@@ -1,9 +1,7 @@
-############
-Introduction
-############
+########################
+Introduction to LizardFS
+########################
 
-About LizardFS
-**************
 
 LizardFS is a distributed, scalable, fault-tolerant and highly available 
 file system. It allows users to combine disk space located on many servers 
@@ -13,12 +11,12 @@ keeping all the data in many replicas spread over available servers. It can
 be used also to build an affordable storage, because it runs without any 
 problems on commodity hardware.
 
-Disk and server failures are handled transparently without any downtime or loss 
-of data. If storage requirements grow, it’s possible to scale an existing 
-LizardFS installation just by adding new servers - at any time, without any 
-downtime. The system will automatically move some data to newly added servers, 
-because it continuously takes care of balancing disk usage across all connected 
-nodes. Removing servers is as easy as adding a new one. 
+Disk and server failures are handled transparently without any downtime or 
+loss of data. If storage requirements grow, it’s possible to scale an 
+existing LizardFS installation just by adding new servers - at any time, 
+without any downtime. The system will automatically move some data to newly 
+added servers, because it continuously takes care of balancing disk usage 
+across all connected nodes. Removing servers is as easy as adding a new one. 
 
 Unique features like:
 
@@ -49,20 +47,21 @@ recovery. Their role is also to manage the whole installation, so the active
 metadata server is often called the master server. The role of other metadata 
 servers is just to keep in sync with the active master servers, so they are 
 often called shadow master servers. Any shadow master server is ready to take 
-the role of the active master server at any time. A suggested configuration of 
-a metadata server is a machine with fast CPU, at least 32 GB of RAM and at 
+the role of the active master server at any time. A suggested configuration 
+of a metadata server is a machine with fast CPU, at least 32 GB of RAM and at 
 least one drive (preferably SSD) to store several dozens of gigabytes of 
 metadata. 
  
-* A set of chunkservers which store the data. Each file is divided into blocks 
-called chunks (each up to 64 MiB) which are stored on the chunkservers. A 
-suggested configuration of a chunkserver is a machine with large disk space 
-available either in a JBOD or RAID configuration, depending on requirements. 
-CPU and RAM are not very important. You can have as little as 2 chunkservers (a 
-minimum to make your data resistant to any disk failure) or as many as hundreds 
-of them. A typical chunkserver is equipped with 8, 12, 16, or even more hard 
-drives. Each file can be distributed on the chunkservers in a specific 
-replication mode which is one of standard, xor or ec. 
+* A set of chunkservers which store the data. Each file is divided into 
+blocks called chunks (each up to 64 MiB) which are stored on the 
+chunkservers. A suggested configuration of a chunkserver is a machine with 
+large disk space available either in a JBOD or RAID configuration, depending 
+on requirements. CPU and RAM are not very important. You can have as little 
+as 2 chunkservers (a minimum to make your data resistant to any disk failure) 
+or as many as hundreds of them. A typical chunkserver is equipped with 8, 12, 
+16, or even more hard drives. Each file can be distributed on the 
+chunkservers in a specific replication mode which is one of standard, xor or 
+ec. 
 
 * Clients which use the data stored on LizardFS. These machines use LizardFS 
 mount to access files in the installation and process them just as those on 
@@ -83,14 +82,14 @@ The replication-mode of a directory or even of a file can be defined
 individually. 
 
 **standard**
-  this mode is for defining explicitely how many copies of the data-chunks you 
-  want to be stored in your cluster and on **which group of nodes the copies 
-  reside**. In conjunction with "custom-goals" this is handy for
+  this mode is for defining explicitely how many copies of the data-chunks 
+  you want to be stored in your cluster and on **which group of nodes the 
+  copies reside**. In conjunction with "custom-goals" this is handy for
   geo-replication. 
 
 **xor**
-   xor is similar to the replication-mechanism also known by RAID5. For Details 
-   see the whitepaper on lizardfs.
+   xor is similar to the replication-mechanism also known by RAID5. For 
+   Details see the whitepaper on lizardfs.
 
 **ec - erasure coding**
    ec mode is similar to the replication-mechanism also known by RAID6. In 
@@ -122,16 +121,16 @@ Hardware recommendation
 ***********************
 
 LizardFS will be working on any hardware, you can use commodity hardware as 
-well. Minimum requirements is two dedicated nodes with a bunch of disks, but to 
-achieve proper HA installation you should have at least 3 nodes
+well. Minimum requirements is two dedicated nodes with a bunch of disks, but 
+to achieve proper HA installation you should have at least 3 nodes.
 We recommend that each node shall have at least two 1Gbps network interface 
-controllers (NICs). Since most commodity hard disk drives have a throughput of 
-approximately 100MB/second, your NICs should be able to handle the traffic 
+controllers (NICs). Since most commodity hard disk drives have a throughput 
+of approximately 100MB/second, your NICs should be able to handle the traffic 
 between the chunkservers and your host.
 
 Minimal configuration of LizardFS strongly depends on its use case. LizardFS 
-will run on practically any reasonable machine, but a sample configuration for 
-a medium size installation could be as follows:
+will run on practically any reasonable machine, but a sample configuration 
+for a medium size installation could be as follows:
 
 Master / Shadow 
 
@@ -157,16 +156,17 @@ Management (HSM), help to build Disaster Recovery Center with asynchronous
 replication between sites, reduce disk space required for replication, 
 effectively manage storage pools (QoS, Quotas) and many more. If you see any 
 other use case for LizardFS that would require any other functionality please 
-let us know, we might put it into our Road Map or develop it especially for you.
+let us know, we might put it into our Road Map or develop it especially for 
+you.
 
 Support for LTO Libraries
 =========================
 
-LizardFS offers native support for LTO libraries. Storing archival backups may 
-consume a lot of memory, even though those files are almost never read. Such 
-data can be efficiently stored on a tape, so LizardFS offers a simple way to 
-cooperate with back-end LTO storage. Files can be chosen to have a backup copy 
-on a tape by setting a tape goal. 
+LizardFS offers native support for LTO libraries. Storing archival backups 
+may consume a lot of memory, even though those files are almost never read. 
+Such data can be efficiently stored on a tape, so LizardFS offers a simple 
+way to cooperate with back-end LTO storage. Files can be chosen to have a 
+backup copy on a tape by setting a tape goal. 
 Examples of tape goals can be found in chapter “Advanced configuration”.
 
 Setting a tape goal to a file makes it read-only for obvious reasons - tape 
