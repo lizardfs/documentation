@@ -1,12 +1,12 @@
 .. _connectclient:
 
 Connecting Clients to your LizardFS installation
-################################################
+************************************************
 
 The most exciting part of this tutorial - you will finally be able to store files on your installation!
 
 Linux client
-************
+============
 
 Install client package
 
@@ -32,7 +32,7 @@ See man *mfsmount* or *mfsmount -h* for more advanced mount options.
 
 
 Windows™ client
-***************
+===============
 
 Install our client from exe package provided
 

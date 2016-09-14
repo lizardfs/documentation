@@ -1,10 +1,10 @@
 Installation
-############
+************
 
 .. _get_and_install:
 
 Getting and installing LizardFS
-*******************************
+===============================
 
 There are several methods for getting LizardFS software. The easiest and most common method is to get packages by adding repositories for use with package management tools such as the Advanced Package Tool (APT) or Yellowdog Updater, Modified (YUM). You may also retrieve pre-compiled packages from the LizardFS repository. Finally, you can retrieve tarballs or clone the LizardFS source code repository and build LizardFS yourself.
 
@@ -12,7 +12,7 @@ There are several methods for getting LizardFS software. The easiest and most co
 .. _get_and_install_debian:
 
 Installing from Debian packages
-===============================
++++++++++++++++++++++++++++++++
 
 First, add a our key which is needed to verify the signatures of LizardFS packages::
 
@@ -59,7 +59,7 @@ LizardFS consists of the following packages:
 
 
 Installing from RedHAT EL / CentOS Packages
-===========================================
+++++++++++++++++++++++++++++++++++++++++++=
 
 First, add a file with information about the repository:
 
@@ -96,7 +96,7 @@ LizardFS consists of following packages:
 * lizardfs-debuginfo – (CentOS 7 / RHEL 7 only) Debugging symbols and sources for all the LizardFS binaries
 
 Installing LizardFS from downloaded .deb packages
-=================================================
++++++++++++++++++++++++++++++++++++++++++++++++++
 Make sure to install the *lizardfs-common* package first before installing other packages.
 
 Also, remember to install lizardfs-cgi before installing lizardfs-cgiserv
@@ -112,7 +112,7 @@ If installing fails due to dependency problems, run:
 .. _get_and_install_from_source
 
 Installing LizardFS from source
-===============================
++++++++++++++++++++++++++++++++
 
 Installing LizardFS from source.
 
