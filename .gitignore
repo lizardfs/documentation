@@ -1,0 +1,49 @@
+*~
+.DS_Store
+
+# External libraries #
+######################
+/external/googletest-release-1.7.0
+
+# Vim files #
+#############
+.clang_complete
+tags
+*.taghl
+compile_commands.json
+.ycm_extra_conf.py
+
+# Commonly used build directory #
+#################################
+/build*
+
+# Eclipse project files #
+#########################
+/.project
+/.cproject
+/.settings
+
+# KDevelop4 project file #
+##########################
+*.kdev4
+
+# QtCreator user profiles #
+###########################
+*.user
+
+# Debian builds #
+#################
+/Makefile
+/debian/files
+/debian/*.debhelper
+/debian/*.substvars
+/debian/*.debhelper.log
+/debian/lizardfs-adm/
+/debian/lizardfs-cgi/
+/debian/lizardfs-cgiserv/
+/debian/lizardfs-chunkserver/
+/debian/lizardfs-client/
+/debian/lizardfs-common/
+/debian/lizardfs-master/
+/debian/lizardfs-metalogger/
+/debian/tmp/
