@@ -2,7 +2,6 @@
 Introduction to LizardFS
 ########################
 
-
 LizardFS is a distributed, scalable, fault-tolerant and highly available 
 file system. It allows users to combine disk space located on many servers 
 into a single name space which is visible on Unix-like and Windows systems
