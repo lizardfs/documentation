@@ -42,30 +42,30 @@ while data is kept on machines called chunkservers. A typical installation
 consists of: 
 
 * At least two metadata servers, which work in master-slave mode for failure 
-recovery. Their role is also to manage the whole installation, so the active 
-metadata server is often called the master server. The role of other metadata 
-servers is just to keep in sync with the active master servers, so they are 
-often called shadow master servers. Any shadow master server is ready to take 
-the role of the active master server at any time. A suggested configuration 
-of a metadata server is a machine with fast CPU, at least 32 GB of RAM and at 
-least one drive (preferably SSD) to store several dozens of gigabytes of 
-metadata. 
+  recovery. Their role is also to manage the whole installation, so the 
+  active metadata server is often called the master server. The role of other 
+  metadata servers is just to keep in sync with the active master servers, so 
+  they are often called shadow master servers. Any shadow master server is 
+  ready to take the role of the active master server at any time. A suggested 
+  configuration of a metadata server is a machine with fast CPU, at least 32 
+  GB of RAM and at least one drive (preferably SSD) to store several dozens 
+  of gigabytes of metadata. 
  
 * A set of chunkservers which store the data. Each file is divided into 
-blocks called chunks (each up to 64 MiB) which are stored on the 
-chunkservers. A suggested configuration of a chunkserver is a machine with 
-large disk space available either in a JBOD or RAID configuration, depending 
-on requirements. CPU and RAM are not very important. You can have as little 
-as 2 chunkservers (a minimum to make your data resistant to any disk failure) 
-or as many as hundreds of them. A typical chunkserver is equipped with 8, 12, 
-16, or even more hard drives. Each file can be distributed on the 
-chunkservers in a specific replication mode which is one of standard, xor or 
-ec. 
+  blocks called chunks (each up to 64 MiB) which are stored on the 
+  chunkservers. A suggested configuration of a chunkserver is a machine with 
+  large disk space available either in a JBOD or RAID configuration, 
+  depending on requirements. CPU and RAM are not very important. You can have 
+  as little as 2 chunkservers (a minimum to make your data resistant to any 
+  disk failure) or as many as hundreds of them. A typical chunkserver is 
+  equipped with 8, 12, 16, or even more hard drives. Each file can be 
+  distributed on the chunkservers in a specific replication mode which is one 
+  of standard, xor or ec. 
 
 * Clients which use the data stored on LizardFS. These machines use LizardFS 
-mount to access files in the installation and process them just as those on 
-their local hard drives. Files stored on LizardFS can be seen and 
-simultaneously accessed by as many clients as needed.
+  mount to access files in the installation and process them just as those on 
+  their local hard drives. Files stored on LizardFS can be seen and 
+  simultaneously accessed by as many clients as needed.
 
 .. figure:: images/lfs.png
    :scale: 50 %
