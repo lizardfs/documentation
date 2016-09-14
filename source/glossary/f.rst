@@ -5,7 +5,8 @@ F
 
 .. _FibreChannel:
 
-**FC/FibreChannel**
+FC/FibreChannel
+===============
 
   Fibre Channel, or FC, is a high-speed network technology (commonly running at 1, 2, 4, 8, 16, 32, and 128 gigabit per second rates) primarily used to connect computer data storage to servers. Fibre Channel is mainly used in storage area networks (SAN) in enterprise storage. Fibre Channel networks are known as a Fabric because they operate in unison as one big switch. Fibre Channel typically runs on optical fiber cables within and between data centers.
 
