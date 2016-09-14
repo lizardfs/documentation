@@ -1,9 +1,11 @@
 Configuring Replication Modes
 *****************************
 
-LizardFS supports 3 different modes of replication. In the simplest one, the 
-simple goal setup, you specify how many copies of every chunk of a file or 
-directory will be copied to how many and optionaly also "which" chunkservers. 
+LizardFS supports 3 different modes of replication. 
+
+In the simplest one, the simple goal setup, you specify how many copies of 
+every chunk of a file or directory will be copied to how many and optionaly 
+also "which" chunkservers. 
 Note that the write modus here is: client writes chunk to ONE chunkserver and 
 this chunkserver replicates this chunk to the other chunkservers.
 
