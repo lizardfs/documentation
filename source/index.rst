@@ -20,6 +20,7 @@ Contents:
    cookbook/index
    glossary/index
    release_nodes
+   references
 
 
 Indices and tables

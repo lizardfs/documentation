@@ -1,14 +1,16 @@
 .. _connectclient:
 
+************************************************
 Connecting Clients to your LizardFS installation
 ************************************************
 
-The most exciting part of this tutorial - you will finally be able to store files on your installation!
+The most exciting part of this tutorial - you will finally be able to store 
+files on your installation!
 
 Linux client
 ============
 
-Install client package
+Install the client package
 
    Check :ref:`get_and_install` for instructions how to install package
 
@@ -16,7 +18,8 @@ Example for Debian/Ubuntu::
 
    $ apt-get install lizardfs-client
 
-Set mfsmaster host in /etc/hosts file. For our example configuration it would be::
+Set mfsmaster host in /etc/hosts file. For our example configuration it would 
+be::
 
    192.168.16.100 mfsmaster
 

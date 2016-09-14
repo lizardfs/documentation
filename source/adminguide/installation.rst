@@ -1,5 +1,6 @@
-Installation
-************
+*******************
+Installing LizardFS
+*******************
 
 .. _get_and_install:
 
@@ -109,7 +110,7 @@ If installing fails due to dependency problems, run:
 
    # apt-get -f install
 
-.. _get_and_install_from_source
+.. _get_and_install_from_source:
 
 Installing LizardFS from source
 +++++++++++++++++++++++++++++++
