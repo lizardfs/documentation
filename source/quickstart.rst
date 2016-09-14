@@ -3,13 +3,14 @@ LizardFS QuickStart on Debian
 #############################
 
 .. Important::  
-   In case you downloaded the packages from the official Debian repository, be 
-   aware of the differences in certain names and paths, including:
+   In case you downloaded the packages from the official Debian repository, 
+   be aware of the differences in certain names and paths, including:
 
    * Configuration files directory is /etc/lizardfs instead of /etc/mfs, data 
-   directory is /var/lib/lizardfs instead of /var/lib/mfs
-   * Sample configuration files can be found in /usr/share/doc/lizardfs-<name>/
-   examples, where <name> can be master, chunkserver or metalogger.
+     directory is /var/lib/lizardfs instead of /var/lib/mfs
+   * Sample configuration files can be found in 
+     /usr/share/doc/lizardfs-<name>/examples, where <name> can be master, 
+     chunkserver or metalogger.
    * Chunk servers are run as user lizardfs, instead of user mfs.
 
    In order to allow lizardfs-<name> to be run as service, run the following 
@@ -82,8 +83,8 @@ After this operation, you can launch LizardFS master daemon::
 
 Your first instance of LizardFS should have been successfully launched!
 
-Explore your new master server's capabilities by looking into the mfsmaster man 
-pages::
+Explore your new master server's capabilities by looking into the mfsmaster 
+man pages::
 
    $ man mfsmaster
 
@@ -132,8 +133,8 @@ For our example configuration, mfsmetalogger.cfg may remain unchanged.
 By default, the metalogger uses the "mfsmaster" host as LizardFS master's 
 address. It is advised to set it up in /etc/hosts file.
 
-For example configuration mentioned at the top, /etc/hosts should include this 
-line::
+For example configuration mentioned at the top, /etc/hosts should include 
+this line::
 
    192.168.16.100 mfsmaster
 
@@ -175,9 +176,9 @@ in your shell.
 
 Sample configuration files can be found in /etc/mfs/\*.dist
 
-By default, chunk server uses "mfsmaster" host as LizardFS master's address. It 
-is advised to set it up in /etc/hosts file. For example configuration mentioned 
-at the top, /etc/hosts should include this line::
+By default, chunk server uses "mfsmaster" host as LizardFS master's address. 
+It is advised to set it up in /etc/hosts file. For example configuration 
+mentioned at the top, /etc/hosts should include this line::
 
    192.168.16.100 mfsmaster
 
@@ -211,8 +212,8 @@ and congratulate yourself on launching your first LizardFS chunk server.
 Cgi server installation
 ***********************
 
-The cgi server offers a Web-based GUI that presents LizardFS status and various 
-statistics.
+The cgi server offers a Web-based GUI that presents LizardFS status and 
+various statistics.
 
 Install the cgi-server package
 
@@ -235,7 +236,8 @@ Run your cgi-server::
 The Web interface is now available.
 
 Assuming that lizardfs-cgiserv is installed on host 192.168.10.11, you can 
-access LizardFS panel at http://192.168.10.11:9425/mfs.cgi?masterhost=mfsmaster
+access LizardFS panel at 
+http://192.168.10.11:9425/mfs.cgi?masterhost=mfsmaster
 
 Command line administration tools
 *********************************

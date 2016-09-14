@@ -136,7 +136,7 @@ Master / Shadow
 * CPU - at least 2 GHz CPU, 64bit
 
 * RAM - depends on expected number of files (4GB should be enough for a small 
-installation)
+  installation)
 
 * Disk - 128G, SSD would improve performance, HDD is fine
 
