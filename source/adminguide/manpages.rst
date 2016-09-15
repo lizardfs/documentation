@@ -1,7 +1,7 @@
 LizardFS Manual Pages
 #####################
 
-These Manual Pages get installed automatically on installation of lizardfs and 
+These Manual Pages get installed automatically on installation of lizardfs and
 can be also read in your system using::
 
   man <commandname>
@@ -12,6 +12,7 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: Administrative commands
 
    ../man/lizardfs-admin.8.rst
@@ -32,6 +33,7 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: Master Server
 
    ../man/globaliolimits.cfg.5.rst
@@ -44,6 +46,7 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: Chunkservers
 
    ../man/mfschunkserver.8.rst
@@ -52,6 +55,7 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: Metalogger
 
    ../man/mfsmetalogger.8.rst
@@ -59,12 +63,14 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: Clients
 
    ../man/mfsmount.1.rst
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :caption: webinterface
 
    ../man/mfscgiserv.8.rst
