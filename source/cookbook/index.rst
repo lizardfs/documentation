@@ -1,3 +1,5 @@
+.. _cookbook:
+
 *********************
 LizardFS'ers CookBook
 *********************
