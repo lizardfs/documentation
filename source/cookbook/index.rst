@@ -12,3 +12,11 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+
+   filesystems
+   linux
+   freebsd
+   macosx
+   illumos
+   georeplication
+
