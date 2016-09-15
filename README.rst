@@ -42,12 +42,12 @@ Wrap the documentation at 80 characters wide, unless a code example is significa
 Writing style
 ***************
 
-When using pronouns in reference to a hypothetical person, such as “a user with a session cookie”, gender neutral pronouns (they/their/them) should be used. Instead of:
+When using pronouns in reference to a hypothetical person, such as “a user with a session cookie”, gender neutral pronouns (they/their/them) should be used. Instead of::
 
-he or she... use they.
-him or her... use them.
-his or her... use their.
-his or hers... use theirs.
-himself or herself... use themselves.
+  he or she... use they.
+  him or her... use them.
+  his or her... use their.
+  his or hers... use theirs.
+  himself or herself... use themselves.
 
 
