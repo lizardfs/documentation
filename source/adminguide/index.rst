@@ -15,11 +15,11 @@ Contents:
    basic_configuration
    replication
    advanced_configuration
-   manpages
    optional_features
    connectclient
    security
    optimizing
    troubleshooting
    upgrading
+   manpages
 
