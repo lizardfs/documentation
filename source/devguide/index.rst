@@ -1,3 +1,5 @@
+.. _devguide:
+
 LizardFS Developers Guide
 #########################
 
@@ -19,3 +21,4 @@ Contents:
    submitting
    documentation
    ressources
+   participation_rules
