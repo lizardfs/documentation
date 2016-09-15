@@ -9,8 +9,9 @@ Contents:
    :maxdepth: 2
 
    general
+   server
+   clients
    platforms
    networking
-   clients
 
 
