@@ -1,8 +1,11 @@
+.. _upgrading:
+
+******************
 Upgrading Lizardfs
-##################
+******************
 
 Upgrading to LizardFS 3.10.0
-****************************
+============================
 
     Direct upgrade is possible from LizardFS 2.6.0 - 3.9.4.
 
@@ -29,7 +32,7 @@ Upgrading to LizardFS 3.10.0
     limits.d/10-lizardfs.conf file or by using ulimit command.
 
 Upgrading to LizardFS 3.9.4
-****************************
+===========================
 
     Direct upgrade is possible from LizardFS 3.9.2 and LizardFS 2.6.0.
 
@@ -38,7 +41,7 @@ Upgrading to LizardFS 3.9.4
     * See upgrade notes for LizardFS 3.9.2
 
 Upgrading to LizardFS 3.9.2
-***************************
+===========================
 
     Direct upgrade is possible from LizardFS 2.6.0.
 
@@ -79,7 +82,7 @@ Upgrading to LizardFS 3.9.2
     or by using the ulimit command.
 
 Upgrading to LizardFS 2.6.0
-****************************
+===========================
 
     Direct upgrade is possible from:
 
@@ -103,7 +106,7 @@ Upgrading to LizardFS 2.6.0
     * Proceed the same as in case of upgrade to LizardFS 2.5.2.
 
 Upgrading to LizardFS 2.5.4
-****************************
+===========================
 
     Direct upgrade is possible from:
     
@@ -132,7 +135,7 @@ Upgrading to LizardFS 2.5.4
     * Proceed the same as in case of upgrade to LizardFS 2.5.2.
 
 Upgrading to LizardFS 2.5.2
-***************************
+===========================
 
     Direct upgrade is possible from:
 
@@ -160,7 +163,7 @@ Upgrading to LizardFS 2.5.2
       clients (either all at once or one by one).
 
 Upgrading to LizardFS 2.5.0
-***************************
+===========================
 
     Direct upgrade is possible from:
 
@@ -177,7 +180,7 @@ Upgrading to LizardFS 2.5.0
       newer.
 
 Upgrading to LizardFS 1.6.28
-****************************
+============================
 
     Direct upgrade is possible from:
 
