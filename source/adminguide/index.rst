@@ -15,7 +15,7 @@ Contents:
    basic_configuration
    replication
    advanced_configuration
-   ../man/source/index
+   manpages
    optional_features
    connectclient
    security
