@@ -55,6 +55,9 @@ Developer Specific
 **Continuous integration system**
   http://jenkins.lizardfs.org/
 
+**Roadmap**
+  https://github.com/lizardfs/lizardfs/wiki/Roadmap
+
 
 ******************
 Third Party AddOns
@@ -66,7 +69,7 @@ Third Party AddOns
 
   You can configure with puppet-lizardfs:
 
-    * The LizardFS master (ready for High-availability with tools like 
+    * The LizardFS master (ready for High-availability with tools like
       keepalived or Pacemaker. Check out the explanation below)
     * The LizardFS chunkserver
     * The LizardFS metalogger
@@ -80,10 +83,22 @@ Third Party AddOns
 
 **lizardfs ansible playbook**
 
-  Ansible playbook for automated installation of LizardFS Master, 
+  Ansible playbook for automated installation of LizardFS Master,
   Shadowmaster, multiple Chunkservers, Metalogger and CGIserv.
 
   Author: stenub
 
   Github repository: https://github.com/stenub/lizardfs_ansible_playbook
+
+
+***************************
+Packages from the community
+***************************
+
+**Archlinux**
+  https://aur.archlinux.org/packages/lizardfs/
+
+
+
+
 
