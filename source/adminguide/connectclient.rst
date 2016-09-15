@@ -47,7 +47,7 @@ windows session.
 It should look like in the following image:
 
 
-.. image:: ../images/LizardWindowsClient.png
+.. image:: /images/LizardWindowsClient.png
    :align: center
    :alt: Figure 2: main view of LizardFS Windows™ client
 
