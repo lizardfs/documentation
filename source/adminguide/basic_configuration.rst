@@ -31,7 +31,7 @@ Basic operating system settings for LizardFS
 
 LizardFS runs on many UNIX and UNIX like operating systems. We will be
 concentrating here on Debian and RH like systems to keep things simple. For
-other OSes, please consult the :ref:`cookbook`.
+other OSes, please consult the :ref:´cookbook´.
 
 The /etc/hosts file
 -------------------
