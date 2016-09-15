@@ -16,7 +16,7 @@ General
   https://www.youtube.com/channel/UCyDn7vchGZxDUyr-CajFzfg
 
 **LizardFS Twitter channel**
-  https://www.youtube.com/channel/UCyDn7vchGZxDUyr-CajFzfg
+  https://www.twitter.com/lizardfs/
 
 **LizardFS on Facebook**
   https://www.facebook.com/lizardfs/
