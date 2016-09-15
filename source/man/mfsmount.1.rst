@@ -12,11 +12,12 @@ mfsmount - mount a LizardFS File System
 SYNOPSIS
 ========
 
+::
 
- | mfsmount 'mountpoint' [-d] [-f] [-s] [-m] [-n] [-p]
+ mfsmount 'mountpoint' [-d] [-f] [-s] [-m] [-n] [-p]
          [-H 'HOST'] [-P 'PORT'] [-S 'PATH'] [-o 'opt'[,'opt']...]
- | mfsmount -h | --help
- | mfsmount -V | --version
+ mfsmount -h | --help
+ mfsmount -V | --version
 
 
 OPTIONS
