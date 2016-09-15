@@ -51,3 +51,15 @@ When using pronouns in reference to a hypothetical person, such as “a user wit
   himself or herself... use themselves.
 
 
+*******************
+debian8 (jessie)
+*******************
+Best way to get the documentation formatting-tools running is:
+
+ * apt-get install python-pip
+ * pip install Sphinx
+
+This should be enough to build the html-documentation. 
+If you want pdf also you will need texlive/pdflatex - caution, that one is 
+really a *large* set of software. 
+
