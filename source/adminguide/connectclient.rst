@@ -4,7 +4,7 @@
 Connecting Clients to your LizardFS installation
 ************************************************
 
-The most exciting part of this tutorial - you will finally be able to store 
+The most exciting part of this tutorial - you will finally be able to store
 files on your installation!
 
 Linux client
@@ -18,7 +18,7 @@ Example for Debian/Ubuntu::
 
    $ apt-get install lizardfs-client
 
-Set mfsmaster host in /etc/hosts file. For our example configuration it would 
+Set mfsmaster host in /etc/hosts file. For our example configuration it would
 be::
 
    192.168.16.100 mfsmaster
@@ -39,9 +39,22 @@ Windows™ client
 
 Install our client from exe package provided
 
+Add your credentials and the address and port of the master server.
+
+Select the drive you want your lizardFS filesystem to appear as in your
+windows session.
+
+It should look like in the following image:
+
+
+.. figure:: images/lizard-windows-client.jpg
+   :scale: 100 %
+   :align: center
+   :alt: Figure 2: main view of LizardFS Windows™ client
+
 Figure 2: main view of LizardFS Windows™ client
 
 
-Figure 3: My Computer view after mounting LizardFS client 
+Figure 3: My Computer view after mounting LizardFS client
 
 
