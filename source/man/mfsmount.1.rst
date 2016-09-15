@@ -1,3 +1,6 @@
+.. _mfsmount.1:
+
+***********
 mfsmount(1)
 ***********
 
@@ -32,7 +35,7 @@ FUSE options
 ------------
 
 -d, -o debug
-  enable debug mode (implies *-f*)
+  enable debug mode (implies -f)
 
 -f
   foreground operation
@@ -50,7 +53,7 @@ LizardFS options
   mount MFSMETA companion filesystem instead of primary LizardFS
 
 -n
-  omit default mount options (-o allow_other,default_permissions*)
+  omit default mount options (-o allow_other,default_permissions)
 
 -p, -o askpassword
   prompt for password (interactive version of -o mfspassword='PASS')
@@ -67,7 +70,7 @@ LizardFS options
 -S 'PATH', -o mfssubfolder='PATH'
   mount specified LizardFS directory (default is /, i.e. whole filesystem)
 
--o enablefilelocks=*[0,1]::
+-o enablefilelocks=[0,1]::
   enables/disables global file locking (disabled by default)
 
 -o mfspassword='PASSWORD'
@@ -75,7 +78,7 @@ LizardFS options
 
 -o mfsmd5pass='MD5'
   authenticate to LizardFS master using directly given 'MD5' (only if
-  *mfspassword* option is not specified)
+  mfspassword option is not specified)
 
 -o mfsdelayedinit
   connection with master is done in background - with this option mount can be
@@ -105,7 +108,7 @@ LizardFS options
   print some LizardFS-specific debugging information
 
 -o mfscachemode='CACHEMODE'
-  set cache mode (see *DATA CACHE MODES*; default is AUTO)
+  set cache mode (see DATA CACHE MODES; default is AUTO)
 
 -o mfscachefiles
   (deprecated) preserve file data in cache (equivalent to -o
@@ -183,7 +186,7 @@ LizardFS options
 -o mfsiolimits='PATH'
   specify local I/O limiting configuration file (default: no I/O limiting)
 
-General mount options (see *mount*(8) manual):
+General mount options (see mount(8) manual):
 ----------------------------------------------
 
 -o rw, -o ro
