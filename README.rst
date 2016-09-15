@@ -1,5 +1,5 @@
 ###########################
- lizardfs-new-documentation
+lizardfs-new-documentation
 ###########################
 
 A take at a new documentation for the LizardFS project
@@ -10,7 +10,7 @@ If you want to generate nroff man pages as well, you will need to install pandoc
 
 *******************
 Documentation Rules
-******************
+*******************
 
 Headers are taken from the Python documentation project::
 
@@ -38,9 +38,9 @@ In section titles, capitalize only initial words and proper nouns.
 
 Wrap the documentation at 80 characters wide, unless a code example is significantly less readable when split over two lines, or for another good reason.
 
-*******************
+***************
 Writing style
-*******************
+***************
 
 When using pronouns in reference to a hypothetical person, such as “a user with a session cookie”, gender neutral pronouns (they/their/them) should be used. Instead of:
 
@@ -49,4 +49,5 @@ him or her... use them.
 his or her... use their.
 his or hers... use theirs.
 himself or herself... use themselves.
+
 
