@@ -1,5 +1,6 @@
 .. _adminguide:
 
+#############################
 LizardFS Administration Guide
 #############################
 
@@ -12,11 +13,13 @@ Contents:
 
    installation
    basic_configuration
-   connectclient
+   replication
    advanced_configuration
-   optional_elements
+   optional_features
+   connectclient
    security
    optimizing
    troubleshooting
    upgrading
+   manpages
 
