@@ -19,7 +19,9 @@ Contents:
    faq/index
    cookbook/index
    glossary/index
-   release_nodes
+   release_notes
+   ressources
+   support
    references
 
 
