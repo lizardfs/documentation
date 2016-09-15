@@ -23,6 +23,12 @@ SAN/Storage Area Network
   However, file systems built on top of SANs do provide file-level access, 
   and are known as shared-disk file systems.
 
+.. seealso::
 
-  For more information please check the Wikipedia entry for SAN: 
-  https://en.wikipedia.org/wiki/Storage_area_network
+   Wikipedia entry for SAN: 
+     https://en.wikipedia.org/wiki/Storage_area_network
+
+   SNIA definition of Storage Area Networks:
+     http://www.snia.org/education/storage_networking_primer/san/what_san
+
+
