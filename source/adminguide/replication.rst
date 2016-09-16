@@ -35,7 +35,7 @@ Now that you know what they are, lets start configuring them....
 .. _standard_goals:
 
 Standard Goals
-=============
+==============
 
 Goals configuration is defined in the file mfsgoals.cfg used by the master
 server.
@@ -103,7 +103,7 @@ Via cgi (webinterface):
 In the ‘Config’ tab there is a table called ‘Goal definitions’.
 
 Set and show the goal of a file/directory
----------------------------------------
+-----------------------------------------
 
 **set**
    The goal of a file/directory can be set using::
@@ -184,6 +184,6 @@ Applying, showing and listing goals works the same way as for
 :ref:`standard_goals`.
 
 Setting up EC
-==============
+=============
 
 .. todo:: Explain ec configuration
