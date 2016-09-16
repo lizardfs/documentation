@@ -198,10 +198,22 @@ for the target-format are available (check terminal-output for
 ====================
 Submitting your work
 ====================
+.. auth-status-proof1/none
 
 Read :ref:`submitting_patches` for information about our conventions. In short
 this means for us:
 
-* First line of the commit-message is of form::
+* First line of the commit-message is preceeded by "doc: ", The first character
+  of the remaining line has to be uppercase. First line is of form::
 
-  doc: Short-description max-length 65 characters
+    doc: Short-description max-length 65 characters
+
+* After the first line of the commit-message add a blank-line
+* third part of the commit-message is a longer description
+
+A complete commit-message looks like::
+
+  doc: Fixed references to other documentation
+  
+  The refs to adminguide/basic_configuration and to filesystem/georeplication had
+  a wrong syntax.
