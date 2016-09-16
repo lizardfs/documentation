@@ -125,7 +125,8 @@ You can either download a tarball from there by choosing the respective
 version in the **Branch** tab on the left or use :ref:`git` to clone the
 sourcetree.
 
-LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow the directions outlined below.
+LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow
+the directions outlined below.
 
 1. Create a build directory inside the source directory::
 
@@ -151,7 +152,8 @@ LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow t
 5. Now continue to the configuration pages.
 
 
-If you want to participate in developing LizardFS, please refer to the :ref:`devguide` and the :ref:`participation_rules`.
+If you want to participate in developing LizardFS, please refer to the
+:ref:`devguide` and the :ref:`participation_rules`.
 
 
 
