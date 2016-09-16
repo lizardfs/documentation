@@ -123,7 +123,7 @@ File systems for LizardFS servers
 For the Master servers
 ----------------------
 
-
+The Master keeps all of his records in memory but does frequent backups to drives which should therefore be very fast, but do not have to be very large. A standard 250G SSD should suffice. As a file system we would recommend something fast, like XFS. Do not use a HW RAID controller to mirror your drives, SSDs usualy have identical lifespan so block level mirroring would just lead to two dead SSDs instead of one. An alternative would be ZFS mirroring which is not lowlevel but data based and does not always write the same block to both devices to the same position.
 
 
 
@@ -174,6 +174,13 @@ Configuring the Metalogger
 
 Configuring the Web Interface
 =============================
+
+The lizardfs cgiserver does not require much configuration. After the
+installation either follow the example installation and just add an entry for
+*mfsmaster* to your /etc/hosts file, or,  ...
+
+.. todo: how do we change the place this looks for the master server ? Any
+config possible ?
 
 
 Labeling your chunkserver

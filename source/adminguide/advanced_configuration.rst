@@ -164,8 +164,9 @@ LizardFS can be run as a high-availability cluster on several nodes. When
 working in HA mode, a dedicated daemon watches the status of the metadata
 servers and performs a failover whenever it detects a master server crashed
 (e.g. due to power outage). Running LizardFS installation as a HA-cluster
-significantly increases its availability. A reasonable minimum of metadata
-servers in a HA installation is 3.
+significantly increases its availability. Since uRaft uses :ref:`quorum` a
+reasonable
+minimum of metadata servers in a HA installation is at least 3.
 
 In order to deploy LizardFS as a high-availability cluster, follow the steps
 below.
@@ -242,7 +243,8 @@ Change “false” to “true” in /etc/default/lizardfs-uraft::
 
    $ service lizardfs-uraft start
 
-You can check your uraft status via telnet on URAFT_STATUS_PORT (default: 9428)::
+You can check your uraft status via telnet on URAFT_STATUS_PORT
+(default: 9428)::
 
 	$ telnet NODE-ADDRESS 9428
 
