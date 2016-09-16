@@ -136,7 +136,8 @@ Set and show the goal of a file/directory
 
       $ lizardfs fileinfo file
 
-For further information see: :ref:`lizardfs-getgoal.1` :ref:`lizardfs-fileinfo.1`
+For further information see: :ref:`lizardfs-getgoal.1`
+:ref:`lizardfs-fileinfo.1`
 
 
 
