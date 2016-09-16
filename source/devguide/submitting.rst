@@ -1,4 +1,4 @@
-.. _submitting_patches
+.. _submitting_patches:
 
 Submitting Patches
 ******************
