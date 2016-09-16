@@ -8,7 +8,8 @@ LizardFS supports 3 different modes of replication.
          have lets say, 5 chunkservers in a EC3+1 configuration, chunks will
          spread among them but one set will always be 4 chunks. This way all
          active chunkservers are being used and the data/parity chunks get
-         nicely distributed amongst them. For details refer to the :ref:`techncal_whitepaper`.
+         nicely distributed amongst them. For details refer to the
+         :ref:`technical_whitepaper`.
 
 In the simplest one, the simple goal setup, you specify how many copies of
 every chunk of a file or directory will be copied to how many and optionaly
@@ -102,7 +103,7 @@ Set and show the goal of a file/directory
 **set**
    The goal of a file/directory can be set using::
 
-	   $ mfssetgoal goal_name object
+	   $ lizardfs setgoal goal_name object
 
    which will result in setting the goal of an object to goal_name.
 
@@ -113,29 +114,29 @@ Set and show the goal of a file/directory
 
    * (-r) - change goals recursively for all objects contained in a directory
    * goal_name[+|-] - when goal_name is appended with +, the goal is changed
-   only if it will “increase security” (i.e. goal_name id is higher than id
-   of the current goal)
+     only if it will “increase security” (i.e. goal_name id is higher than id
+     of the current goal)
 
 
 **show**
    Current goal of the file/directory can be shown using::
 
-      $ mfsgetgoal object
+      $ lizardfs getgoal object
 
    The result is the name of the currently set goal.
 
    To list the goals in a directory use::
 
-      $ mfsgetgoal -r directory
+      $ lizardfs getgoal -r directory
 
    which for every given directory additionally prints the current value of
    all contained objects (files and directories).
 
    To show where exactly file chunks are located use::
 
-      $ mfsfileinfo file
+      $ lizardfs fileinfo file
 
-For further information see: man mfssetgoal, man mfsfileinfo
+For further information see: :ref:`lizardfs-getgoal.1` :ref:`lizardfs-fileinfo.1`
 
 
 
