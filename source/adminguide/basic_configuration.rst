@@ -35,7 +35,7 @@ Basic operating system settings for LizardFS
 
 LizardFS runs on many UNIX and UNIX like operating systems. We will be
 concentrating here on Debian and RH like systems to keep things simple. For
-other OSes, please consult the :ref:´cookbook´.
+other OSes, please consult the :ref:`cookbook`.
 
 The /etc/hosts file
 -------------------
@@ -64,7 +64,7 @@ one line per IP address.
 
 Example::
 
-  127.0.0.1	       localhost
+  127.0.0.1        localhost
   192.168.16.100   mfsmaster
   192.168.16.101   shadowmaster
   192.168.16.10    chunkserver1 metalogger
@@ -214,7 +214,4 @@ Via the cgi (webinterface):
 
 In the ‘Servers’ tab in the table ‘Chunk Servers’ there is a column ‘label’
 where labels of the chunkservers are displayed.
-
-
-
 
