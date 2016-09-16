@@ -27,9 +27,13 @@ We offer full maintenance, development and support for LizardFS:
 ---------------------------------
 
 | **Skytechnology Sp. z o.o.**
-| Głogowa 21, PL-02-639 Warszawa
+| Ul. Głogowa 21
+| 02-639 Warszawa
+| Poland
+|
 | Tel: (+48) 22 100 32 48
 | Tel: (+1) 646 655 0 693
+|
 | E-mail: info@lizardfs.com
 
 ----------------------------------
