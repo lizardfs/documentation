@@ -2,6 +2,7 @@
 
 LizardFS Developers Guide
 #########################
+.. auth-status-proof1/none
 
 A guide for people wanting to work on developing LizardFS.
 
