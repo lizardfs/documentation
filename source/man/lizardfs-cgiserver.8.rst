@@ -30,13 +30,13 @@ OPTIONS
 -h
   print usage information and exit
 
--H 'BIND_HOST'
+-H <BIND_HOST>
   local address to listen on (default: any)
 
--P 'BIND_PORT'
+-P <BIND_PORT>
   port to listen on (default: 9425)
 
--R 'ROOT_PATH'
+-R <ROOT_PATH>
   local path to use as HTTP document root (default is CGIDIR set up at
   configure time)
 
