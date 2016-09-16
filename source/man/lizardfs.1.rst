@@ -1,0 +1,117 @@
+.. _lizardfs.1:
+
+***********
+lizardfs(1)
+***********
+
+NAME
+====
+
+lizardfs - open prompt to perform LizardFS-specific operations
+
+SYNOPSIS
+========
+
+::
+
+ lizardfs getgoal [-r] [-n|-h|-H] 'OBJECT'...
+ lizardfs rgetgoal [-n|-h|-H] 'OBJECT'...
+ lizardfs setgoal [-r] [-n|-h|-H] 'NAME' 'OBJECT'...
+ lizardfs rsetgoal [-n|-h|-H] [+|-]N 'OBJECT'...
+ lizardfs setquota (-u* 'UID' | -g 'GID') 'SOFT-LIMIT-SIZE'
+                      'HARD-LIMIT-SIZE' 'SOFT-LIMIT-INODES'
+                      'HARD-LIMIT-INODES' 'MOUNTPOINT-ROOT-PATH'
+ lizardfs repquota [-nhH] (-u 'UID' | -g 'GID')+ 'MOUNTPOINT-ROOT-PATH'
+ lizardfs repquota [-nhH] -a 'MOUNTPOINT-ROOT-PATH'
+ lizardfs gettrashtime [-r] [-n|-h|-H] 'OBJECT'...
+ lizardfs rgettrashtime [-n|-h|-H] 'OBJECT'...
+ lizardfs settrashtime [-r] [-n|-h|-H] [+|-]SECONDS 'OBJECT'...
+ lizardfs rsettrashtime [-n|-h|-H] [+|-]SECONDS 'OBJECT'...
+ lizardfs geteattr* [-r] [-n|-h|-H] 'OBJECT'...
+ lizardfs seteattr* [-r] [-n|-h|-H] -f 'ATTRNAME' [-f 'ATTRNAME' ...]
+                                             'OBJECT'...
+ lizardfs deleattr* [-r] [-n|-h|-H] -f 'ATTRNAME' [-f 'ATTRNAME' ...]
+                                             'OBJECT'...
+ lizardfs checkfile 'FILE'...
+ lizardfs fileinfo 'FILE'...
+ lizardfs dirinfo [-n|-h|-H] 'OBJECT'...
+ lizardfs filerepair [-n|-h|-H] 'FILE'...
+ lizardfs appendchunks 'SNAPSHOT_FILE' 'OBJECT'...
+ lizardfs makesnapshot [-o] 'SOURCE'... 'DESTINATION'
+
+DESCRIPTION
+===========
+
+See respective documents.
+
+OPTIONS
+=======
+
+General
+-------
+
+Most of *lizardfs* operations use the following options to select the format of
+printed numbers:
+
+-n
+  Print exact numbers (e.g. 1024).
+
+-h
+  Print numbers with binary prefixes (Ki, Mi, Gi as `2^10`, `2^20` etc.).
+
+-H
+  Print numbers with SI prefixes (k, M, G as `10^3`, `10^6` etc.).
+
+  The same can be achieved by setting *MFSHRFORMAT* environment variable to:
+  *0* (exact numbers), *1* or *h* (binary prefixes), *2* or *H* (SI prefixes),
+  *3* or *h+* (exact numbers and binary prefixes), *4* or *H+* (exact numbers and SI prefixes). The default is to print just exact numbers.
+
+Other
+-----
+
+-r
+  This option enables recursive mode.
+
+INHERITANCE
+===========
+
+When a new object is created in LizardFS, attributes such as goal, trashtime
+and extra attributes are inherited from parent directory. So if you set i.e.
+"noowner" attribute and goal to 3 in a directory then every new object created
+in this directory will have goal set to 3 and "noowner" flag set. A newly
+created object inherits always the current set of its parent's attributes.
+Changing a directory attribute does not affect its already created children.
+To change an attribute for a directory and all of its children use `'-r'`
+option.
+
+REPORTING BUGS
+==============
+
+Report bugs to <contact@lizardfs.org>.
+
+COPYRIGHT
+=========
+
+Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology sp. z o.o.
+
+LizardFS is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, version 3.
+
+LizardFS is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+LizardFS. If not, see <http://www.gnu.org/licenses/>.
+
+SEE ALSO
+========
+
+mfsmount(1), lizardfs-appendchunks(1), lizardfs-checkfile(1),
+lizardfs-deleattr(1), lizardfs-dirinfo(1), lizardfs-fileinfo(1),
+lizardfs-filerepair(1), lizardfs-geteattr(1), lizardfs-getgoal(1),
+lizardfs-gettrashtime(1), lizardfs-makesnapshot(1), lizardfs-rgetgoal(1),
+lizardfs-rgettrashtime(1), lizardfs-rsetgoal(1), lizardfs-rsettrashtime(1),
+lizardfs-seteattr(1), lizardfs-setgoal(1), lizardfs-settrashtime(1),
+lizardfs-repquota(1), lizardfs-setquota(1), lizardfs(7)

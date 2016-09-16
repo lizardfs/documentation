@@ -1,23 +1,26 @@
-.. _iolimits.cfg.5:
+.. _lizardfs-chekfile.1:
 
-***************
-iolimits.cfg(5)
-***************
+*********************
+lizardfs-checkfile(1)
+*********************
 
 NAME
 ====
 
-iolimits.cfg - local I/O limiting configuration
+lizardfs-checkfile - print information about chunks
+
+SYNOPSIS
+========
+
+::
+
+  lizardfs checkfile 'FILE'...
 
 DESCRIPTION
 ===========
 
-The file *iolimits.cfg* contains the configuration of the local I/O limiter.
-
-SYNTAX,  OPTIONS
-================
-
-The same as in globaliolimits.cfg(5).
+  **lizardfs checkfile** checks and prints the number of chunks and number of
+  chunk copies belonging to the specified file(s). It can be used on any file, including deleted ones ('trash').
 
 COPYRIGHT
 =========
@@ -35,13 +38,8 @@ A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 LizardFS. If not, see <http://www.gnu.org/licenses/>.
 
+
 SEE ALSO
 ========
 
-mfsmount.cfg(5), globaliolimits.cfg(5)
-
-.. seealso::
-
-   :ref:`mfsmaster.cfg.5`
-   :ref:`mfsmount.cfg.5`
-   :ref:`globaliolimits.cfg.5`
+lizardfs(1), lizardfs(7)

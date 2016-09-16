@@ -19,13 +19,6 @@ Some basic rules first:
 There are a range of settings that must be done on every server before we
 start working on the LizardFS configuration itself.
 
-* setup all participating hosts in the /etc/hosts file
-
-* setup time synchronization via ntp
-
-* select the filesystem type and create the filesystems the chunkservers shall
-  use
-
 * adjust network settings
 
 * adjust kernel settings
@@ -35,7 +28,7 @@ Basic operating system settings for LizardFS
 
 LizardFS runs on many UNIX and UNIX like operating systems. We will be
 concentrating here on Debian and RH like systems to keep things simple. For
-other OSes, please consult the :ref:´cookbook´.
+other OSes, please consult the :ref:`cookbook`.
 
 The /etc/hosts file
 -------------------
@@ -64,7 +57,7 @@ one line per IP address.
 
 Example::
 
-  127.0.0.1	       localhost
+  127.0.0.1        localhost
   192.168.16.100   mfsmaster
   192.168.16.101   shadowmaster
   192.168.16.10    chunkserver1 metalogger
@@ -77,14 +70,13 @@ In this example your Master is on 192.168.16.100 and your Shadow Master on
 at 192.168.16.11. Chunkserver3 is at 192.168.11.12.
 
 
-The file must be the same on all the LizardFS servers.
-
-
+.. note: The /etc/hosts file must be the same on all the LizardFS servers.
 
 
 The ntpd time service
 ---------------------
 
+.. todo: needs inclusion of article from Wolfram
 
 
 Basic network adjustments for Linux
@@ -107,7 +99,7 @@ sysconf.d/ directory containing the following entries::
   net.core.wmem_default=167772160
   net.core.optmem_max= 2048000
 
-# set minimum size, initial size, and maximum size in bytes
+  # set minimum size, initial size, and maximum size in bytes
   net.ipv4.tcp_rmem= 1024000 8738000 1677721600
   net.ipv4.tcp_wmem= 1024000 8738000 1677721600
   net.ipv4.tcp_mem= 1024000 8738000 1677721600
@@ -214,7 +206,4 @@ Via the cgi (webinterface):
 
 In the ‘Servers’ tab in the table ‘Chunk Servers’ there is a column ‘label’
 where labels of the chunkservers are displayed.
-
-
-
 

@@ -14,6 +14,12 @@ Contents:
 .. toctree::
    :maxdepth: 1
    :titlesonly:
+
+   ../man/lizardfs.7.rst
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
    :caption: Administrative commands
 
    ../man/lizardfs-admin.8.rst
@@ -76,6 +82,4 @@ Contents:
 
    ../man/mfscgiserv.8.rst
    ../man/lizardfs-cgiserver.8.rst
-
-   ../man/moosefs.7.rst
 

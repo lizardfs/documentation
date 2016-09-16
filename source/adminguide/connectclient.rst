@@ -19,8 +19,8 @@ Example for Debian/Ubuntu::
 
    $ apt-get install lizardfs-client
 
-Set mfsmaster host in /etc/hosts file. For our example configuration it would
-be::
+Make sure that the mfsmaster host is set in your /etc/hosts file. For our
+example configuration it would be::
 
    192.168.16.100 mfsmaster
 
