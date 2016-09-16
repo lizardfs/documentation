@@ -22,10 +22,11 @@ The same as in globaliolimits.cfg(5).
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2015 Skytechnology sp. z o.o.
+Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
-terms of the GNU General Public License as published by the Free Software Foundation, version 3.
+terms of the GNU General Public License as published by the Free Software
+Foundation, version 3.
 
 LizardFS is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR

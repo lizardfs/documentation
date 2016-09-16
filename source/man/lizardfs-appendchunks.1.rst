@@ -19,11 +19,11 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-appendchunks (equivalent of mfssnapshot from MooseFS 1.5) appends a lazy copy
-of specified file(s) to specified snapshot file ("lazy" means that creation of
-new chunks is delayed to the moment one copy is modified). If multiple files
-are given, they are merged into one target file in the way that each file
-begins at 'chunk' (64MB) boundary; padding space is left empty.
+**lizardfs appendchunks** (equivalent of mfssnapshot from MooseFS 1.5) appends
+a lazy copy of specified file(s) to the specified snapshot file ("lazy" means
+that creation of new chunks is delayed to the moment one copy is modified). If
+multiple files are given, they are merged into one target file in the way that
+each file begins at 'chunk' (64MB) boundary; padding space is left empty.
 
 COPYRIGHT
 =========

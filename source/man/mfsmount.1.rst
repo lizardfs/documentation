@@ -15,7 +15,7 @@ SYNOPSIS
 ::
 
  mfsmount 'mountpoint' [-d] [-f] [-s] [-m] [-n] [-p]
-         [-H 'HOST'] [-P 'PORT'] [-S 'PATH'] [-o 'opt'[,'opt']...]
+         [-H 'HOST'] [-P PORT] [-S PATH] [-o opt[,opt]...]
  mfsmount -h | --help
  mfsmount -V | --version
 
@@ -44,42 +44,43 @@ FUSE options
 -s
   disable multi-threaded operation
 
+
 LizardFS options
 ----------------
 
--c 'CFGFILE', -o mfscfgfile='CFGFILE'
-  loads file with additional mount options
+-c [CFGFILE], -o mfscfgfile=[CFGFILE]
+   loads file with additional mount options
 
 -m, --meta, -o mfsmeta
-  mount MFSMETA companion filesystem instead of primary LizardFS
+   mount MFSMETA companion filesystem instead of primary LizardFS
 
 -n
-  omit default mount options (-o allow_other,default_permissions)
+   omit default mount options (-o allow_other,default_permissions)
 
 -p, -o askpassword
-  prompt for password (interactive version of -o mfspassword='PASS')
+   prompt for password (interactive version of -o mfspassword='PASS')
 
--H 'HOST', -o mfsmaster='HOST'
-  connect with LizardFS master on 'HOST' (default is mfsmaster)
+-H [HOST], -o mfsmaster=[HOST]
+   connect with LizardFS master on 'HOST' (default is mfsmaster)
 
 -P 'PORT', -o mfsport='PORT'
-  connect with LizardFS master on 'PORT' (default is 9421)
+   connect with LizardFS master on 'PORT' (default is 9421)
 
 -B 'HOST', -o mfsbind='HOST'
-  local address to use for connecting with master instead of default one
+   local address to use for connecting with master instead of default one
 
 -S 'PATH', -o mfssubfolder='PATH'
-  mount specified LizardFS directory (default is /, i.e. whole filesystem)
+   mount specified LizardFS directory (default is /, i.e. whole filesystem)
 
 -o enablefilelocks=[0,1]::
-  enables/disables global file locking (disabled by default)
+   enables/disables global file locking (disabled by default)
 
 -o mfspassword='PASSWORD'
-  authenticate to LizardFS master with 'PASSWORD'
+   authenticate to LizardFS master with 'PASSWORD'
 
 -o mfsmd5pass='MD5'
-  authenticate to LizardFS master using directly given 'MD5' (only if
-  mfspassword option is not specified)
+   authenticate to LizardFS master using directly given 'MD5' (only if
+   mfspassword option is not specified)
 
 -o mfsdelayedinit
   connection with master is done in background - with this option mount can be
@@ -299,4 +300,4 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-mfsmaster(8), mfstools(1), moosefs(7), mount(8)
+mfsmaster(8), lizardfs(1), lizardfs(7), mount(8)

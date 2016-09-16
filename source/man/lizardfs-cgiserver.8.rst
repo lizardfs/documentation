@@ -63,4 +63,4 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-moosefs(7)
+lizardfs(7)
