@@ -22,9 +22,10 @@ Contents:
 
    obtaining
    creating_workspace
+   participation_rules
+   submitting
    versioning
    bughunt
-   submitting
    documentation
    ressources
-   participation_rules
+
