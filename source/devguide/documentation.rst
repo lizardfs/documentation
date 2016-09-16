@@ -214,9 +214,10 @@ Submitting your work
 Read :ref:`submitting_patches` for information about our conventions. In short
 this means for us:
 
-* First line of the commit-message is of form::
+* First line of the commit-message formatted according to the following
+  example::
 
-  doc: Short-description max-length 65 characters
+    doc: Short-description max-length 65 characters
 
   followed by an empty line and than if needed one or more paragraphs of max.
   80 chars containing more description about what and why was changed.
