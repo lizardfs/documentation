@@ -65,7 +65,7 @@ ec(K,M)
   these labels. Otherwise, default wildcard labels will be used. K can be in
   range from 2 to 32 and M from 1 to 32.
 
-  If the type is unspecified is is assumed to be *std*.
+  If the type is unspecified it is assumed to be *std*.
 
 The list of 'labels' is a list of chunkserver labels as defined in
 mfschunkserver.cfg(5). 'label' can consist of up to 32 alphanumeric
@@ -76,8 +76,7 @@ one copy per each occurrence.
 
 The special label _ means "a copy on any chunkserver".
 
-.. note:: changing the definition of a goal in mfsgoals.cfg affects all
-files which currently use given goal id.
+.. note:: changing the definition of a goal in mfsgoals.cfg affects all files which currently use a given goal id.
 
 EXAMPLES
 ========
