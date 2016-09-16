@@ -44,7 +44,7 @@ It is also possible to download the source package using::
 
    # apt-get source lizardfs
 
-.. important:: 
+.. important::
    Before upgrading any existing LizardFS installation, please read the instructions here: https://github.com/lizardfs/lizardfs/blob/master/UPGRADE
 
 LizardFS consists of the following packages:
@@ -119,8 +119,11 @@ Installing LizardFS from source
 Installing LizardFS from source.
 
 
-Current LizardFS source code can be obtained from our :ref:`github` (https://github.com/lizardfs/lizardfs) project page. You can either download a tarball from there by choosing the respecitve version in the **Branch** tab on the left or use :ref:`git` to clone the sourcetree.
-
+The current LizardFS source code can be obtained from our :ref:`github`
+(https://github.com/lizardfs/lizardfs) project page.
+You can either download a tarball from there by choosing the respective
+version in the **Branch** tab on the left or use :ref:`git` to clone the
+sourcetree.
 
 LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow the directions outlined below.
 
