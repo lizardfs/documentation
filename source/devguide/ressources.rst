@@ -1,5 +1,8 @@
 Developer Ressources
 ********************
+.. auth-status-todo/none
+
+.. todo:: add links to ressources here
 
 Github Repository
 

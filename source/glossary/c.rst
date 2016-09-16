@@ -1,6 +1,7 @@
 ***
  C
 ***
+.. auth-status-writing/none
 
 .. _CMake:
 

@@ -1,5 +1,6 @@
 Configuring Replication Modes
 *****************************
+.. auth-status-proof1/none
 
 LizardFS supports 3 different modes of replication.
 

@@ -3,6 +3,7 @@
 ***********************
 LizardFS linux CookBook
 ***********************
+.. auth-status-proof1/none
 
 
 

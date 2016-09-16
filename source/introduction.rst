@@ -1,6 +1,7 @@
 ########################
 Introduction to LizardFS
 ########################
+.. auth-status-writing/none
 
 LizardFS is a distributed, scalable, fault-tolerant and highly available 
 file system. It allows users to combine disk space located on many servers 

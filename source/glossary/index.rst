@@ -1,5 +1,6 @@
 Glossary
 ########
+.. auth-status-writing/none
 
 The following abbreviations are used in LizardFS, both in documentation and in
 the names of variables and classes:

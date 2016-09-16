@@ -1,6 +1,7 @@
 ***
  Y
 ***
+.. auth-status-writing/none
 
 .. _yum:
 

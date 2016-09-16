@@ -1,6 +1,7 @@
 *****************
 General Questions
 *****************
+.. auth-status-writing/none
 
 **Why is it called LizardFS ?**
   It's a metaphor for something that can grow back if partially lost

@@ -3,6 +3,7 @@
 ************************************************
 Connecting Clients to your LizardFS installation
 ************************************************
+.. auth-status-proof1/none
 
 The most exciting part of this tutorial - you will finally be able to store
 files on your installation!

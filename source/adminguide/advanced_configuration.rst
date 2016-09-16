@@ -3,6 +3,7 @@
 **********************
 Advanced configuration
 **********************
+.. auth-status-proof1/none
 
 
 Configuring rack awareness (network topology)

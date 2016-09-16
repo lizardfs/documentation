@@ -3,6 +3,7 @@
 ******************
 Upgrading Lizardfs
 ******************
+.. auth-status-proof1/none
 
 Upgrading to LizardFS 3.10.0
 ============================

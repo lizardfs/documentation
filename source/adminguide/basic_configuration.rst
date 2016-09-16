@@ -1,5 +1,9 @@
+.. _basic_config:
+
+*******************
 Basic Configuration
 *******************
+.. auth-status-proof1/none
 
 Some basic rules first:
 

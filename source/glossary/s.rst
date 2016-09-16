@@ -1,6 +1,7 @@
 ***
  S
 ***
+.. auth-status-writing/none
 
 .. _SAN:
 

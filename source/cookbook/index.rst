@@ -3,6 +3,7 @@
 *********************
 LizardFS'ers CookBook
 *********************
+.. auth-status-proof1/none
 
 A collection of HowTo's, tips, tricks and solutions for
 installing, configuring, running and maintaining LizardFS.

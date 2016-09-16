@@ -5,6 +5,8 @@
 
 Welcome to LizardFS's documentation!
 ####################################
+.. auth-status-writing/none
+
 
 Contents:
 

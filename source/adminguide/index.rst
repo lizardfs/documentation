@@ -3,6 +3,7 @@
 #############################
 LizardFS Administration Guide
 #############################
+.. auth-status-proof1/none
 
 An Administrators Guide to installing, configuring and managing LizardFS
 

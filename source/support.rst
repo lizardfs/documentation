@@ -3,6 +3,7 @@
 ##################
 Commercial Support
 ##################
+.. auth-status-writing/none
 
 Commercial Support is available from Sky Technologies Sp. z o.o..
 

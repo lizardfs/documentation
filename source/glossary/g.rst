@@ -1,6 +1,8 @@
 ***
  G
 ***
+.. auth-status-writing/none
+
 
 .. _git:
 

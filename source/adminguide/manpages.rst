@@ -1,5 +1,6 @@
 LizardFS Manual Pages
 #####################
+.. auth-status-proof1/none
 
 These Manual Pages get installed automatically on installation of lizardfs and
 can be also read in your system using::

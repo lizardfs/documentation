@@ -1,6 +1,7 @@
 *******************
 Installing LizardFS
 *******************
+.. auth-status-proof1/none
 
 .. _get_and_install:
 

@@ -1,6 +1,7 @@
 ***
  Z
 ***
+.. auth-status-writing/none
 
 
 .. _zfs:

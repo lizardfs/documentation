@@ -1,6 +1,7 @@
 ***
  X
 ***
+.. auth-status-writing/none
 
 .. _xfs:
 

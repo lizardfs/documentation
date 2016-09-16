@@ -1,6 +1,7 @@
 #############################
 LizardFS QuickStart on Debian
 #############################
+.. auth-status-writing/none
 
 .. Important::  
    In case you downloaded the packages from the official Debian repository, 

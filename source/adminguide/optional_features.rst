@@ -3,6 +3,7 @@
 *****************************
 Configuring Optional Features
 *****************************
+.. auth-status-proof1/none
 
 LizardFS comes with a range of optional features whose configuration does not 
 belong into the "basic" or "advanced" modes.

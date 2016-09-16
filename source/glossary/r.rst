@@ -1,6 +1,7 @@
 ***
  R
 ***
+.. auth-status-writing/none
 
 
 .. _rpm:

@@ -1,6 +1,7 @@
 ***
  F
 ***
+.. auth-status-writing/none
 
 .. _FC:
 

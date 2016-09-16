@@ -1,6 +1,7 @@
 **********
 References
 **********
+.. auth-status-writing/none
 
 This documentation would have not been possible without the help of many sources that we would like to menton here:
 

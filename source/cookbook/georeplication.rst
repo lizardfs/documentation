@@ -3,4 +3,5 @@
 ********************
 Dummy-georeplication
 ********************
+.. auth-status-todo/none
 

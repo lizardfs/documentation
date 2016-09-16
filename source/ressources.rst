@@ -1,6 +1,7 @@
 ##########
 Ressources
 ##########
+.. auth-status-writing/none
 
 *******
 General

@@ -3,4 +3,5 @@
 *************
 Dummy-illumos
 *************
+.. auth-status-todo/none
 

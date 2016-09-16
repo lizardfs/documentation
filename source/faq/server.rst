@@ -1,6 +1,7 @@
 ******************
 Server related FAQ
 ******************
+.. auth-status-writing/none
 
 **How do I completely reset a cluster ?**
    The simplest way is to create a new metadata file.

@@ -2,6 +2,7 @@
 
 LizardFS Frequently Asked Questions
 ###################################
+.. auth-status-writing/none
 
 Contents:
 
