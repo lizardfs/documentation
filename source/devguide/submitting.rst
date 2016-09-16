@@ -1,3 +1,5 @@
+.. _submitting_patches
+
 Submitting Patches
 ******************
 .. auth-status-proof1/none
@@ -23,7 +25,7 @@ Repository Rules
    being pushed to the repository. This makes the git tree simpler if there is
    no important reason to add any branches and merges there.
 
-*  We document all the changes in commit messages. Please make you commit
+*  We document all the changes in commit messages. Please make your commit
    messages consistent with the rest of git log. Especially:
 
    The first must contain a summary of the change. It has to be no more than
