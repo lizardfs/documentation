@@ -29,6 +29,13 @@ command::
 
   cat .lizardfs_tweaks | grep DirectIO
 
-The changes are effective immediately after changing the setting.
+If you find that this does not improve your performance or in fact, slows it
+down, you can always change it back by running::
+
+  echo "DirectIO=false" > .lizardfs_tweaks
+
+The changes are effective immediately.
+
+
 
 
