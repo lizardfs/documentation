@@ -4,18 +4,28 @@ Configuring Replication Modes
 
 LizardFS supports 3 different modes of replication.
 
+.. note:: All replication settings are based on chunks, not on nodes. So if you
+         have lets say, 5 chunkservers in a EC3+1 configuration, chunks will
+         spread among them but one set will always be 4 chunks. This way all
+         active chunkservers are being used and the data/parity chunks get
+         nicely distributed amongst them. For details refer to the :ref:`techncal_whitepaper`.
+
 In the simplest one, the simple goal setup, you specify how many copies of
 every chunk of a file or directory will be copied to how many and optionaly
 also "which" chunkservers.
 Note that the write modus here is: client writes chunk to ONE chunkserver and
 this chunkserver replicates this chunk to the other chunkservers.
 
-The second replication mode is called XOR.
-
+The second replication mode is called XOR. It is similar to a classic RAID5
+scenario in that you have N data chunks and 1 parity chunk.
 
 The third and most advanced mode of replication is the EC mode which does
 advanced erasure coding with a configurable amount of data and parity copies.
-In this mode ....
+In this mode clients wirte quasi parallel to the chunkservers.
+
+.. note:: To ensure proper repair procedure in case of a broken chunkserver,
+          make sure to always have one chunkserver more than your configured
+          goals/XOR/EC requires.
 
 Now that you know what they are, lets start configuring them....
 
@@ -86,12 +96,11 @@ Via cgi (webinterface):
 
 In the ‘Config’ tab there is a table called ‘Goal definitions’.
 
-Set and show goal of the file/directory
+Set and show the goal of a file/directory
 ---------------------------------------
 
 **set**
-
-   The goal of a file/direcotry can be set using::
+   The goal of a file/directory can be set using::
 
 	   $ mfssetgoal goal_name object
 
@@ -109,12 +118,11 @@ Set and show goal of the file/directory
 
 
 **show**
-
    Current goal of the file/directory can be shown using::
 
       $ mfsgetgoal object
 
-   Result is the name of the currently set goal.
+   The result is the name of the currently set goal.
 
    To list the goals in a directory use::
 

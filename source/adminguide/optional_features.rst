@@ -5,7 +5,7 @@ Configuring Optional Features
 *****************************
 .. auth-status-proof1/none
 
-LizardFS comes with a range of optional features whose configuration does not 
+LizardFS comes with a range of optional features whose configuration does not
 belong into the "basic" or "advanced" modes.
 
 
@@ -23,10 +23,10 @@ THe LizardFS tapeserver package can be installed via::
 Configuration
 -------------
 
-The configuration file for the lizardfs-tapeserver is located at 
+The configuration file for the lizardfs-tapeserver is located at
 /etc/mfs/lizardfs-tapeserver.cfg.
 The tapeserver needs a working mountpoint of your LizardFS installation.
-Configuration consists mainly of listing changer and volume devices of a tape 
+Configuration consists mainly of listing changer and volume devices of a tape
 library.
 
 Example configuration::
@@ -59,7 +59,7 @@ Installation can be easily verified using the lizardfs-admin command::
 
    $ lizardfs-admin list-tapeserver MASTER_ADDR MASTER_PORT
 
-If the installation succeeded, the command above should result in listing all 
+If the installation succeeded, the command above should result in listing all
 tapeservers connected to the current master.
 
 Verification if tape storage works properly can be achieved by the steps below:
@@ -68,25 +68,25 @@ Verification if tape storage works properly can be achieved by the steps below:
 
 * set tape goal to the file: mfssetgoal your_tape_goal testfile
 
-* wait for replication to take place, check its status with ‘mfsfileinfo’ 
+* wait for replication to take place, check its status with ‘mfsfileinfo’
 command::
 
    $ mfsfileinfo testfile
 
-* Replication to tape is complete after tape copy status changes from Creating 
+* Replication to tape is complete after tape copy status changes from Creating
 to Ok
 
 * verify that the file was actually stored on tape::
 
 	$ tar tf /dev/your_tape_volume # will list all files present on tape
-	$ tar xvf /dev/your_tape_volume filename # will extract file ‘filename’ 
+	$ tar xvf /dev/your_tape_volume filename # will extract file ‘filename’
 	from tape
 
-Configure tape goals
+Configuring tape goals
 --------------------
 
-Tape goals are configured just like regular goals, save one difference in 
-naming. In order to create a tape goal, append a “@” sign to the end of its 
+Tape goals are configured just like regular goals, save one difference in
+naming. In order to create a tape goal, append a “@” sign to the end of its
 definition.
 
 Example mfsgoals.cfg contents::
