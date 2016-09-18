@@ -1,30 +1,34 @@
-.. _iolimits.cfg.5:
+.. _lizardfs-dirinfo.1:
 
-***************
-iolimits.cfg(5)
-***************
+*******************
+lizardfs-dirinfo(1)
+*******************
 
 NAME
 ====
 
-iolimits.cfg - local I/O limiting configuration
+lizardfs-dirinfo - show directories stats
+
+SYNOPSIS
+========
+
+::
+
+lizardfs dirinfo [-n|-h|-H] 'OBJECT'...
 
 DESCRIPTION
 ===========
 
-The file *iolimits.cfg* contains the configuration of the local I/O limiter.
+*dirinfo* is an extended, LizardFS-specific equivalent of the *du -s* command.
+It prints a summary for each specified object (single file or directory tree).
 
-SYNTAX,  OPTIONS
-================
+OPTIONS
+=======
 
-The same as in globaliolimits.cfg(5).
+-n, -h, -H
+  These options are described in lizardfs(1).
 
-REPORTING BUGS
-==============
-
-Report bugs to <contact@lizardfs.org>.
-
-COPYRIGHT
+OPYRIGHT
 =========
 
 Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology Sp. z o.o.
@@ -43,10 +47,4 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-mfsmount.cfg(5), globaliolimits.cfg(5)
-
-.. seealso::
-
-   :ref:`mfsmaster.cfg.5`
-   :ref:`mfsmount.cfg.5`
-   :ref:`globaliolimits.cfg.5`
+lizardfs(1)

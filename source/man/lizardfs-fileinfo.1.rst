@@ -19,7 +19,9 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-**fileinfo** prints location ('chunkserver' host and port) of each chunk copy belonging to specified file(s). It can be used on any file, included deleted ('trash').
+**fileinfo** prints the location ('chunkserver' host and port) of each chunk
+copy belonging to specified file(s). It can be used on any file, included
+deleted ones ('trash').
 
 COPYRIGHT
 =========

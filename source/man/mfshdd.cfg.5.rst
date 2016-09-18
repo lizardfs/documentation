@@ -1,28 +1,23 @@
-.. _iolimits.cfg.5:
+.. _mfshdd.cfg.5:
 
-***************
-iolimits.cfg(5)
-***************
+*************
+mfshdd.cfg(5)
+*************
 
 NAME
 ====
 
-iolimits.cfg - local I/O limiting configuration
+mfshdd.cfg - list of LizardFS storage directories for mfschunkserver
 
 DESCRIPTION
 ===========
 
-The file *iolimits.cfg* contains the configuration of the local I/O limiter.
+The file *mfshdd.cfg* contains a list of directories (mountpoints) used for
+LizardFS storage (one per line). A directory prefixed by a single *\**
+character causes that directory to be freed by replicating all data already
+stored there to different locations. Lines starting with a *#* character are
+ignored.
 
-SYNTAX,  OPTIONS
-================
-
-The same as in globaliolimits.cfg(5).
-
-REPORTING BUGS
-==============
-
-Report bugs to <contact@lizardfs.org>.
 
 COPYRIGHT
 =========
@@ -43,10 +38,4 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-mfsmount.cfg(5), globaliolimits.cfg(5)
-
-.. seealso::
-
-   :ref:`mfsmaster.cfg.5`
-   :ref:`mfsmount.cfg.5`
-   :ref:`globaliolimits.cfg.5`
+mfschunkserver(8), mfschunkserver.cfg(5)

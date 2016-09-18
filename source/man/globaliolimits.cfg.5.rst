@@ -106,6 +106,11 @@ b
 This applies to each group separately, because groups reserve their bandwidth
 independently from each other.
 
+REPORTING BUGS
+==============
+
+Report bugs to <contact@lizardfs.org>.
+
 COPYRIGHT
 =========
 

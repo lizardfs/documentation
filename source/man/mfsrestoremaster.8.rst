@@ -1,23 +1,37 @@
-.. _iolimits.cfg.5:
+.. _mfsrestoremaster.8:
 
-***************
-iolimits.cfg(5)
-***************
+*******************
+mfsrestoremaster(8)
+*******************
 
 NAME
 ====
 
-iolimits.cfg - local I/O limiting configuration
+mfsrestoremaster - a networking, distributed, highly available file system
+
+SYNOPSIS
+========
+
+::
+
+  mfsrestoremaster <net-interface> [<etc-mfs-dir>]
+
+<net-interface> - network interface to reconfigure.
+
+<etc-mfs-dir> - mfs configuration directory to use (default: /etc/mfs).
 
 DESCRIPTION
 ===========
 
-The file *iolimits.cfg* contains the configuration of the local I/O limiter.
+**mfsrestoremaster** automates starting a spare master server on a metalogger
+machine.
 
-SYNTAX,  OPTIONS
-================
+It performs the following steps:
 
-The same as in globaliolimits.cfg(5).
+ * verify basic sanity of configuration files
+ * update metadata image with data from metalogger changelogs
+ * set master's IP address on given network interface
+ * start the master server
 
 REPORTING BUGS
 ==============
@@ -43,10 +57,5 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-mfsmount.cfg(5), globaliolimits.cfg(5)
+lizardfs(1), lizardfs(7)
 
-.. seealso::
-
-   :ref:`mfsmaster.cfg.5`
-   :ref:`mfsmount.cfg.5`
-   :ref:`globaliolimits.cfg.5`

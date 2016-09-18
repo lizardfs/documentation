@@ -37,10 +37,8 @@ FUSE options
 
 -d, -o debug
   enable debug mode (implies -f)
-
 -f
   foreground operation
-
 -s
   disable multi-threaded operation
 
@@ -48,113 +46,82 @@ FUSE options
 LizardFS options
 ----------------
 
--c [CFGFILE], -o mfscfgfile=[CFGFILE]
-   loads file with additional mount options
-
 -m, --meta, -o mfsmeta
    mount MFSMETA companion filesystem instead of primary LizardFS
-
+-c <CFGFILE>, -o mfscfgfile=<CFGFILE>
+   loads file with additional mount options
 -n
    omit default mount options (-o allow_other,default_permissions)
-
 -p, -o askpassword
    prompt for password (interactive version of -o mfspassword='PASS')
-
--H [HOST], -o mfsmaster=[HOST]
-   connect with LizardFS master on 'HOST' (default is mfsmaster)
-
--P 'PORT', -o mfsport='PORT'
-   connect with LizardFS master on 'PORT' (default is 9421)
-
--B 'HOST', -o mfsbind='HOST'
+-H <HOST>, -o mfsmaster=<HOST>
+   connect with LizardFS master on <HOST> (default is mfsmaster)
+-P <PORT>, -o mfsport=<PORT>
+   connect with LizardFS master on <PORT> (default is 9421)
+-B <HOST>, -o mfsbind=<HOST>
    local address to use for connecting with master instead of default one
-
--S 'PATH', -o mfssubfolder='PATH'
+-S <PATH>, -o mfssubfolder=<PATH>
    mount specified LizardFS directory (default is /, i.e. whole filesystem)
-
 -o enablefilelocks=[0,1]::
    enables/disables global file locking (disabled by default)
-
--o mfspassword='PASSWORD'
-   authenticate to LizardFS master with 'PASSWORD'
-
--o mfsmd5pass='MD5'
-   authenticate to LizardFS master using directly given 'MD5' (only if
+-o mfspassword=<PASSWORD>
+   authenticate to LizardFS master with <PASSWORD>
+-o mfsmd5pass=<MD5>
+   authenticate to LizardFS master using directly given <MD5> (only if
    mfspassword option is not specified)
-
 -o mfsdelayedinit
   connection with master is done in background - with this option mount can be
   run without network (good for running from fstab / init scripts etc.)
-
 -o mfsacl
   enable ACL support (disabled by default)
-
--o mfsaclcacheto='SEC'
+-o mfsaclcacheto=<SEC>
   set ACL cache timeout in seconds (default: 1.0)
-
--o mfsaclcachesize='N'
+-o mfsaclcachesize=<N>
   define ACL cache size in number of entries (0: no cache; default: 1000)
-
--o mfsrwlock='0|1'
+-o mfsrwlock=<0|1>
   when set to 1, parallel reads from the same descriptor are performed
   (default: 1)
-
--o mfsmkdircopysgid='N'
+-o mfsmkdircopysgid=<N>
   sgid bit should be copied during mkdir operation (on linux default: 1,
   otherwise: 0)
-
--o mfssugidclearmode='SMODE'
+-o mfssugidclearmode=<SMODE>
   set sugid clear mode (see below)
-
 -o mfsdebug
   print some LizardFS-specific debugging information
-
--o mfscachemode='CACHEMODE'
+-o mfscachemode=<CACHEMODE>
   set cache mode (see DATA CACHE MODES; default is AUTO)
-
 -o mfscachefiles
   (deprecated) preserve file data in cache (equivalent to -o
   mfscachemode='YES')
-
--o mfsattrcacheto='SEC'
+-o mfsattrcacheto=<SEC>
   set attributes cache timeout in seconds (default: 1.0)
-
--o mfsentrycacheto='SEC'
+-o mfsentrycacheto=<SEC>
   set file entry cache timeout in seconds (default: 0.0, i.e. no cache)
-
--o mfsdirentrycacheto='SEC'
+-o mfsdirentrycacheto=<SEC>
   set directory entry cache timeout in seconds (default: 1.0)
-
--o mfswritecachesize='N'
+-o mfswritecachesize=<N>
   specify write cache size in MiB (in range: 16..2048 - default: 128)
-
--o mfscacheperinodepercentage='N'
+-o mfscacheperinodepercentage=<N>
   specify what part of the write cache non occupied by other inodes can a
   single inode occupy (measured in %).
   E.g. When N=75 and the inode X uses 10 MiB, and all other inodes use 20 MiB
   out of 100 MiB cache, X can use 50 MiB more (since 75% of 80 MiB is 60 MiB).
   Default: 25.
-
--o mfschunkserverreadto='MSEC'
+-o mfschunkserverreadto=<MSEC>
   set timeout for whole communication with a chunkserver during read operation
   in milliseconds (default: 2000)
-
--o mfschunkserverwriteto='MSEC'
+-o mfschunkserverwriteto=<MSEC>
   set chunkserver response timeout during write operation in milliseconds
   (default: 5000)
-
--o mfschunkserverrtt='MSEC'
+-o mfschunkserverrtt=<MSEC>
   set timeout after which SYN packet is considered lost during the first retry
   of connecting a chunkserver (default: 200)
-
 -o mfschunkserverconnectreadto='MSEC'
   set timeout for connecting with chunkservers during read operation in
   milliseconds (default: 2000)
-
 -o mfschunkserverwavereadto='MSEC'
   set timeout for executing each wave of a read operation in milliseconds
   (default: 500)
-
 -o mfschunkservertotalreadto='MSEC'
   set timeout for the whole communication with chunkservers during a read o
   operation in milliseconds (default: 2000)
@@ -203,11 +170,11 @@ General mount options (see mount(8) manual):
 -o exec, -o noexec
   Allow or disallow execution of binaries.
 
--o symlinkcachetimeout='N'
+-o symlinkcachetimeout=<N>
   Set timeout value for symlink cache timeout in seconds. Default value is
   3600.
 
--o bandwidthoveruse='N'
+-o bandwidthoveruse=<N>
   Define ratio of allowed bandwidth overuse when fetching data. Default value
   is 1.25. This option is effective only with N+M goals (xors and erasure
   codes).
@@ -284,7 +251,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology sp. z o.o.
+Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
@@ -297,7 +264,9 @@ A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 LizardFS. If not, see <http://www.gnu.org/licenses/>.
 
+.. only:: man
 SEE ALSO
 ========
 
-mfsmaster(8), lizardfs(1), lizardfs(7), mount(8)
+:manpage:`mfsmaster(8)`, :manpage:`lizardfs(1)`, :manpage:`lizardfs(7)`, :manpage:`mount(8)`
+
