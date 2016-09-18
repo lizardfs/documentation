@@ -36,7 +36,6 @@ We offer full maintenance, development and support for LizardFS:
 |
 | E-mail: info@lizardfs.com
 
-----------------------------------
 
 
 

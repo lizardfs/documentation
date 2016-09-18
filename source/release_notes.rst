@@ -5,3 +5,5 @@ Dummy-Releasenotes
 ******************
 .. auth-status-todo/none
 
+.. todo:: convert release notes to rst
+
