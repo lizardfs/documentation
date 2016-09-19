@@ -158,14 +158,13 @@ debian8 (jessie)
 
 The best way to get the documentation formatting-tools up and running is:
 
+ * apt-get install pandoc pandoc-data
  * apt-get install python-pip
  * pip install Sphinx
 
 This should be enough to build the html-documentation.
-If you want pdf also you will need texlive/pdflatex - caution, that one is
+If you want pdf as well you will need texlive/pdflatex - caution, that one is
 really a *large* set of software.
-
-.. todo:: describe the installation of pandoc for deb8
 
 
 Mac/OS X
@@ -181,15 +180,19 @@ pretty simple. Just issue::
 and you are all set up. To compile the documentation some additional work has
 to be done.
 
-To install sphinx correctly on MacOS/X you will need to
+To install sphinx correctly on MacOS/X you will need to make use of a virtual
+python environment::
 
+
+.. todo:: add instructions for virtualenv and sphinx.
 
 
 
 FreeBSD
 -------
 
-For building the manpages and documentation you will require additionaly::
+For building the manpages and documentation you will require the following
+packages::
 
   hs-pandoc
   hs-pandoc-types
