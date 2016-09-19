@@ -100,6 +100,7 @@ To create a new test simply create a file like this::
   <SOURCE_DIRECTORY>/tests/test_suites/<SUITE>/test_<TEST_NAME>.sh
 
 where:
+
     <SUITE> is a test suite that you want your test to be a part of.
         Existing test suites:
 
