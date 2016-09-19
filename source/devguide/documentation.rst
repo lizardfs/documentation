@@ -168,12 +168,32 @@ really a *large* set of software.
 .. todo:: describe the installation of pandoc for deb8
 
 
-macos X
--------
+Mac/OS X
+--------
 .. auth-status-todo/none
 
-.. todo:: describe the installation of documenters-tools for macos
+If you are following our :ref:`_workspace_mac` recommendations and use
+:ref:`homebrew` the installation of the tools required to compile manpages is
+pretty simple. Just issue::
 
+  brew install pandoc
+
+and you are all set up. To compile the documentation some additional work has
+to be done.
+
+To install sphinx correctly on MacOS/X you will need to
+
+
+
+
+FreeBSD
+-------
+
+For building the manpages and documentation you will require additionaly::
+
+  hs-pandoc
+  hs-pandoc-types
+  py27-sphinx-1.4.4
 
 Build-Process
 =============
