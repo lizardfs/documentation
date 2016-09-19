@@ -60,7 +60,14 @@ install the sphinx documentation engine::
 As on any other OS we have no preferences for a IDE on MacOS/X. You can use
 Xcode, eclipse, netbeans or whatever else fickles your fancy.
 
+To build with your installed gcc6 you will need to set the following variables
+in your environment before invoking :ref:`cmake`::
 
+  export CC=/usr/local/gcc6
+  export CXX=/usr/local/g++-6
+  export CPP=/usr/local/gcc6
+
+Now you are ready to compile a fully featured LizardFS package on your Mac.
 
 On FreeBSD
 ==========
