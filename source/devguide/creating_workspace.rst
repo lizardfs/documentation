@@ -32,7 +32,7 @@ To get all the goodies from the current LizardFS, you will require to build
 LizardFS with gcc6 and the latest :ref:`osxfuse` library.
 
 We have had good experiences with using :ref:`homebrew` for adding open source
-software to MaxOS/X and would like to recommend to developers to use it to add
+software to MacOS/X and would like to recommend to developers to use it to add
 all additional software required.
 
 To install homebrew, issue the following at your command prompt::
