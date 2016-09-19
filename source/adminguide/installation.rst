@@ -8,7 +8,12 @@ Installing LizardFS
 Getting and installing LizardFS
 ===============================
 
-There are several methods for getting LizardFS software. The easiest and most common method is to get packages by adding repositories for use with package management tools such as the Advanced Package Tool (APT) or Yellowdog Updater, Modified (YUM). You may also retrieve pre-compiled packages from the LizardFS repository. Finally, you can retrieve tarballs or clone the LizardFS source code repository and build LizardFS yourself.
+There are several methods for getting LizardFS software. The easiest and most
+common method is to get packages by adding repositories for use with package
+management tools such as the Advanced Package Tool (APT) or Yellowdog Updater,
+Modified (YUM). You may also retrieve pre-compiled packages from the LizardFS
+repository. Finally, you can retrieve tarballs or clone the LizardFS source
+code repository and build LizardFS yourself.
 
 
 .. _get_and_install_debian:
@@ -16,7 +21,8 @@ There are several methods for getting LizardFS software. The easiest and most co
 Installing from Debian packages
 +++++++++++++++++++++++++++++++
 
-First, add a our key which is needed to verify the signatures of LizardFS packages::
+First, add a our key which is needed to verify the signatures of LizardFS
+packages::
 
    # wget -O - http://packages.lizardfs.com/lizardfs.key | apt-key add -
 
@@ -32,7 +38,8 @@ For Ubuntu do::
    # echo "deb http://packages.lizardfs.com/ubuntu/$(lsb_release -sc) $(lsb_release -sc) main" > /etc/apt/sources.list.d/lizardfs.list
    # echo "deb-src http://packages.lizardfs.com/ubuntu$(lsb_release -sc) $(lsb_release -sc) main" >> /etc/apt/sources.list.d/lizardfs.list
 
-This will have created the lizardfs.list file. To use the newly added repository, update the packages index::
+This will have created the lizardfs.list file. To use the newly added
+repository, update the packages index::
 
    # apt-get update
 
@@ -45,7 +52,8 @@ It is also possible to download the source package using::
    # apt-get source lizardfs
 
 .. important::
-   Before upgrading any existing LizardFS installation, please read the instructions here: https://github.com/lizardfs/lizardfs/blob/master/UPGRADE
+   Before upgrading any existing LizardFS installation, please read the
+   instructions here: https://github.com/lizardfs/lizardfs/blob/master/UPGRADE
 
 LizardFS consists of the following packages:
 
@@ -56,7 +64,8 @@ LizardFS consists of the following packages:
 * lizardfs-cgi – LizardFS CGI Monitor
 * lizardfs-cgiserv – Simple CGI-capable HTTP server to run LizardFS CGI Monitor
 * lizardfs-metalogger – LizardFS metalogger server
-* lizardfs-common – LizardFS common files required by lizardfs-master, lizardfs-chunkserver and lizardfs-metalogger
+* lizardfs-common – LizardFS common files required by lizardfs-master,
+  lizardfs-chunkserver and lizardfs-metalogger
 * lizardfs-dbg – Debugging symbols for all the LizardFS binaries
 
 
@@ -99,7 +108,9 @@ LizardFS consists of following packages:
 
 Installing LizardFS from downloaded .deb packages
 +++++++++++++++++++++++++++++++++++++++++++++++++
-Make sure to install the *lizardfs-common* package first before installing other packages.
+
+Make sure to install the *lizardfs-common* package first before installing
+other packages.
 
 Also, remember to install lizardfs-cgi before installing lizardfs-cgiserv
 
