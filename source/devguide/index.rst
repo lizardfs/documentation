@@ -22,6 +22,7 @@ Contents:
 
    obtaining
    creating_workspace
+   functional_testing.rst
    participation_rules
    submitting
    versioning

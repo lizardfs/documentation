@@ -1,0 +1,134 @@
+.. _functional_tests:
+
+****************************
+LizardFS functional testing
+****************************
+
+
+How to set up a testing environment?
+=====================================
+
+Functional tests configure and run testing LizardFS installation several times.
+The testing installation runs all system modules on a single computer.
+
+To prepare the testing environment safely, please use the following script::
+
+  <SOURCE_DIRECTORY>/tests/setup_machine.sh
+
+You will need root permissions to use it. While running it, you may want to
+provide directories which will be used by the chunkservers during the tests to
+store any generated data as an arguments to this script, eg::
+
+  sudo setup_machine.sh setup /mnt/hdb /mnt/hdc /mnt/hdd /mnt/hde
+
+These directories may be located on one physical disk. Long tests, however,
+may not work in such a configuration (they generate heavy traffic). It's OK
+for sanity checks.
+
+You will need to have about 60 GB of disk space available for the tests.
+At least three directories have to be provided in order to run some of the
+test cases.
+
+.. note: Remember that the user 'lizardfstest' needs permissions to write
+   files in these directories. All the contents of these directories will be
+   erased during tests.
+
+If you want to know what 'setup_machine.sh' does, just run it without any
+command line arguments. It will print a short description of all the changes
+it is going to make.
+
+The tests need to know which binaries should be tested. The default location is
+/var/lib/lizardfstest/local and this means eg. that the master server will run
+code from the /var/lib/lizardfstest/local/sbin/mfsmaster file. You can change
+the default directory by adding an entry like the following to the
+/etc/lizardfs_tests.conf file::
+
+  : ${LIZARDFS_ROOT:=/home/you/local}
+
+Make sure that the user lizardfstest is able to read files from this directory.
+
+How to compile the tests?
+=========================
+
+To use tests, LizardFS has to be compiled with an option ENABLE_TESTS, e.g.::
+
+  cmake .. -DENABLE_TESTS=YES
+
+The test installation has to be prepared. The default location for tests is
+'$HOME/local' but it can be changed in the tests config file, e.g.::
+
+  : ${LIZARDFS_ROOT:="$HOME/LizardFS"}
+
+After that, the tests are ready to be run.
+
+How to launch the tests?
+========================
+
+Test binary is installed together with the file system. The path leading to it
+is the following::
+
+  <INSTALL_PREFIX>/bin/lizardfs-tests
+
+Alternatively, it can be run from build directory::
+
+  <SOURCE_DIRECTORY>/tests/lizardfs-tests
+
+This binary runs all the bash scripts using googletest framework. This makes
+it easy to generate a report after all the tests are finished. Part of the
+source code of the 'lizardfs-tests' binary (list of tests) is generated
+automatically when tests are added or removed. Launched without any
+parameters, it executes all available tests.
+
+By using the parameter '--gtest_filter' you can choose which tests are to be
+run. The above parameter uses a pattern to select the tests, e.g.::
+
+  ./lizardfs-tests --gtest_filter='SanityChecks*'
+
+The command above runs all tests from the 'SanityChecks' suite.
+
+A 'lizardfs-tests' binary uses an interface delivered by googletest which is
+displayed after issuing::
+
+    ./lizardfs-tests --help
+
+
+How to make your own test?
+==========================
+
+To create a new test simply create a file like this::
+
+  <SOURCE_DIRECTORY>/tests/test_suites/<SUITE>/test_<TEST_NAME>.sh
+
+where:
+    <SUITE> is a test suite that you want your test to be a part of.
+        Existing test suites:
+
+         SanityChecks
+          basic tests of LizardFS functionality; these tests
+          should last a couple of minutes,
+
+        ShortSystemTests
+          advanced tests of LizardFS functionality not requiring
+          dedicated storage; these tests last around half an hour,
+
+        LongSystemTests
+           advanced tests of LizardFS functionality requiring dedicated
+           storage; these tests last a few hours,
+
+        ContinuousTests
+           tests using LizardFS mountpoint to populate LizardFS
+           installation with data and validate them;
+           these tests are desigend to be run continuously,
+
+    <TEST_NAME> is the name of your test.
+
+Tests which you write are run inside a kind of sandbox. They use the UID
+of a special user 'lizardfstest', so you can safely spawn any processes
+(they will be killed after the test).
+
+Our testing framework provides numerous bash functions and structures. They are
+implemented in the following directory::
+
+  <SOURCE_DIRECTORY>/tests/tools
+
+Merry testing!
