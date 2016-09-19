@@ -40,7 +40,6 @@ ZFS
    ZFS Manual in the FreeBSD Handbook
       https://www.freebsd.org/doc/handbook/zfs.html
 
-
    The ZFS on Linux project supplies packages and documentation for every
    major distro:
       http://zfsonlinux.org/

@@ -15,9 +15,9 @@ OSXFuse
 
     ** Features **
 
-  As a user, installing the FUSE for macOS software package will let you use
-  any third-party FUSE file system. Legacy MacFUSE file systems are supported
-  through the optional MacFUSE compatibility layer.
+  As a user, installing the :ref:`fuse` for macOS software package will let
+  you use any third-party FUSE file system. Legacy MacFUSE file systems are
+  supported through the optional MacFUSE compatibility layer.
 
   As a developer, you can use the FUSE SDK to write numerous types of new file
   systems as regular user space programs. The content of these file systems
@@ -29,6 +29,11 @@ OSXFuse
   flexibility and choice in programming tools, debuggers, and libraries as you
   have if you were developing standard macOS applications.
 
+
+.. seealso::
+
   You can find OSXFuse at https://osxfuse.github.io/
+  :ref:`fuse`
+
 
 
