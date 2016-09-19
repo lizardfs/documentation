@@ -42,4 +42,4 @@ the directions outlined below.
 Now you have a full installation of LizardFS from sourcecode.
 
 For build instructions on operating systems other than Linux, please refer to
-the chapter about setting up your workspace.
+:ref:`workspace` .
