@@ -9,9 +9,6 @@ Obtaining and installing LizardFS from Source
 Installing LizardFS from source
 +++++++++++++++++++++++++++++++
 
-Installing LizardFS from source.
-
-
 The current LizardFS source code can be obtained from our :ref:`github`
 (https://github.com/lizardfs/lizardfs) project page.
 You can either download a tarball from there by choosing the respective
@@ -43,3 +40,6 @@ the directions outlined below.
     make install
 
 Now you have a full installation of LizardFS from sourcecode.
+
+For build instructions on operating systems other than Linux, please refer to
+the chapter about setting up your workspace.
