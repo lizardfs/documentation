@@ -122,7 +122,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology Sp. z o.o.
+2015-2016 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
