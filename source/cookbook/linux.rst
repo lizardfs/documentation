@@ -10,7 +10,7 @@ LizardFS linux CookBook
 Setting DirectIO for your setup
 ===============================
 
-..warning: This is totally unsupported and may result in data loss and
+.. warning: This is totally unsupported and may result in data loss and
            breaking your LizardFS cluster.
 
 In some cases we have experienced that the caching mechanism in some systems
