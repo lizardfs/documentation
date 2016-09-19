@@ -104,7 +104,7 @@ where:
     <SUITE> is a test suite that you want your test to be a part of.
         Existing test suites:
 
-         SanityChecks
+        SanityChecks
           basic tests of LizardFS functionality; these tests
           should last a couple of minutes,
 
