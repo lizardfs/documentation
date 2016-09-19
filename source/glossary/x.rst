@@ -3,6 +3,47 @@
 ***
 .. auth-status-writing/none
 
+.. _xcode:
+
+Xcode
+=====
+
+  Xcode is an integrated development environment (IDE) containing a suite of
+  software development tools developed by Apple for developing software for
+  macOS, iOS, WatchOS and tvOS. First released in 2003, the latest stable
+  release is version 8 and is available via the Mac App Store free of charge
+  for OS X El Capitan users. Registered developers can download preview
+  releases and prior versions of the suite through the Apple Developer
+  website. However, Apple recently made a beta version of version 8.0 of the
+  software available to those of the public with Apple Developer accounts.
+
+  Xcode supports source code for the programming languages C, C++,
+  Objective-C, Objective-C++, Java, AppleScript, Python, Ruby, ResEdit (Rez),
+  and Swift, with a variety of programming models, including but not limited
+  to Cocoa, Carbon, and Java. Third parties have added support for GNU
+  Pascal, Free Pascal, Ada, C#, Perl, and D.
+
+  Thanks to the Mach-O executable format, which allows fat binary files,
+  containing code for multiple architectures, Xcode can build universal binary
+  files, which allow software to run on both PowerPC and Intel-based (x86)
+  platforms and that can include both 32-bit and 64-bit code for both
+  architectures. Using the iOS SDK, Xcode can also be used to compile and
+  debug applications for iOS that run on ARM architecture processors.
+  Xcode includes the GUI tool Instruments, which runs atop a dynamic tracing
+  framework, DTrace, created by Sun Microsystems and released as part of
+  OpenSolaris.
+
+.. seealso::
+
+   **Wikipedia entry for Xcode**
+     https://en.wikipedia.org/wiki/Xcode
+
+   **Xcode at the Mac App Store**
+     https://itunes.apple.com/us/app/xcode/id497799835
+
+   **Xcode at Apples Developer Site**
+     https://developer.apple.com/xcode/
+
 .. _xfs:
 
 XFS
