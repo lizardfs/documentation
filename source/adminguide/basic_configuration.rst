@@ -153,7 +153,7 @@ here:
 http://xfs.org/index.php/XFS_FAQ
 
 If you would like to use the high performance ZFS filesystem, please check the
-:ref:`cookbook`for further information.
+:ref:`cookbook` for further information.
 
 
 Configuring your Master
