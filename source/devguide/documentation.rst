@@ -224,10 +224,10 @@ this means for us:
 * third part of the commit-message is a longer description with lines of 80
   characters maximum-length.
 
-A complete commit-message looks like::
+A complete commit-message looks like the following::
 
   doc: Fixed references to other documentation
-  
+
   The refs to adminguide/basic_configuration and to filesystem/georeplication
   had a wrong syntax.
 
