@@ -12,7 +12,7 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   
+
    todolist
    introduction
    quickstart
@@ -32,7 +32,6 @@ Indices and tables
 ##################
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 
