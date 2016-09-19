@@ -24,7 +24,8 @@ DESCRIPTION
 
 **mfsmaster** is the metadata server program of Lizard File System. Depending
 on parameters it can start, restart or stop the LizardFS metadata server
-process. Without any options it starts the LizardFS metadata server, killing first the running process if a lock file exists.
+process. Without any options it starts the LizardFS metadata server, killing
+first the running process if a lock file exists.
 
 The metadata server can work in one of two modes (personalities):
 
@@ -79,6 +80,7 @@ files.
   run in foreground, don*t daemonize
 -t LOCKTIMEOUT
   how long to wait for lockfile (default is 60 seconds)
+
 ACTION
   is one of *start*, *stop*, *restart*, *reload*, *test*, *isalive* or
   *kill*. The default action is *restart*.
@@ -87,15 +89,14 @@ FILES
 =====
 
 mfsmaster.cfg
-  configuration file for LizardFS master process (see *mfsmaster.cfg*(5)
-  manual)
+  configuration file for the LizardFS master process (see :manpage:`mfsmaster.cfg(5)`)
 
 mfsexports.cfg
-  LizardFS access control file (used with *mfsmount*`s` 1.6.0 or later, see
-  *mfsexports.cfg*(5) manual)
+  LizardFS access control file (used with *mfsmount`s* 1.6.0 or later, see
+  :manpage:`mfsexports.cfg(5)`)
 
 mfstopology.cfg
-  Network topology definitions (see *mfstopology.cfg*(5) manual)
+  Network topology definitions (see :manpage:`mfstopology.cfg(5)`)
 
 mfsmaster.lock
   PID file of running LizardFS master process
