@@ -171,7 +171,7 @@ Mac/OS X
 --------
 .. auth-status-todo/none
 
-If you are following our :ref:`_workspace_mac` recommendations and use
+If you are following our :ref:`workspace_mac` recommendations and use
 :ref:`homebrew` the installation of the tools required to compile manpages is
 pretty simple. Just issue::
 
