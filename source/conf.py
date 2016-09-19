@@ -52,7 +52,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'LizardFS'
-copyright = u'2016, Skytechnologies Sp. z o.o. if not explicitly stated differently in respective documents'
+copyright = u'2016, Skytechnology Sp. z o.o. if not explicitly stated differently in respective documents'
 author = u'Skytechnology Sp. z o.o. and the LizardFS Community'
 
 # The version info for the project you're documenting, acts as replacement for
