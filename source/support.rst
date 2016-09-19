@@ -5,7 +5,7 @@ Commercial Support
 ##################
 .. auth-status-writing/none
 
-Commercial Support is available from Sky Technologies Sp. z o.o..
+Commercial Support is available from Skytechnology Sp. z o.o..
 
 Have peace of mind with our helpful, passionate support team on standby.
 
