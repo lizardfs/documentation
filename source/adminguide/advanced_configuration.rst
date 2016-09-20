@@ -165,8 +165,7 @@ working in HA mode, a dedicated daemon watches the status of the metadata
 servers and performs a failover whenever it detects a master server crashed
 (e.g. due to power outage). Running LizardFS installation as a HA-cluster
 significantly increases its availability. Since uRaft uses :ref:`quorum` a
-reasonable
-minimum of metadata servers in a HA installation is at least 3.
+reasonable minimum of metadata servers in a HA installation is at least 3.
 
 In order to deploy LizardFS as a high-availability cluster, follow the steps
 below.
@@ -216,7 +215,7 @@ LizardFS installation will be accessible at 192.168.0.100 ::
    URAFT_FLOATING_IFACE = eth1
 
    # Configuration for node2:
-   URAFT_NODE_ADDRESS = 192.168.0.3
+   URAFT_NODE_ADDRESS = 192.168.0.1
    URAFT_NODE_ADDRESS = node2
    URAFT_NODE_ADDRESS = node3:99427
    URAFT_ID = 1
@@ -225,7 +224,7 @@ LizardFS installation will be accessible at 192.168.0.100 ::
    URAFT_FLOATING_IFACE = eth1
 
    # Configuration for node3:
-   URAFT_NODE_ADDRESS = 192.168.0.3
+   URAFT_NODE_ADDRESS = 192.168.0.1
    URAFT_NODE_ADDRESS = node2
    URAFT_NODE_ADDRESS = node3:99427
    URAFT_ID = 2
