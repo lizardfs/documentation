@@ -30,6 +30,7 @@ Now add a proper entry in /etc/apt/sources.list.d/
 
 For Debian do::
 
+   # apt-get install lsb-release
    # echo "deb http://packages.lizardfs.com/debian/$(lsb_release -sc) $(lsb_release -sc) main" > /etc/apt/sources.list.d/lizardfs.list
    # echo "deb-src http://packages.lizardfs.com/debian/$(lsb_release -sc) $(lsb_release -sc) main" >> /etc/apt/sources.list.d/lizardfs.list
 
@@ -83,6 +84,10 @@ for RHEL 7 and CentOS 7::
 
    # curl http://packages.lizardfs.com/yum/el7/lizardfs.repo > /etc/yum.repos.d/lizardfs.repo
    # yum update
+
+To get libjuly which is used by parts of LizardFS, install the epel repository for RHEL 7::
+
+   yum install epel-release
 
 Now you are able to install LizardFS packages (listed below) using::
 

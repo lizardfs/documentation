@@ -119,12 +119,17 @@ File systems for LizardFS servers
           by SUN Microsystems and is used for heavy duty storage by Systems
           from numerous Storage System Vendors.
 
-
 For the Master servers
 ----------------------
 
-The Master keeps all of his records in memory but does frequent backups to drives which should therefore be very fast, but do not have to be very large. A standard 250G SSD should suffice. As a file system we would recommend something fast, like XFS. Do not use a HW RAID controller to mirror your drives, SSDs usualy have identical lifespan so block level mirroring would just lead to two dead SSDs instead of one. An alternative would be ZFS mirroring which is not lowlevel but data based and does not always write the same block to both devices to the same position.
-
+The Master keeps all of his records in memory but does frequent backups to
+drives which should therefore be very fast, but do not have to be very large.
+A standard 250G SSD should suffice. As a file system we would recommend
+something fast, like XFS. Do not use a HW RAID controller to mirror your
+drives, SSDs usualy have identical lifespan so block level mirroring would
+just lead to two dead SSDs instead of one. An alternative would be ZFS
+mirroring which is not lowlevel but data based and does not always write the
+same block to both devices to the same position.
 
 
 For the chunkservers
@@ -156,13 +161,19 @@ If you would like to use the high performance ZFS filesystem, please check the
 :ref:`cookbook` for further information.
 
 
+.. _master_server_config:
+
 Configuring your Master
 =======================
 
 
+.. _shadow_server_config:
+
 Configuring your Shadowmaster
 =============================
 
+
+.. _chunk_server_config:
 
 Configuring your Chunkservers
 =============================
@@ -201,6 +212,10 @@ After changing the configuration you must reload the chunkserver::
 If there is no LABEL entry in the config, the chunkserver has a default label
 of “_” (i.e. wildcard), which has a special meaning when defining goals and
 means “any chunkserver”.
+
+Multiple chunkservers can have the same label than they are basically a group
+of chunkservers where you can use the label to write a chunk or a piece of XOR
+or EC set to "any" chunkserver in that group.
 
 Show labels of connected chunkservers
 -------------------------------------

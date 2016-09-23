@@ -48,15 +48,15 @@ LizardFS options
 
 -m, --meta, -o mfsmeta
    mount MFSMETA companion filesystem instead of primary LizardFS
--c <CFGFILE>, -o mfscfgfile=<CFGFILE>
+-c CFGFILE, -o mfscfgfile=CFGFILE
    loads file with additional mount options
 -n
    omit default mount options (-o allow_other,default_permissions)
 -p, -o askpassword
    prompt for password (interactive version of -o mfspassword='PASS')
--H <HOST>, -o mfsmaster=<HOST>
+-H HOST, -o mfsmaster=HOST
    connect with LizardFS master on <HOST> (default is mfsmaster)
--P <PORT>, -o mfsport=<PORT>
+-P PORT, -o mfsport=PORT
    connect with LizardFS master on <PORT> (default is 9421)
 -B <HOST>, -o mfsbind=<HOST>
    local address to use for connecting with master instead of default one
@@ -160,20 +160,15 @@ General mount options (see mount(8) manual):
 
 -o rw, -o ro
   Mount file-system in read-write (default) or read-only mode respectively.
-
 -o suid, -o nosuid
   Enable or disable suid/sgid attributes to work.
-
 -o dev, -o nodev
   Enable or disable character or block special device files interpretation.
-
 -o exec, -o noexec
   Allow or disallow execution of binaries.
-
 -o symlinkcachetimeout=<N>
   Set timeout value for symlink cache timeout in seconds. Default value is
   3600.
-
 -o bandwidthoveruse=<N>
   Define ratio of allowed bandwidth overuse when fetching data. Default value
   is 1.25. This option is effective only with N+M goals (xors and erasure

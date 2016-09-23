@@ -74,13 +74,13 @@ Example 1::
 
 Example 2::
 
-   # Ale clients in blkio/a group are limited to 1MiB/s, other clients are blocked
+   # All clients in blkio/a group are limited to 1MiB/s, other clients are blocked
 	subsystem blkio
 	limit /a 1024
 
 Example 3::
 
-   # blkio group /a is allowed to transfer 1MiB/s
+   # The directory /a in the blkio group is allowed to transfer 1MiB/s
    # /b/a group gets 2MiB/s
    # unclassified  clients share 256KiB/s of bandwidth.
         subsystem blkio
@@ -169,7 +169,8 @@ reasonable minimum of metadata servers in a HA installation is at least 3.
 
 In order to deploy LizardFS as a high-availability cluster, follow the steps
 below.
-Steps should be performed on all machines chosen to be in a cluster.
+
+These steps should be performed on all machines chosen to be in a cluster.
 
 Install the lizardfs-uraft package::
 
@@ -178,59 +179,70 @@ Install the lizardfs-uraft package::
 
 Prepare your installation:
 
-Fill lizardfs-master config file (/etc/mfs/mfsmaster.cfg). Details depend on
-your personal configuration, the only fields essential for uraft are::
+Fill lizardfs-master config file (/etc/mfs/mfsmaster.cfg) according to
+:ref:`master_server_config`. Details depend on your personal configuration,
+the only fields essential for uraft are::
 
    PERSONALITY = ha-cluster-managed
    ADMIN_PASSWORD = your-lizardfs-password
 
-For a fresh installation, execute standard steps for lizardfs-master (creating
-mfsexports file, empty metadata file etc.). Do not start lizardfs-master
-daemon yet.
+For a fresh installation, execute the standard steps for the lizardfs-master
+(creating mfsexports file, empty metadata file etc.). Do not start the
+lizardfs-master daemon yet.
 
-Fill the lizardfs-uraft config file (/etc/mfs/lizardfs-uraft.cfg). Notable fields are::
+Fill the lizardfs-uraft config file (/etc/mfs/lizardfs-uraft.cfg). Notable
+fields are:
 
-	URAFT_NODE_ADDRESS - identifiers of all machines in a cluster
-	URAFT_ID - node address ordinal number; should be different for each machine
-	URAFT_FLOATING_IP - IP at which LizardFS will be accessible for the clients
-	URAFT_FLOATING_NETMASK - a matching netmask for floating IP
-	URAFT_FLOATING_IFACE - interface for floating IP
+**URAFT_NODE_ADDRESS**
+  identifiers of all the machines in your cluster
+**URAFT_ID**
+  node address ordinal number; should be unique for each machine
+**URAFT_FLOATING_IP**
+  IP at which LizardFS will be accessible for the clients
+**URAFT_FLOATING_NETMASK**
+  a matching netmask for floating IP
+**URAFT_FLOATING_IFACE**
+  network interface for the floating IP
 
 
 Example configuration for a cluster with 3 machines:
 ----------------------------------------------------
 
-The first, node1, is at 192.168.0.1, the second node gets hostname node2, and the third one gets hostname node3 and operates under a non-default port number - 99427.
+The first, node1, is at 192.168.0.1, the second node gets hostname node2, and
+the third one gets hostname node3 and operates under a non-default port number
+- 99427.
 
-All machines are inside a network with a 255.255.255.0 netmask and use interface eth1.
-LizardFS installation will be accessible at 192.168.0.100 ::
+All machines are inside a network with a 255.255.255.0 netmask and use
+their network interface eth1 for the floating ip.
+
+The LizardFS installation will be accessible at 192.168.0.100 ::
 
    # Configuration for node1:
-   URAFT_NODE_ADDRESS = 192.168.0.1
-   URAFT_NODE_ADDRESS = node2
-   URAFT_NODE_ADDRESS = node3:99427
-   URAFT_ID = 0
-   URAFT_FLOATING_IP = 192.168.0.100
-   URAFT_FLOATING_NETMASK = 255.255.255.0
-   URAFT_FLOATING_IFACE = eth1
+   URAFT_NODE_ADDRESS = 192.168.0.1            # ip of first node
+   URAFT_NODE_ADDRESS = node2                  # hostname of second node
+   URAFT_NODE_ADDRESS = node3:99427            # hostname and custom port of third node
+   URAFT_ID = 0                                # URAFT_ID for this node
+   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip adddress for this cluster
+   URAFT_FLOATING_NETMASK = 255.255.255.0      # Netmask for the floating ip
+   URAFT_FLOATING_IFACE = eth1                 # Network interface for the floating ip on this node
 
-   # Configuration for node2:
-   URAFT_NODE_ADDRESS = 192.168.0.1
-   URAFT_NODE_ADDRESS = node2
-   URAFT_NODE_ADDRESS = node3:99427
-   URAFT_ID = 1
-   URAFT_FLOATING_IP = 192.168.0.100
-   URAFT_FLOATING_NETMASK = 255.255.255.0
-   URAFT_FLOATING_IFACE = eth1
+  # Configuration for node2:
+   URAFT_NODE_ADDRESS = 192.168.0.1            # ip of first node
+   URAFT_NODE_ADDRESS = node2                  # hostname of second node
+   URAFT_NODE_ADDRESS = node3:99427            # hostname and custom port of third node
+   URAFT_ID = 1                                # URAFT_ID for this node
+   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip adddress for this cluster
+   URAFT_FLOATING_NETMASK = 255.255.255.0      # Netmask for the floating ip
+   URAFT_FLOATING_IFACE = eth1                 # Network interface for the floating ip on this node
 
    # Configuration for node3:
-   URAFT_NODE_ADDRESS = 192.168.0.1
-   URAFT_NODE_ADDRESS = node2
-   URAFT_NODE_ADDRESS = node3:99427
-   URAFT_ID = 2
-   URAFT_FLOATING_IP = 192.168.0.100
-   URAFT_FLOATING_NETMASK = 255.255.255.0
-   URAFT_FLOATING_IFACE = eth1
+   URAFT_NODE_ADDRESS = 192.168.0.1            # ip of first node
+   URAFT_NODE_ADDRESS = node2                  # hostname of second node
+   URAFT_NODE_ADDRESS = node3:99427            # hostname and custom port of third node
+   URAFT_ID = 2                                # URAFT_ID for this node
+   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip adddress for this cluster
+   URAFT_FLOATING_NETMASK = 255.255.255.0      # Netmask for the floating ip
+   URAFT_FLOATING_IFACE = eth1                 # Network interface for the floating ip on this node
 
 Enable arp broadcasting in your system (for the floating IP to work)::
 
