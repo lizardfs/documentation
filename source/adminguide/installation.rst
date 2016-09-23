@@ -149,9 +149,9 @@ the directions outlined below.
     cd lizardfs-source
     mkdir build
 
-2. Run 'cmake ..' inside the build directory. Useful options include
-   '-DCMAKE_INSTALL_PREFIX', '-DCMAKE_BUILD_TYPE' as well as various
-   LizardFS-specific '-DENABLE_...' options. Options are listed when
+2. Run *cmake ..* inside the build directory. Useful options include
+   *-DCMAKE_INSTALL_PREFIX*, *-DCMAKE_BUILD_TYPE* as well as various
+   LizardFS-specific *-DENABLE_...* options. Options are listed when
    cmake is ran and can be changed by re-running cmake::
 
     cd build

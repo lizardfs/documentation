@@ -150,7 +150,7 @@ How you do a that is documented here:
 
 http://www.cyberciti.biz/faq/linux-change-io-scheduler-for-harddisk/
 
-Probably you will want the `deadline`scheduler but your mileage may vary.
+Probably you will want the `deadline` scheduler but your mileage may vary.
 
 Why you should do that and what performance gains you may achieve can be found
 here:
@@ -191,7 +191,7 @@ installation either follow the example installation and just add an entry for
 *mfsmaster* to your /etc/hosts file, or,  ...
 
 .. todo: how do we change the place this looks for the master server ? Any
-config possible ?
+         config possible ?
 
 
 Labeling your chunkserver
