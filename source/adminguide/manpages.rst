@@ -12,13 +12,13 @@ on your system.
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
 
    ../man/lizardfs.7.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :caption: Administrative commands
 
@@ -39,7 +39,7 @@ Contents:
    ../man/lizardfs.1.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :caption: Master Server
 
@@ -52,7 +52,7 @@ Contents:
    ../man/mfstopology.cfg.5.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :caption: Chunkservers
 
@@ -61,7 +61,7 @@ Contents:
    ../man/mfshdd.cfg.5.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :caption: Metalogger
 
@@ -69,14 +69,14 @@ Contents:
    ../man/mfsmetalogger.cfg.5.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :caption: Clients
 
    ../man/mfsmount.1.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :caption: webinterface
 

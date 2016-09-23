@@ -102,6 +102,7 @@ tool::
    mfssetquota  (-u UID/-g GID)   SL_SIZE   HL_SIZE   SL_INODES   HL_INODES   MOUNTPOINT_PATH
 
 where:
+
 * SL - soft limit
 * HL - hard limit
 
@@ -262,4 +263,7 @@ You can check your uraft status via telnet on URAFT_STATUS_PORT
 When running telnet locally on a node, it is sufficient to use::
 
 	$ telnet localhost 9428
+
+Please check if you have the :ref:`sudo` package installed and that the 'mfs'
+user has been added with the right permissions to the /etc/sudoers file.
 
