@@ -42,7 +42,7 @@ FC/FibreChannel
   For more information please check the Wikipedia entry for SAN: https://en.wikipedia.org/wiki/Fibre_Channel where most of the info in this entry is from.
 
 
-: _fuse:
+.. _fuse:
 
 FUSE
 ====
