@@ -93,6 +93,8 @@ Example 3::
        	limit /a   1024
        	limit /b/a 2048
 
+.. _lizardfs_quotas:
+
 Configuring Quotas
 ==================
 
@@ -166,6 +168,8 @@ Reserved directory
 If you delete a file, but someone else use this file and keep an open
 descriptor, you will see this file in here until descriptor is closed.
 
+.. _lizardfs_ha_cluster:
+
 Deploying LizardFS as a HA Cluster
 ==================================
 
@@ -199,7 +203,7 @@ For a fresh installation, execute the standard steps for the lizardfs-master
 (creating mfsexports file, empty metadata file etc.). Do not start the
 lizardfs-master daemon yet.
 
-Fill the lizardfs-uraft config file (/etc/mfs/lizardfs-uraft.cfg). Notable
+Fill the lizardfs-uraft config file (/etc/mfs/lizardfs-uraft.cfg). Configurable
 fields are:
 
 **URAFT_NODE_ADDRESS**
@@ -212,6 +216,21 @@ fields are:
   a matching netmask for floating IP
 **URAFT_FLOATING_IFACE**
   network interface for the floating IP
+**URAFT_ELECTOR_MODE**
+  ...
+**LOCAL_MASTER_ADDRESS**
+  The address of the local master controlled by this uraft node, defaults to
+  localhost.
+**LOCAL_MASTER_MATOCL_PORT**
+  The port the local master listens on, defaults to 9421
+**ELECTION_TIMEOUT_MIN**
+  Minimum election timeout (ms), defaults to 400
+**ELECTION_TIMEOUT_MAX**
+  Maximum election timeout (ms), defaults to 600
+**HEARTBEAT_PERIOD** = 20
+  Period between hearbeat messages between uraft nodes (ms), defaults to 20.
+**LOCAL_MASTER_CHECK_PERIOD**
+  How often uRaft checks if local master is alive (ms), defaults to 250.
 
 
 Example configuration for a cluster with 3 machines:

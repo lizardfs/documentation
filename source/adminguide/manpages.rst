@@ -14,6 +14,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :titlesonly:
+   :caption: General
 
    ../man/lizardfs.7.rst
 

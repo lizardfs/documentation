@@ -197,6 +197,34 @@ In the mfsmaster.cfg file, there are a lot of settings for advanced usage
 which we will get into in the :ref:`advanced_config` Guide. For a basic setup
 the things that are important are:
 
+  Current *personality* of this instance of the metadata server. Valid values
+  are *master*, *shadow* and *ha-cluster-managed*. If the installation is
+  managed by an HA cluster the only valid value is *ha-cluster-managed*,
+  otherwise the only valid values are *master* and *shadow*, in which case
+  only one metadata server in LizardFS shall have *master* personality. ::
+
+    PERSONALITY = *master*
+
+  means that this instance of metadata server acts as main metadata server
+  govering all file system metadata modifications. ::
+
+    PERSONALITY = *shadow*
+
+  means that this instance of the metadata server acts as backup metadata
+  server  ready for immediate deployment as the new *master* in case of a
+  failure of the current *master*.
+
+  Metadata server personality can be changed at any moment as long as one
+  changes personality from *shadow* to *master*, changing personality the
+  other way around is forbidden. ::
+
+    PERSONALITY = *ha-cluster-managed*
+
+  means that this instance is managed by a HA cluster, server runs in
+  *shadow*  mode as long as its not remotly promoted to *master*. For details
+  on running LizardFS with HA Master please refer to :ref:`lizardfs_ha_cluster`
+  .
+
 The addresses your master server is to listen on, if not all::
 
   ATOML_LISTEN_HOST # IP address to listen on for metalogger connections (* means any)
