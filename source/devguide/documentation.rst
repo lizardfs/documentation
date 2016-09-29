@@ -158,9 +158,25 @@ debian8 (jessie)
 
 The best way to get the documentation formatting-tools up and running is:
 
+First:
+
  * apt-get install pandoc pandoc-data
- * apt-get install python-pip
- * pip install Sphinx
+
+Than (the sphinx in the debian repo is too old) :
+
+ * choose a place for your virtual environment for sphinx
+ * setup a virtual enironment for sphinx::
+
+   $ virtualenv sphinx
+
+ * activate your virtual python environment::
+
+   $ source sphinx/bin/acticate
+
+ * install the newest sphinx and tools::
+
+   $ pip install sphinx sphinx-autobuild
+
 
 This should be enough to build the html-documentation.
 If you want pdf as well you will need texlive/pdflatex - caution, that one is
@@ -183,6 +199,18 @@ to be done.
 To install sphinx correctly on MacOS/X you will need to make use of a virtual
 python environment::
 
+ * choose a place for your virtual environment for sphinx
+ * setup a virtual enironment for sphinx::
+
+   $ virtualenv sphinx
+
+ * activate your virtual python environment::
+
+   $ source sphinx/bin/acticate
+
+ * install the newest sphinx and tools::
+
+   $ pip install sphinx sphinx-autobuild
 
 .. todo:: add instructions for virtualenv and sphinx.
 
@@ -197,6 +225,9 @@ packages::
   hs-pandoc
   hs-pandoc-types
   py27-sphinx-1.4.4
+
+FreeBSD keeps its sphinx prety actual so there should be no problem in
+building the docs.
 
 Build-Process
 =============
