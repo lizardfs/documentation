@@ -37,11 +37,12 @@ metadata server govering all file system metadata modifications.
 If the metadata server works with *shadow* personality it acts as backup
 metadata server ready for immediate deployment as new *master* in case of the
 current *master* failing.
+
 Shadow only accepts connections from lizardfs-admin, i.e. mfschunkserver,
 mfsmetalogger and mfsmount (the client) are not allowed to connect to the
 *shadow* instance.
 
-Current metadata server personality is defined in metadata server
+Current metadata server personality is defined in the metadata server
 configuration file and can be changed on the fly from *shadow* to *master* by
 proper modification and reloading of its configuration file.
 
@@ -53,8 +54,9 @@ detect and fix possible metadata corruptions. In case a mismatch is detected
 *shadow* asks *master* to double check its metadata and dump its current
 snapshot.
 
-After the metadata is dumped and the checksum in *master* is recalculated,
-shadow downloads the new metadata snapshot, which should ensure that the master and all its shadows have exactly the same metadata.
+After the metadata is dumped and the checksum in the *master* is recalculated,
+shadow downloads the new metadata snapshot, which should ensure that the
+master and all its shadows have exactly the same metadata.
 
 SIGHUP (or *reload* ACTION) forces **mfsmaster** to reload all configuration
 files.

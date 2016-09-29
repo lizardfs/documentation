@@ -203,12 +203,12 @@ the things that are important are:
   otherwise the only valid values are *master* and *shadow*, in which case
   only one metadata server in LizardFS shall have *master* personality. ::
 
-    PERSONALITY = *master*
+    PERSONALITY = master
 
   means that this instance of metadata server acts as main metadata server
   govering all file system metadata modifications. ::
 
-    PERSONALITY = *shadow*
+    PERSONALITY = shadow
 
   means that this instance of the metadata server acts as backup metadata
   server  ready for immediate deployment as the new *master* in case of a
@@ -218,7 +218,7 @@ the things that are important are:
   changes personality from *shadow* to *master*, changing personality the
   other way around is forbidden. ::
 
-    PERSONALITY = *ha-cluster-managed*
+    PERSONALITY = ha-cluster-managed
 
   means that this instance is managed by a HA cluster, server runs in
   *shadow*  mode as long as its not remotly promoted to *master*. For details
