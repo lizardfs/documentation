@@ -105,7 +105,7 @@ REPLICATION_BANDWIDTH_LIMIT_KBPS
 NR_OF_NETWORK_WORKERS
   number of threads which handle (in a round-robin manner) connections with
   clients (default is 1); these threads are responsible for reading from
-  sockets and coping data from internal buffers to sockets
+  sockets and copying data from internal buffers to sockets
 
 NR_OF_HDD_WORKERS_PER_NETWORK_WORKER
   number of threads that each network worker may use to do disk operations
