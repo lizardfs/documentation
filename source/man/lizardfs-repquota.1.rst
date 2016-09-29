@@ -49,14 +49,17 @@ In general quotas can be set only by a superuser, but there is a workaround
 available - one can set SESFLAG_ALLCANCHANGEQUOTA in mfsexports.cfg file. A
 user can only retrieve a quota of his own (and of his primary group).
 
-*repquota* prints a summary of the limits that were set and inode/space usage for specified user/group (or all of them) in the following format::
+*repquota* prints a summary of the limits that were set and inode/space usage
+for specified user/group (or all of them) in the following format::
 
   # User/Group ID/Inode; Bytes: current usage, soft limit, hard limit; Inodes: current usage, soft limit, hard limit;
   User/Group/Inode ID (+/-)(+/-) USED-BYTES SOFT-LIMIT-BYTES HARD-LIMIT-BYTES USED-INODES SOFT-LIMIT-INODES HARD-LIMIT-INODES
 
-*\+* indicates that the soft was exceeded or the hard limit was reached. *\-*
-indicates otherwise. The first *\+* or *\-* corresponds to bytes limit, while
-the second one to inodes.
+* *\+* indicates that the soft was exceeded or the hard limit was reached.
+* *\-* indicates otherwise.
+
+The first *\+* or *\-* corresponds to bytes limit, while the second one to
+inodes.
 
 *setquota* sets quotas for a user or a group on LizardFS. The quotas are not
 strict, i.e. it is possible to exceed hard limits a bit, mostly by appending
