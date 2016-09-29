@@ -55,8 +55,12 @@ for specified user/group (or all of them) in the following format::
   # User/Group ID/Inode; Bytes: current usage, soft limit, hard limit; Inodes: current usage, soft limit, hard limit;
   User/Group/Inode ID (+/-)(+/-) USED-BYTES SOFT-LIMIT-BYTES HARD-LIMIT-BYTES USED-INODES SOFT-LIMIT-INODES HARD-LIMIT-INODES
 
-* *\+* indicates that the soft was exceeded or the hard limit was reached.
-* *\-* indicates otherwise.
+*\+*
+  indicates that the soft limit was exceeded or the hard limit was
+  reached.
+
+*\-*
+  indicates otherwise.
 
 The first *\+* or *\-* corresponds to bytes limit, while the second one to
 inodes.
