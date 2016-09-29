@@ -1,4 +1,4 @@
-.. mfsmaster.cfg.5:
+.. _mfsmaster.cfg.5:
 
 ****************
 mfsmaster.cfg(5)
