@@ -160,11 +160,223 @@ http://xfs.org/index.php/XFS_FAQ
 If you would like to use the high performance ZFS filesystem, please check the
 :ref:`cookbook` for further information.
 
-
 .. _master_server_config:
 
 Configuring your Master
 =======================
+
+The master server is the heart of the LizardFS ecosystem. It keeps all meta
+information about every file, every chunk and every slice if in ec mode. It
+knows what is where and how to find it. It is also resposible to organize
+georeplication and topology and fix the effects of broken drives and
+chunkservers.
+
+The metadata database
+---------------------
+
+For the master to work, you need to first give it a file where it will keep
+its metadata database. The default location, which can be adjusted in the
+:ref:`mfsmaster.cfg.5` file, is::
+
+  /var/lib/mfs/metadata.mfs
+
+There is an empty metdata file available which you can use to create a new
+one. If you want to use the default location, just issue a::
+
+  $ cp /var/lib/mfs/metadata.mfs.empty /var/lib/mfs/metadata.mfs
+
+to copy the empty template into the default location and create a new database.
+
+Now that you have a metadata database, you need to provide your master server
+with the required information for operation.
+
+The mfsmaster.cfg file
+----------------------
+
+In the mfsmaster.cfg file, there are a lot of settings for advanced usage
+which we will get into in the :ref:`advanced_config` Guide. For a basic setup
+the things that are important are:
+
+The addresses your master server is to listen on, if not all::
+
+  ATOML_LISTEN_HOST # IP address to listen on for metalogger connections (* means any)
+  MATOCS_LISTEN_HOST # IP address to listen on for chunkserver connections (* means any)
+  MATOTS_LISTEN_HOST # IP address to listen on for tapeserver connections (* means any)
+  MATOCL_LISTEN_HOST # IP address to listen on for client (mount) connections (* means any)
+
+The ports your master server is supposed to listen on, if not the default ones::
+
+  MATOML_LISTEN_PORT # port to listen on for metalogger connections (default is 9419)
+  MATOCS_LISTEN_PORT # port to listen on for chunkserver connections (default is 9420)
+  MATOCL_LISTEN_PORT # port to listen on for client (mount) connections (default is 9421)
+  MATOTS_LISTEN_PORT # Port to listen on for tapeserver connections (default is 9424)
+
+The user and group you would like your master to run as (default is *mfs*)::
+
+  WORKING_USER # user to run daemon as
+  WORKING_GROUP # group to run daemon as (optional - if empty then the default user group will be used)
+
+Where to store metadata and lock files::
+
+  DATA_PATH # where to store metadata files and lock file
+
+Should the access time for every file be recorded or not ? ::
+
+  NO_ATIME
+  # when this option is set to 1 inode access time is not updated on every #
+  # access, otherwise (when set to 0) it is updated (default is 0)
+
+All other settings should be left alone for a basic system.
+
+Layout, access rights and other options
+---------------------------------------
+
+Now that we have the main configuration done, lets configure the layout of our
+LizardFS. This is done in the :ref:`mfsexport.cfg.5` file, unless you specify
+a different file in your :ref:`mfsmaster.cfg.5` file.
+
+.. note:: LizardFS creates one big namespace. For fine tuned access you should
+          create entries here for subdirectories and assign those to groups to
+          have different clients access only different parts of the tree.
+
+This file contains all the settings required to create a LizardFS namespace
+and set its access rights and network permissions. Its format is pretty
+simple::
+
+  ADDRESS DIRECTORY [OPTIONS]
+
+Basically you define which network address or address range has access to
+which directory plus options for that access.
+
+The address scheme looks like the following:
+
++-------------------+-------------------------------------------------------+
+|  \*               | all addresses                                         |
++-------------------+-------------------------------------------------------+
+|  n.n.n.n          | single IP address                                     |
++-------------------+-------------------------------------------------------+
+|  n.n.n.n/b        | IP class specified by network address and bits number |
++-------------------+-------------------------------------------------------+
+|  n.n.n.n/m.m.m.m  | IP class specified by network address and mask        |
++-------------------+-------------------------------------------------------+
+|  f.f.f.f-t.t.t.t  | IP range specified by from-to addresses (inclusive)   |
++-------------------+-------------------------------------------------------+
+
+Your LizardFS namespace is a tree, starting with the root entry **/**.
+So in the directory field you can specify the whole namespace, **/**, or
+subdirectories like: **/home** or **/vm1**. The special value **.** represents
+the meta file system, which is described in :ref:`mount_meta` .
+You can specify different access rights, options, passwords and user mappings
+for every single directory and split your namespace utlising those options
+into multiple sub namespaces if required. Check out the examples for how
+different directories can be set to different options.
+
+Options
+^^^^^^^
+
+To give oyu maximum flexibility LizardFS provides a range of mount options so you can finetune settings for every piece of your namespace.
+
+None of them are required. If you do not provide any options, the default set
+of::
+
+  ro,maproot=999:999
+
+will be used.
+
+The options are:
+
+**ro, readonly**
+  export tree in read-only mode (default)
+
+**rw, readwrite**
+  export tree in read-write mode
+
+**ignoregid**
+  disable testing of group access at *mfsmaster* level (it's still done at
+  *mfsmount* level) - in this case "group" and "other" permissions are
+  logically added; needed for supplementary groups to work.
+  (*mfsmaster* only receives information about the users primary group)
+
+**dynamicip**
+  allows reconnecting of already authenticated client from any IP address (the
+  default is to check the IP address on reconnect)
+
+**maproot=USER[:GROUP]**
+  maps root (uid=0) accesses to the given user and group (similarly to maproot
+  option in NFS mounts);
+  USER and GROUP can be given either as name or number; if no group is
+  specified, USERs primary group is used. Names are resolved on *mfsmaster*
+  side (see note below).
+
+**mapall=USER[:GROUP]**
+  like above but maps all non privileged users (uid!=0) accesses to a given
+  user and group (see notes below).
+
+**minversion=VER**
+  rejects access from clients older than specified
+
+**mingoal=N, maxgoal=N**
+  specifies range in which goal can be set by users
+
+**mintrashtime=TDUR, *maxtrashtime=TDUR**
+  specifies range in which trashtime can be set by users. See :ref:`meta_trash`
+
+**password=PASS, md5pass=MD5**
+  requires password authentication in order to access specified resource
+
+**alldirs**
+  allows to mount any subdirectory of the specified directory (similarly to
+  NFS)
+
+nonrootmeta
+  allows non-root users to use filesystem mounted in the meta mode (option
+  available only in this mode). See :ref:`mount_meta` .
+
+
+Examples
+^^^^^^^^
+
+::
+
+  *                    /       ro
+  # Give everybody access to the whole namespace but read-only. Subdirs can
+  # not be mounted directly and must be accessed from /.
+
+  192.168.1.0/24       /       rw
+  # Allow 192.168.1.1 - 192.168.1.254 to access the whole namespace read/write.
+
+  192.168.1.0/24       /       rw,alldirs,maproot=0,password=passcode
+  # Allow 192.168.1.1 - 192.168.1.254 to access the whole namespace read/write
+  # with the password *passcode* and map the root user to the UID *0*.
+
+  10.0.0.0-10.0.0.5    /test   rw,maproot=nobody,password=test
+  # Allow 10.0.0.0 - 10.0.0.5 to access the directory /test except for its
+  # subdirectores in a read/write fashion using the password *test*. Map all
+  # accesses by the root user to the user *nobody*.
+
+  10.1.0.0/255.255.0.0 /public rw,mapall=1000:1000
+  # Give access to the /public directory to the network 10.1.0.0/255.255.0.0
+  # in a read/write fashion and map everybody to the UID *1000* and GID *1000*.
+
+  10.2.0.0/16          /      rw,alldirs,maproot=0,mintrashtime=2h30m,maxtrashtime=2w
+  # Give access to the whole namespae to the 10.2.0.0/16 network in a
+  # read/write fashion. Also allowsubdirectories to be mounted directly by
+  # those clients.
+  # Map the root user to UID *0*. Allow users to set the trahtime (time when
+  # files in the tash get autopruned) between
+  # 2h30m and 2 weeks.
+
+Utilising all of these options you will be able to do quite flexible setups,
+like optimizing for virtualization as described in out Cookbook at
+:ref:`virtu_farms` .
+
+Now that you know how to setup your namespace, the next step would be to set
+custom goals/replication modes, described in :ref:`replication` and QoS/IO
+Limits, described in the :ref:`lizardfs_qos` chapter.
+
+Network awareness / topology are further advanced topics, especialy required
+for georeplication. A description of how to set them up can be found here
+:ref:`rack_awareness` .
 
 
 .. _shadow_server_config:

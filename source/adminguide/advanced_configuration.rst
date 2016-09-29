@@ -6,6 +6,8 @@ Advanced configuration
 .. auth-status-proof1/none
 
 
+.. _rack_awareness:
+
 Configuring rack awareness (network topology)
 =============================================
 
@@ -48,6 +50,9 @@ As for now, distance between switches can be set to 0, 1, 2:
 The topology feature works well with chunkserver labeling - a combination of
 the two can be used to make sure that clients read to/write from chunkservers
 best suited for them (e.g. from the same network switch).
+
+
+.. _lizardfs_qos:
 
 Configuring QoS
 ===============
@@ -106,6 +111,7 @@ where:
 * SL - soft limit
 * HL - hard limit
 
+.. _mount_meta:
 
 Mounting the metadata
 =====================
@@ -129,6 +135,8 @@ The structure of the mounted metadata directory will look like this::
                       ├── reserved
                       └── trash
                       └── undel
+
+.. _meta_trash:
 
 Trash directory
 ----------------

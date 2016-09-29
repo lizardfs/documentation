@@ -1,3 +1,5 @@
+.. _replication:
+
 Configuring Replication Modes
 *****************************
 .. auth-status-proof1/none
@@ -19,11 +21,13 @@ Note that the write modus here is: client writes chunk to ONE chunkserver and
 this chunkserver replicates this chunk to the other chunkservers.
 
 The second replication mode is called XOR. It is similar to a classic RAID5
-scenario in that you have N data chunks and 1 parity chunk. The maximum number of data chunks in this case is 9.
+scenario in that you have N data chunks and 1 parity chunk. The maximum number
+of data chunks in this case is 9.
 
 The third and most advanced mode of replication is the EC mode which does
 advanced erasure coding with a configurable amount of data and parity copies.
-In this mode clients wirte quasi parallel to the chunkservers. The maximum number of data chunks as well as of parity chunks is 32.
+In this mode clients wirte quasi parallel to the chunkservers. The maximum
+number of data chunks as well as of parity chunks is 32.
 
 .. note:: To ensure proper repair procedure in case of a broken chunkserver,
           make sure to always have one chunkserver more than your configured
@@ -158,7 +162,8 @@ your XOR definition but writes will be spread over all chunkservers.
 
 For example if you have 5 chunkservers and define $xor2 (2 data and 1 parity
 chunk per set), the first set could write to chunkserver 1,2 and 3, the second
-one to chunkserver 2,3,4 and the next to chunkserver 1,3,5. The maximum number of data chunks is currently 9.
+one to chunkserver 2,3,4 and the next to chunkserver 1,3,5. The maximum number
+of data chunks is currently 9.
 
 Example
 -------
@@ -173,10 +178,10 @@ This goes into :ref:`mfsgoals.cfg.5`::
   16 fast_read : $xor2 { ssd ssd hdd } # simple xor with 2 data and 1 parity
                                        # utilizing only 2 chunkservers, ssd
                                        # and hdd and writing 2 copies to the
-                                       # ssd chunkserver and one to the hdd
-                                       # chunkserver
+                                       # ssd chunkservers and one to the hdd
+                                       # chunkserver.
 
-  17 xor5 : $xor5 { hdd _ }             # XOR with 5 data and 1 parity drive
+  17 xor5 : $xor5 { hdd _ }            # XOR with 5 data and 1 parity drive
                                        # and at least one part of each set
                                        # written to the chunkserver labeled hdd
 
