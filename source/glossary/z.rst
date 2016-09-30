@@ -13,7 +13,7 @@ ZFS
    many of the major problems found in previous designs.
 
    Originally developed at Sun™, ongoing open source ZFS development has moved
-   to the <OpenZFS Project http://www.open-zfs.org>_ .
+   to the `OpenZFS Project <http://www.open-zfs.org>`_ .
 
    ZFS has three major design goals:
 
@@ -34,15 +34,28 @@ ZFS
 
 .. seealso::
 
-   OpenZFS Project:
-      http://www.open-zfs.org/
+   * `A guide to install and use zfs on centos 7 <`http://linoxide.com/tools/guide-install-use-zfs-centos-7/">`_
 
-   ZFS Manual in the FreeBSD Handbook
-      https://www.freebsd.org/doc/handbook/zfs.html
+   * `The Open-ZFS Project <http://www.open-zfs.org/>`_
 
-   The ZFS on Linux project supplies packages and documentation for every
-   major distro:
-      http://zfsonlinux.org/
+   * `ZFS Manual in the FreeBSD Handbook <https://www.freebsd.org/doc/handbook/zfs.html>`_
+
+   * The `ZFS On Linux - ZOL <http://zfsonlinux.org/>`_ project supplies
+     packages and documentation for every major distro:
+     `ZFS On Linux - ZOL <http://zfsonlinux.org/>`_
+
+   * `ZFS in the Ubuntu Wiki <https://wiki.ubuntuusers.de/ZFS_on_Linux/>`_
+
+   * `How to install and use ZFS on Ubuntu and why you'd wnat to <http://www.howtogeek.com/272220/how-to-install-and-use-zfs-on-ubuntu-and-why-youd-want-to/>`_
+
+   * `An extensive Guide about ZFS on Debian by Aaron Toponce <https://pthree.org/2012/04/17/install-zfs-on-debian-gnulinux/>`_
+
+   * `Performance tuning instructions from the Open-ZFS Project <http://open-zfs.org/wiki/Performance_tuning>`_
+
+
+
+
+
 
 
 
