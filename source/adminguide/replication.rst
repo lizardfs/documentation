@@ -168,7 +168,7 @@ of data chunks is currently 9.
 Example
 -------
 
-This goes into :ref:`mfsgoals.cfg.5`::
+This goes into :ref:`mfsgoals.cfg.5` and sets custom goals 15,16 and 17::
 
   15 default_xor3 : $xor3 # simple xor with 3 data and 1 parity chunks on all
                           # defined chunkservers. Each set will be written to
@@ -191,4 +191,40 @@ Applying, showing and listing goals works the same way as for
 Setting up EC
 =============
 
-.. todo:: Explain ec configuration
+EC goals are set nearly the same way as XOR goals. The only difference is that
+you specify an ec definition in the format *$ecM,K* , where M stands for the
+data parts and K for the parity parts instead of the xor definition. The
+maximum size for each of those  (M or K) is 32.
+
+Example
+-------
+
+This goes into :ref:`mfsgoals.cfg.5` and sets custom goals 18, 19 and 20::
+
+  18 first_ec : $ec(3,1)
+  # Use ec3+1 on all chunkservers. Load will be balanced and each write will
+  # consist of 3 data and 1 parity part
+
+  19 ec32_ssd : $ec(3,2) { ssd ssd ssd ssd ssd }
+  # Use ec3+2 but write only to chunkservers labeled ssd. Each write will
+  # consist of 3 data and 2 parity parts.
+
+  20 ec53_mixed : $ec(5,3) { hdd ssd hdd _ _ _ _ _ }
+  # Use ec5+3 on all chunkservers but always write 2 parts to chunkservers
+  # labeled hdd and 1 part to chunkservers labeled ssd. The remaining parts go
+  # to any chunkserver. Each write will have 5 data and 3 parity parts. Load
+  # will be distributed amongst all chunkservers except for 2 parts which will
+  # be written to chunkservers labeled hdd and 1 part which will be written to
+  # chunkserver ssd on every write.
+
+As you can see EC is extremely flexible and is also our fastest replication
+mode since writes from the client get spread over the chunkservers according
+to the goals set.
+
+.. seealso::
+
+   * :ref:`mfsgoals.cfg.5`
+   * :ref:`lizardfs-getgoal.1`
+   * :ref:`lizardfs.1`
+   * :ref:`lizardfs-admin.8`
+   * :ref:`labeling_chunkserver`

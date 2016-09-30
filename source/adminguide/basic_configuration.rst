@@ -260,7 +260,7 @@ Layout, access rights and other options
 ---------------------------------------
 
 Now that we have the main configuration done, lets configure the layout of our
-LizardFS. This is done in the :ref:`mfsexport.cfg.5` file, unless you specify
+LizardFS. This is done in the :ref:`mfsexports.cfg.5` file, unless you specify
 a different file in your :ref:`mfsmaster.cfg.5` file.
 
 .. note:: LizardFS creates one big namespace. For fine tuned access you should
@@ -302,7 +302,7 @@ different directories can be set to different options.
 Options
 ^^^^^^^
 
-To give oyu maximum flexibility LizardFS provides a range of mount options so you can finetune settings for every piece of your namespace.
+To give you maximum flexibility LizardFS provides a range of mount options so you can finetune settings for every piece of your namespace.
 
 None of them are required. If you do not provide any options, the default set
 of::
@@ -356,7 +356,7 @@ The options are:
   allows to mount any subdirectory of the specified directory (similarly to
   NFS)
 
-nonrootmeta
+**nonrootmeta**
   allows non-root users to use filesystem mounted in the meta mode (option
   available only in this mode). See :ref:`mount_meta` .
 
@@ -433,6 +433,7 @@ installation either follow the example installation and just add an entry for
 .. todo: how do we change the place this looks for the master server ? Any
          config possible ?
 
+.. _labeling_chunkserver:
 
 Labeling your chunkserver
 =========================
