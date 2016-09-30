@@ -71,7 +71,7 @@ LizardFS consists of the following packages:
 
 
 Installing from RedHAT EL / CentOS Packages
-++++++++++++++++++++++++++++++++++++++++++=
++++++++++++++++++++++++++++++++++++++++++++
 
 First, add a file with information about the repository:
 
