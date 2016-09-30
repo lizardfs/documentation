@@ -1,4 +1,4 @@
-.. _mfsexports.cfg.5
+.. _mfsexports.cfg.5:
 
 *****************
 mfsexports.cfg(5)
