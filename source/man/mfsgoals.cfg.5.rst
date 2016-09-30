@@ -115,6 +115,11 @@ modification and diverges from the snapshotted version.
 If some snapshot has different goal than its original file, any shared
 data are stored according to the goal with higher 'id' of the two.
 
+REPORTING BUGS
+==============
+
+Report bugs to <contact@lizardfs.org>.
+
 COPYRIGHT
 =========
 

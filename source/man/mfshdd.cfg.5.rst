@@ -19,6 +19,11 @@ stored there to different locations. Lines starting with a *#* character are
 ignored.
 
 
+REPORTING BUGS
+==============
+
+Report bugs to <contact@lizardfs.org>.
+
 COPYRIGHT
 =========
 
