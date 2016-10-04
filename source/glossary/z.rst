@@ -52,6 +52,14 @@ ZFS
 
    * `Performance tuning instructions from the Open-ZFS Project <http://open-zfs.org/wiki/Performance_tuning>`_
 
+   * `ZFS RAIDZ stripe width or: How I learned to stop worrying and love raidZ <https://www.delphix.com/blog/delphix-engineering/zfs-raidz-stripe-width-or-how-i-learned-stop-worrying-and-love-raidz>`_
+
+   * `ZFS Administration Part I VDEVs <https://pthree.org/2012/12/04/zfs-administration-part-i-vdevs/>`_
+
+
+
+
+
 
 
 
