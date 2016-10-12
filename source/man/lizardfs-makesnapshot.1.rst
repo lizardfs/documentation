@@ -1,4 +1,4 @@
-.. _lizardfs-makesnapshot.1
+.. _lizardfs-makesnapshot.1:
 
 ************************
 lizardfs-makesnapshot(1)

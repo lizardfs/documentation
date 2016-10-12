@@ -47,7 +47,7 @@ If you want to use LizardFS as a Backend for your virtualization Farm, there
 are multiple options.
 
 Use LizardFS from inside each VM
-  The LizardFS client on Linux utilises the :ref:`fuse`libraray which has
+  The LizardFS client on Linux utilises the :ref:`fuse` library which has
   limits on the performance it can offer. To work around this one option would
   be to have each VM connect to the lizardfs system by itself. That way each
   VM has its own connection and gets the maximum performance possible via fuse.
@@ -95,7 +95,7 @@ All that is required to switch a node to "non master" mode is setting::
 
   URAFT_ELECTOR_MODE = 1
 
-in the *lizardfs-uraft.cfg* file. Everything else must be setup like it would
+in the lizardfs-uraft.cfg file. Everything else must be setup like it would
 be a normale lizardfs-master with uraft node except that the master will never
 be put into a real **master* role.
 

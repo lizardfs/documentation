@@ -14,7 +14,7 @@ SYNOPSIS
 
 ::
 
-lizardfs dirinfo [-n|-h|-H] 'OBJECT'...
+  lizardfs dirinfo [-n|-h|-H] OBJECT...
 
 DESCRIPTION
 ===========

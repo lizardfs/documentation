@@ -35,15 +35,16 @@ OPTIONS
   This option enables recursive mode, which works as usual for every given
   file, but for every given directory additionally prints the current
   'trashtime' value of all contained objects (files and directories).
-N\[+|-]
+-n, -h, -H
+  These options are described in lizardfs(1).
+
+N[+|-]
   If a new value is specified in 'N'+ form, the 'trashtime' value is increased
   to 'N' for objects with lower 'trashtime' value and unchanged for the rest.
   Similarly, if a new value is specified as 'N'-, the 'trashtime' value is
   decreased to 'N' for objects with higher 'trashtime' value and unchanged for
   the rest. These tools can be used on any file, directory or deleted
   ('trash') file.
--n, -h, -H
-  These options are described in lizardfs(1).
 
 
 .. note:: *rgettrashtime* and *rsettrashtime* are deprecated aliases for

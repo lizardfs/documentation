@@ -20,6 +20,7 @@ SYNOPSIS
   mfsmetalogger -h
 
 DESCRIPTION
+===========
 
 **mfsmetalogger** is the metadata replication server of the Lizard File
 System. Depending on the parameters given to it, it can start, restart or stop
