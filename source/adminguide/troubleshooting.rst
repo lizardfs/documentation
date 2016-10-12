@@ -15,6 +15,7 @@ Basic checks
 * Check if your network has the right throughput
 * Check if your disks are all working and do not repport errors
 * Check your Chunkservers for:
+
   * Broken Disks
   * Slow Disks
   * permissions on your directories (the user which is running the chunkserver
@@ -22,6 +23,7 @@ Basic checks
   * network performance to other chunkserver
   * network performance to master server
   * network performance to clients
+
 * Check your license files for the correct name and location
 * Check your log files for errors. Lizardfs is very talkative and reports a
   lot.
