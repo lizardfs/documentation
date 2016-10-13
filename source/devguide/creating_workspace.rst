@@ -114,9 +114,9 @@ For making bash work correctly, please add the following to /etc/fstab::
 Before you can build LizardFS with your newly setup build envionment, please
 set the following variables in your environment or add them to your .bashrc::
 
-  export CC=/usr/local/gcc6
-  export CXX=/usr/local/g++-6
-  export CPP=/usr/local/gcc6
+  export CC=/usr/local/bin/gcc6
+  export CXX=/usr/local/bin/g++6
+  export CPP=/usr/local/bin/gcc6
   export MAKE=/usr/local/bin/gmake
   export SHELL=/usr/local/bin/bash
 
