@@ -25,6 +25,7 @@ Contents:
    functional_testing.rst
    participation_rules
    submitting
+   repository
    versioning
    bughunt
    documentation

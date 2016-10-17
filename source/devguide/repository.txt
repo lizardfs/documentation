@@ -1,7 +1,7 @@
 .. _versioning:
 
 *******************************
-Versioning and repository rules
+Repository rules
 *******************************
 
 .. auth-status-todo/none
