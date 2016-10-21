@@ -92,4 +92,10 @@ lizardfs automount running.
    to either access it from the command line or if you want to use the finder,
    press Shift + Command + G and enter the fodler path there manualy.
 
+.. seealso::
+   * http://useyourloaf.com/blog/using-the-mac-os-x-automounter/
+   * https://www.igeeksblog.com/how-to-disable-system-integrity-protection-on-mac/
+   *
+
+
 
