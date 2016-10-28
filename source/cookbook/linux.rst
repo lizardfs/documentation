@@ -77,7 +77,7 @@ URAFT Cookbook
 ==============
 
 The HA system utilised by LizardFS to keep your master servers always alive is
-called uraft. It has been developed by Sky Technology Sp. z o.o. and is based
+called uraft. It has been developed by Sky Technologies Sp. z o.o. and is based
 on the :ref:`raft` algorithm developed by Diego Ongaro and John Ousterhout.
 
 HA with only 2 masters
