@@ -88,7 +88,7 @@ Release Cycles
 Stable Releases: 6 months
 
 For commerical customers Long Term Support releases are available from Sky
-Technology Sp. z o.o.
+Technologies Sp. z o.o.
 
 
 
