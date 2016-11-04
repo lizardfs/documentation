@@ -85,7 +85,7 @@ for RHEL 7 and CentOS 7::
    # curl http://packages.lizardfs.com/yum/el7/lizardfs.repo > /etc/yum.repos.d/lizardfs.repo
    # yum update
 
-To get libjuly which is used by parts of LizardFS, install the epel repository for RHEL 7::
+To get libjudy which is used by parts of LizardFS, install the epel repository for RHEL 7::
 
    yum install epel-release
 
