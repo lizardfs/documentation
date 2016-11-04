@@ -67,9 +67,9 @@ invention of writing, but YMMV ;)
 To build with your installed gcc6 you will need to set the following variables
 in your environment before invoking :ref:`cmake`::
 
-  export CC=/usr/local/gcc6
-  export CXX=/usr/local/g++-6
-  export CPP=/usr/local/gcc6
+  export CC=/usr/local/bin/gcc6
+  export CXX=/usr/local/bin/g++-6
+  export CPP=/usr/local/bin/gcc6
 
 homebrew is also the perfect place to get git and additions to git and gerrit.
 
