@@ -97,7 +97,7 @@ All that is required to switch a node to "non master" mode is setting::
 
 in the lizardfs-uraft.cfg file. Everything else must be setup like it would
 be a normale lizardfs-master with uraft node except that the master will never
-be put into a real **master* role.
+be put into a real **master** role.
 
 
 
