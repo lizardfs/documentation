@@ -107,7 +107,10 @@ ZFS on Linux
 ============
 
 :ref:`zfs` is a high performance 128 bit filesystem developed by SUN
-Microsystems. We wil show you here the basics how to install it on Linux. For specifics how to finetune, optimize and manage zfs, please consult the links in the seealso part at the end of the ZFS articles. On Linux we use the Open-ZFS way and do not use FUSE to get maximum performance.
+Microsystems. We wil show you here the basics how to install it on Linux. For
+specifics how to finetune, optimize and manage zfs, please consult the links
+in the seealso part at the end of the ZFS articles. On Linux we use the
+Open-ZFS way and do not use FUSE to get maximum performance.
 
 Installing ZFS on RHEL/Centos 7
 ===============================
