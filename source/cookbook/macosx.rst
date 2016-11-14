@@ -71,7 +71,7 @@ following contents for the directory you want to mount::
 
 example::
 
-  /mnt/lizardfs -fstype=mfs,rw,big_writes,mfsmaster=192.168.66.112,mfsport=9421 " "
+  /mnt/lizardfs -fstype=lizardfs,rw,big_writes,mfsmaster=192.168.66.112,mfsport=9421 " "
 
 This will automount /mnt/lizardfs from master 192.168.66.112 port 9421
 
