@@ -198,6 +198,7 @@ the only fields essential for uraft are::
 
    PERSONALITY = ha-cluster-managed
    ADMIN_PASSWORD = your-lizardfs-password
+   MASTER_HOST = the floating ip so that the participating hosts know where to sync the metadatabase from
 
 For a fresh installation, execute the standard steps for the lizardfs-master
 (creating mfsexports file, empty metadata file etc.). Do not start the
