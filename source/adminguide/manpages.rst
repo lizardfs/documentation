@@ -75,6 +75,7 @@ Contents:
    :caption: Clients
 
    ../man/mfsmount.1.rst
+   ../man/mfsmount.cfg.5.rst
 
 .. toctree::
    :maxdepth: 2
