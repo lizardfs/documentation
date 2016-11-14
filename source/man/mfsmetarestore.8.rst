@@ -48,7 +48,7 @@ Prints 0 if metadata files are corrupted.
 
 -v
   print version information and exit
--\?
+-?
   print version information and exit
 -a
   autorestore mode (see above)

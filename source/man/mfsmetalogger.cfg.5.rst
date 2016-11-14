@@ -19,8 +19,7 @@ SYNTAX
 
 ::
 
-
-OPTION = VALUE
+  OPTION = VALUE
 
 Lines starting with the *#* character are ignored.
 
