@@ -12,7 +12,6 @@ Some basic rules first:
 * The Chunk server works best with at least one dedicated disk.
 * Do not put a metalogger on the same machine as the master server, it doesn't
   make your metadata any safer. Metaloggers are completely optional, though ;)
-
   It is fine, however, to install a metalogger along with a chunk server
 * Increase your data safety by using shadow master servers
 
@@ -416,7 +415,7 @@ Your shadowmaster is configured in nearly the same way as your Master. Since
 it is supposed to take over the functionality of the Master in case of a
 failure of the Master, it has to keep its metadatabase in sync and besides that have all the configurations of the masterserver mirrored.
 
-Settings for the Shadowmaster:
+Settings specific to the Shadowmaster:
 
 In the mfsmaster.cfg file::
 
