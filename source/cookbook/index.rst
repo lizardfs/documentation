@@ -25,5 +25,6 @@ Contents:
    freebsd
    macosx
    illumos
+   hypervisors
    georeplication
 
