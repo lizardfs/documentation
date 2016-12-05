@@ -29,5 +29,5 @@ Contents:
    versioning
    bughunt
    documentation
-   ressources
+   ../ressources
 
