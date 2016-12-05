@@ -45,7 +45,7 @@ will mount with fuse option: big_writes and default system mount options:
 nosuid, nodev and noatime.
 
 You can now store your files on your brand new installation.
-See man *mfsmount* or *mfsmount -h* for more advanced mount options.
+
 See :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` manpage for more options
 
 
