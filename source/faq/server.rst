@@ -1,5 +1,5 @@
 ******************
-Server related FAQ
+Server related
 ******************
 .. auth-status-writing/none
 
@@ -14,9 +14,25 @@ Server related FAQ
    Start the master and your cluster will be clear, all remaining chunks will
    be deleted.
 
+**How do I create a full backup of all my metadata (in case of recreating a master etc...)**
+   Copy your data directory somewhere safe (default path: /var/lib/mfs).
+
+   Files you should be interested in keeping are primarily:
+
+   * **metadata.mfs** - your metadata set in binary form. This file is updated
+     hourly + on master server shutdown. You can also trigger a metadata dump
+     with lizardfs-admin save-metadata HOST PORT, but an admin password needs
+     to be set in the mfsmater.cfg first.
+
+   * **sessions.mfs** - additional information on user sessions.
+
+   * **changelog\*.mfs** - changes to metadata that weren't dumped to
+     metadata.mfs yet.
+
+
 .. not completely ready yet ....
 
-    **What is the format of the chunk names on the chunkservers ?**
+   **What is the format of the chunk names on the chunkservers ?**
    The format for the chunkservers is hardcoded in the files::
 
      src/chunkserver/chunk_filename_parser.h
@@ -36,7 +52,8 @@ Server related FAQ
 
    * 00: unique chunk folder id in a disk, can have duplicates across disks or
      chunkservers.
-     IDs range from "00" to "FF" in Hex number. So there are max 256 chunks folders in a disk.
+     IDs range from "00" to "FF" in Hex number. So there are max 256 chunks
+     folders in a disk.
 
    * chunk_0000000000: prefix? placeholder? I don't know.
 

@@ -26,6 +26,8 @@ General Questions
 **Is there support for different network bandwidth in one lizardFS deployment?**
   Yes. You can have different chunkservers having different bandwidth.
 
+  As for different bw per client, check out: :ref:`lizardfs_qos` .
+
 **Is there support for different RAM amount in one lizardFS deployment?**
   Yes. Different chunkservers can have different amounts of RAM.
 
