@@ -25,6 +25,10 @@ command). It's atomic in respect to each 'SOURCE' argument separately. If
 'DESTINATION' points to an already existing file, an error will be reported
 unless *-f* (force) or it's alias *-o* (overwrite) option is given.
 
+The new object exists only in metadata until changes to the data are done
+which will trigger creation of chunks for the changed files or removing
+metadata entries for erased chunks, unless the trash feature is utilized.
+
 NOTE: if 'SOURCE' is a directory, it's copied as a whole; but if it's followed
 by a trailing slash, only the directory content is copied.
 
