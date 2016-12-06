@@ -47,3 +47,8 @@ compile_commands.json
 /debian/lizardfs-master/
 /debian/lizardfs-metalogger/
 /debian/tmp/
+
+# sublime projects and workspaces #
+i###################################
+*.sublime-project
+*.sublime-workspace
