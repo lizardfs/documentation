@@ -46,7 +46,9 @@ nosuid, nodev and noatime.
 
 You can now store your files on your brand new installation.
 
-See :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` manpage for more options
+See the :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` manpage for more options
+
+See :ref:`fuse` to find out more about the fuse library.
 
 
 Windows™ client
