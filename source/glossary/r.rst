@@ -44,9 +44,10 @@ series of commands and thus produces the same series of results and arrives at
 the same series of states.
 
 
-.. seealso:
+.. seealso::
 
    * `The Raft Consensus Algorithm <https://raft.github.io/>`_
+      Contains a nice visualisatio of how the election process works.
 
 
 .. _rpm:
