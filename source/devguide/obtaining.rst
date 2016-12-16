@@ -29,7 +29,7 @@ the directions outlined below.
 
    inside the build directory. Useful options include
    -DCMAKE_INSTALL_PREFIX, -DCMAKE_BUILD_TYPE as well as various
-   LizardFS-specific -DENABLE_... options. Options are listed when
+   LizardFS-specific "-DENABLE_<something_or_other>" options. Options are listed when
    cmake is ran and can be changed by re-running cmake::
 
     cd build
