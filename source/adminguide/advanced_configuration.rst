@@ -176,9 +176,13 @@ Deploying LizardFS as a HA Cluster
 LizardFS can be run as a high-availability cluster on several nodes. When
 working in HA mode, a dedicated daemon watches the status of the metadata
 servers and performs a failover whenever it detects a master server crashed
-(e.g. due to power outage). Running LizardFS installation as a HA-cluster
+(e.g. due to power outage). The state of the available participating servers
+is constantly monitored via a lightweight protocol doing a 'heartbeat' like
+check on the other nodes. Running LizardFS installation as a HA-cluster
 significantly increases its availability. Since uRaft uses :ref:`quorum` a
-reasonable minimum of metadata servers in a HA installation is at least 3.
+reasonable minimum of metadata servers in a HA installation is at least 3, to
+make sure that a proper election with a 'majority' of voices can be done. For
+details on the underlying algorythm, check :ref:`raft` in the glossary.
 
 In order to deploy LizardFS as a high-availability cluster, follow the steps
 below.
