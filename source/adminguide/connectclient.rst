@@ -73,4 +73,63 @@ Figure 2: main view of LizardFS Windows™ client
 
 Figure 3: My Computer view after mounting LizardFS client
 
+Windows™ service
+================
+
+The Windows™ Client can also be run as a Windows™ Service. This is provided by
+the **LizardSControler** command.
+
+Basic configuration
+-------------------
+
+Minimal configuration::
+
+  LizardSControler -p -lic-file <LICENSE_FILE> -H <ADDRESS_OF_MASTER>
+
+where LICENSE_FILE should be the name of the file containing a valid License
+and ADDRESS_OF_MASTER should be the hostname or IP address of the LizardFS
+master server.
+
+Further configuration options
+-----------------------------
+
+(Must follow the -p command)
+
+======================= =======================================================
+Command                 Description
+======================= =======================================================
+-H HOST                 set master server host address.
+-P PORT                 set master server port. Default 9421.
+-D DRIVE                set <DRIVE> as a mount point i.e. \D:\. Default L:
+-f SUBFOLDER            mount only given LizardFS subfolder
+-uid UID                set new UID. Default is 1000.
+-gid GID                set new GID. Default is 1000.
+-umask UMASK            set new UMASK. Default is 000.
+-pass PASS              authenticate to LizardFS master using MD5 password.
+-lic LICENSE            set new LICENSE.
+-lic-file LICENSE_FILE  load new LICENSE from LICENSE_FILE.
+======================= =======================================================
+
+Installation and runtime
+------------------------
+
+After you have done the configration, you can add the service to your Windows
+system by running::
+
+  LizardSControler -i
+
+and start it by running::
+
+  LizardSControler -s
+
+If you would like to uninstall the service again, just run::
+
+  LizardSControler -u
+
+A full list of options can be displayed using::
+
+  LizardSControler -help
+
+
+
 
