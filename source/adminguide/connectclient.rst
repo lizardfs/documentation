@@ -8,6 +8,8 @@ Connecting Clients to your LizardFS installation
 The most exciting part of this tutorial - you will finally be able to store
 files on your installation!
 
+.. _ixclient:
+
 Linux / \*NIX / \*BSD / MacOS/X client
 ======================================
 
@@ -50,6 +52,24 @@ See the :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` manpage for more options
 
 See :ref:`fuse` to find out more about the fuse library.
 
+.. _wintune:
+
+Windows™ System Settings for LizardFS clients
+=============================================
+
+Recommended tuning for Windows™ Clients:
+
+* Make sure your Power Options are set to "High Performance".
+* Increase the number of Transfer and Receive Buffers in the configuration
+  of your network interface
+* Increase the number of Queues available in your network interface setting
+* If at all possible set all network devices in your network to use Jumbo
+  Frames.
+
+The precise number for your respective host / NIC will be different in every
+setup, but they for sure will be far higher than the default settings.
+
+.. _winclient:
 
 Windows™ client
 ===============
@@ -71,7 +91,27 @@ It should look like in the following image:
 Figure 2: main view of LizardFS Windows™ client
 
 
-Figure 3: My Computer view after mounting LizardFS client
+.. _wincliclient:
+
+Windows™ CLI Client
+===================
+
+Together with the GUI client the installation package adds a CLI client to
+your Windows™ system. It is located in::
+
+  C:\Program Files\LizardFS\lizardfscli.exe
+
+Options are:
+
+-H
+  The address of the Master
+-P
+  The port to use at the Master
+-D
+  The drive letter to use for the mounted FS
+
+
+.. _winservclient:
 
 Windows™ service
 ================
@@ -125,6 +165,10 @@ and start it by running::
 If you would like to uninstall the service again, just run::
 
   LizardSControler -u
+
+To terminate the service, run::
+
+  LizardSControler -t
 
 A full list of options can be displayed using::
 
