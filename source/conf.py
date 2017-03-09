@@ -311,7 +311,7 @@ man_pages = [
 
 # If true, show URL addresses after external links.
 #
-# man_show_urls = False
+man_show_urls = True
 
 
 # -- Options for Texinfo output -------------------------------------------
@@ -366,12 +366,12 @@ epub_copyright = copyright
 # epub_language = ''
 
 # The scheme of the identifier. Typical schemes are ISBN or URL.
-# epub_scheme = ''
+epub_scheme = 'URL'
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
 #
-# epub_identifier = ''
+epub_identifier = 'http://docs.lizardfs.com'
 
 # A unique identification for the text.
 #
@@ -420,8 +420,8 @@ epub_exclude_files = ['search.html']
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #
-# epub_show_urls = 'inline'
+epub_show_urls = 'inline'
 
 # If false, no index is generated.
 #
-# epub_use_index = True
+epub_use_index = True
