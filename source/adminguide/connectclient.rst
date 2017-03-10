@@ -39,12 +39,31 @@ That's it.
 
 On most systems adding big_writes to the options will significantly increase
 your throughput since it will force the fuse libraray to use writes > 4k.
+
 Example::
 
   $ mfsmount -o big_writes,nosuid,nodev,noatime /mnt/lizardfs
 
 will mount with fuse option: big_writes and default system mount options:
-nosuid, nodev and noatime.
+nosuid, nodev and noatime.a
+
+If you want to make use of the read ahead caching feature which will sig-
+nificantly improve your read performance, you will require to configure 
+the following options::
+
+  -o cacheexpirationtime=MSEC      set timeout for read cache entries to be considered valid in milliseconds (0 disables cache) (default: 0)
+  -o readaheadmaxwindowsize=KB     set max value of readahead window per single descriptor in kibibytes (default:
+
+Example::
+
+  mfsmount -o cacheexpirationtime=500 -o readaheadmaxwindowsize=4096 mountpoint/
+
+Reasonable values::
+
+* cacheexpirationtime - depends on latency, 500 should be alright for most installations. Higher values = data will be kept in cache longer, but it will also occupy more RAM.
+* readaheadmaxwindowsize - depends on latency and cacheexpirationtime, 1024-8192 are usually fine. Higher values = bigger portions of data asked in single request.
+
+readaheadmaxwindowsize can be adjusted to the installation - starting with 1024 and increasing it until tests show no performance gain is a good idea.
 
 You can now store your files on your brand new installation.
 
