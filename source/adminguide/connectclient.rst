@@ -38,7 +38,7 @@ mfsmount.cfg if any::
 That's it. Simple, straight and easy.a
 
 Optional settings for performance on \*NIX
------------------------------------------
+------------------------------------------
 
 **big_wites**
 
