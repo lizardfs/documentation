@@ -62,7 +62,7 @@ LizardFS options
    local address to use for connecting with master instead of default one
 -S <PATH>, -o mfssubfolder=<PATH>
    mount specified LizardFS directory (default is /, i.e. whole filesystem)
--o enablefilelocks=[0,1]::
+-o enablefilelocks=[0,1]
    enables/disables global file locking (disabled by default)
 -o mfspassword=<PASSWORD>
    authenticate to LizardFS master with <PASSWORD>
@@ -125,33 +125,28 @@ LizardFS options
 -o mfschunkservertotalreadto='MSEC'
   set timeout for the whole communication with chunkservers during a read o
   operation in milliseconds (default: 2000)
-
 -o mfsrlimitnofile='N'
   try to change limit of simultaneously opened file descriptors on startup
   (default: 100000)
-
 -o mfsnice='LEVEL'
   try to change nice level to specified value on startup (default: -19)
-
 -o mfswriteworkers='N'
   define number of write workers (default: 10)
-
 -o mfswritewindowsize='N'
   define write window size (in blocks) for each chunk (default: 15)
-
+-o cacheexpirationtime=MSEC 
+  set timeout for read cache entries to be considered valid in milliseconds (0 disables cache) (default: 0)
+-o readaheadmaxwindowsize=KB
+  set max value of readahead window per single descriptor in kibibytes (default:
 -o mfsmemlock
   try to lock memory (must be enabled at build time)
-
 -o mfsdonotrememberpassword
   do not remember password in memory - more secure, but when session is lost
   then new session is created without password
-
 -o mfsioretries='N'
   specify number of retries before I/O error is returned (default: 30)
-
 -o mfsreportreservedperiod='N'
   specify interval of reporting reserved inodes in seconds (default: 60)
-
 -o mfsiolimits='PATH'
   specify local I/O limiting configuration file (default: no I/O limiting)
 
