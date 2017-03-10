@@ -1,12 +1,12 @@
 ***
  P
 ***
-.. auth-status-todo/none
+.. auth-status-writing/none
 
 .. _pandoc:
 
-SAN/Storage Area Network
-========================
+Pandoc
+======
 
 .. container:: auth-status-writing
 
@@ -42,5 +42,3 @@ SAN/Storage Area Network
    Pandoc home page
      http://pandoc.org/
    
-
-
