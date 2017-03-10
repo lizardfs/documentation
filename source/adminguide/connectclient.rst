@@ -37,10 +37,10 @@ mfsmount.cfg if any::
 
 That's it. Simple, straight and easy.a
 
-Optional settings for performance on *NIX
+Optional settings for performance on \*NIX
 -----------------------------------------
 
-*big_wites*
+**big_wites**
 
 On most systems adding big_writes to the options will significantly increase
 your throughput since it will force the fuse libraray to use writes > 4k.
@@ -52,7 +52,7 @@ Example::
 will mount with fuse option: big_writes and default system mount options:
 nosuid, nodev and noatime.
 
-*Read ahead cache*
+**Read ahead cache**
 
 If you want to make use of the read ahead caching feature which will sig-
 nificantly improve your read performance, you will require to configure 
