@@ -38,7 +38,7 @@ mfsmount.cfg if any::
 That's it. Simple, straight and easy.a
 
 Optional settings for performance on *NIX
-+++++++++++++++++++++++++++++++++++++++++
+-----------------------------------------
 
 *big_wites*
 
@@ -78,10 +78,15 @@ See the :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` manpage for more options
 
 See :ref:`fuse` to find out more about the fuse library.
 
-.. _wintune:
+.. _winclient:
 
-Windows™ System Settings for LizardFS clients
-=============================================
+Windows™ 
+========
+
+.. _winsettings:
+
+System Settings for LizardFS clients
+------------------------------------
 
 Recommended tuning for Windows™ Clients:
 
@@ -95,10 +100,10 @@ Recommended tuning for Windows™ Clients:
 The precise number for your respective host / NIC will be different in every
 setup, but they for sure will be far higher than the default settings.
 
-.. _winclient:
+.. _winguiclient:
 
-Windows™ client
-===============
+Windows™ GUI client
+-------------------
 
 Install our client from exe package provided
 
@@ -120,7 +125,7 @@ Figure 2: main view of LizardFS Windows™ client
 .. _wincliclient:
 
 Windows™ CLI Client
-===================
+-------------------
 
 Together with the GUI client the installation package adds a CLI client to
 your Windows™ system. It is located in::
@@ -140,13 +145,13 @@ Options are:
 .. _winservclient:
 
 Windows™ service
-================
+----------------
 
 The Windows™ Client can also be run as a Windows™ Service. This is provided by
 the **LizardSControler** command.
 
 Basic configuration
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 Minimal configuration::
 
@@ -157,7 +162,7 @@ and ADDRESS_OF_MASTER should be the hostname or IP address of the LizardFS
 master server.
 
 Further configuration options
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (Must follow the -p command)
 
@@ -177,7 +182,7 @@ Command                 Description
 ======================= =======================================================
 
 Installation and runtime
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 After you have done the configration, you can add the service to your Windows
 system by running::
@@ -199,7 +204,6 @@ To terminate the service, run::
 A full list of options can be displayed using::
 
   LizardSControler -help
-
 
 
 
