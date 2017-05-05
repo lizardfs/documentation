@@ -29,6 +29,15 @@ Server related
    * **changelog\*.mfs** - changes to metadata that weren't dumped to
      metadata.mfs yet.
 
+**How do I speed up/slow down the main chunk loop execution during which chunks are checked if they need replication/deletion/rebalance/etc**
+  Adjust the following settings in the master server configuration file::
+
+       CHUNKS_LOOP_PERIOD
+           Time in milliseconds between chunks loop execution (default is 1000).
+
+       CHUNKS_LOOP_MAX_CPU
+           Hard limit on CPU usage by chunks loop (percentage value, default is 60).
+
 
 .. not completely ready yet ....
 

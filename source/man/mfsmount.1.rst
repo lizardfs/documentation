@@ -134,10 +134,12 @@ LizardFS options
   define number of write workers (default: 10)
 -o mfswritewindowsize='N'
   define write window size (in blocks) for each chunk (default: 15)
--o cacheexpirationtime=MSEC 
-  set timeout for read cache entries to be considered valid in milliseconds (0 disables cache) (default: 0)
+-o cacheexpirationtime=MSEC
+  set timeout for read cache entries to be considered valid in milliseconds
+  (0 disables cache) (default: 0)
 -o readaheadmaxwindowsize=KB
-  set max value of readahead window per single descriptor in kibibytes (default:
+  set max value of readahead window per single descriptor in kibibytes
+  (default: 0)
 -o mfsmemlock
   try to lock memory (must be enabled at build time)
 -o mfsdonotrememberpassword

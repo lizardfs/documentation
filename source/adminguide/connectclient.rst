@@ -40,7 +40,7 @@ That's it. Simple, straight and easy.a
 Optional settings for performance on \*NIX
 ------------------------------------------
 
-**big_wites**
+**big_writes**
 
 On most systems adding big_writes to the options will significantly increase
 your throughput since it will force the fuse libraray to use writes > 4k.
@@ -55,7 +55,7 @@ nosuid, nodev and noatime.
 **Read ahead cache**
 
 If you want to make use of the read ahead caching feature which will sig-
-nificantly improve your read performance, you will require to configure 
+nificantly improve your read performance, you will require to configure
 the following options::
 
   -o cacheexpirationtime=MSEC      set timeout for read cache entries to be considered valid in milliseconds (0 disables cache) (default: 0)
@@ -70,7 +70,8 @@ Reasonable values::
 * cacheexpirationtime - depends on latency, 500 should be alright for most installations. Higher values = data will be kept in cache longer, but it will also occupy more RAM.
 * readaheadmaxwindowsize - depends on latency and cacheexpirationtime, 1024-8192 are usually fine. Higher values = bigger portions of data asked in single request.
 
-readaheadmaxwindowsize can be adjusted to the installation - starting with 1024 and increasing it until tests show no performance gain is a good idea.
+readaheadmaxwindowsize can be adjusted to the installation - starting with
+1024 and increasing it until tests show no performance gain is a good idea.
 
 You can now store your files on your brand new installation.
 
@@ -80,7 +81,7 @@ See :ref:`fuse` to find out more about the fuse library.
 
 .. _winclient:
 
-Windows™ 
+Windows™
 ========
 
 .. _winsettings:
