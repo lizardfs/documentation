@@ -45,6 +45,20 @@ iolimits-status <master ip> <master port>
 list-chunkservers <master ip> <master port>
   Prints information about all connected chunkservers.
 
+list-defective-files <master ip> <master port>
+  Prints out paths of files which have unavailable or undergoal chunks
+
+  Possible command-line options:
+
+  --unavailable
+    Print unavailable files
+
+  --undergoal
+    Print files with undergoal chunks
+
+  --limit
+    Limit maximum number of printed files
+
 list-disks <master ip> <master port>
   Prints information about all connected chunkservers.
 
