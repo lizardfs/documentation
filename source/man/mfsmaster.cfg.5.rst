@@ -260,6 +260,12 @@ MASTER_RECONNECTION_DELAY
 MASTER_TIMEOUT
   timeout (in seconds) for metadata server connections (default is 60)
 
+LOAD_FACTOR_PENALTY
+  When set, percentage of load will be added to a chunkserver disk usage
+  while determining the most fitting chunkserver. Heavy loaded chunkservers
+  will be picked for operations less frequently.
+  (default is 0, correct values are in the range of 0 to 0.5)
+
 .. note:: Chunks in master are tested in loop. Speed (or frequency) is
    regulated by the two options *CHUNKS_LOOP_MIN_TIME* and
    *CHUNKS_LOOP_MAX_CPS*. The first one defines the minimal time of the loop
