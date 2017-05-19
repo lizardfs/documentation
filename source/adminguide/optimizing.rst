@@ -1,7 +1,7 @@
 .. _dummy_optimizing:
 
-****************
-Dummy-Optimizing
-****************
+******************************
+Optimizing your LizardFS setup
+******************************
 .. auth-status-todo/none
 

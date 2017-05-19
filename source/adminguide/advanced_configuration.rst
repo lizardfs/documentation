@@ -5,6 +5,29 @@ Advanced configuration
 **********************
 .. auth-status-proof1/none
 
+.. _chunk_load_awareness::
+
+Configuring chunkserver load awareness
+======================================
+
+In a default setup, your chunks will be tried to be evenly distributed
+according to goals and ec configurations among the chunkservers within a
+defined label group (check here :ref:`labeling_chunkserver` for labels). While
+this is the perfect setting for most cases, in some cases, for example if your
+chunkservers are doing other, non lizardFS related workloads, you will want to
+have the distribution be also based on the amount of I/O load each chunkserver
+is handling in a given moment.
+
+This functionality can be achieved by setting the ::
+
+  ENABLE_LOAD_FACTOR
+
+setting in the chunkserver's mfschunkserver.cfg configuration file. By default
+this is disabled and the setting is a per chunkserver setting.
+
+Additionaly it is possible to define a **penalty** configuration option in the
+master configuration file (The setting for this is **LOAD_FACTOR_PENALTY**),
+if he is found to be under heavy I/O load.
 
 .. _rack_awareness:
 
