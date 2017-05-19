@@ -98,6 +98,11 @@ HDD_PUNCH_HOLES
   only on Linux and only with file systems supporting punching holes (XFS,
   ext4, Btrfs, tmpfs)
 
+ENABLE_LOAD_FACTOR
+ if enabled, the chunkserver will send periodical reports of its I/O load
+ to the master, which will be taken into consideration when selecting
+ chunkservers for I/O operations.
+
 REPLICATION_BANDWIDTH_LIMIT_KBPS
   limit how many kilobytes can be replicated from other chunkservers to this
   chunkserver in every second (by default undefined, i.e. no limits)
