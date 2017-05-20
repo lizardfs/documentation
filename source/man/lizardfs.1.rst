@@ -38,6 +38,7 @@ SYNOPSIS
  lizardfs filerepair [-n|-h|-H] 'FILE'...
  lizardfs appendchunks 'SNAPSHOT_FILE' 'OBJECT'...
  lizardfs makesnapshot [-o] 'SOURCE'... 'DESTINATION'
+ lizardfs rremove [-l] 'OBJECT'...
 
 DESCRIPTION
 ===========
@@ -114,4 +115,4 @@ lizardfs-filerepair(1), lizardfs-geteattr(1), lizardfs-getgoal(1),
 lizardfs-gettrashtime(1), lizardfs-makesnapshot(1), lizardfs-rgetgoal(1),
 lizardfs-rgettrashtime(1), lizardfs-rsetgoal(1), lizardfs-rsettrashtime(1),
 lizardfs-seteattr(1), lizardfs-setgoal(1), lizardfs-settrashtime(1),
-lizardfs-repquota(1), lizardfs-setquota(1), lizardfs(7)
+lizardfs-rremove(1), lizardfs-repquota(1), lizardfs-setquota(1), lizardfs(7)

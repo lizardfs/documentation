@@ -1,0 +1,50 @@
+.. _lizardfs_rremove.1:
+
+*******************
+lizardfs-rremove(1)
+*******************
+
+NAME
+====
+
+lizardfs-rremove - remove recursively
+
+SYNOPSIS
+========
+
+::
+
+  lizardfs-rremove* [*-l*] 'OBJECT'...
+
+DESCRIPTION
+===========
+
+*rremove* deletes object(s) recursively. This tool can be used on either files
+or directories.
+
+OPTIONS
+=======
+
+-l
+  This option disables the timeout set for this operation. (the default
+  timeout is 60 seconds)
+
+COPYRIGHT
+==========
+Copyright 2016-2017 Skytechnology sp. z o.o.
+
+LizardFS is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, version 3.
+
+LizardFS is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+LizardFS. If not, see <http://www.gnu.org/licenses/>.
+
+SEE ALSO
+========
+
+lizardfs(1)

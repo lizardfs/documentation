@@ -37,6 +37,7 @@ Contents:
    ../man/lizardfs-gettrashtime.1.rst
    ../man/lizardfs-makesnapshot.1.rst
    ../man/lizardfs-repquota.1.rst
+   ../man/lizardfs-rremove.1.rst
    ../man/lizardfs.1.rst
 
 .. toctree::
