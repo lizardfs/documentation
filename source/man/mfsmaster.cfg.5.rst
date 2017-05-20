@@ -243,6 +243,13 @@ BDB_NAME_STORAGE_CACHE_SIZE
   Size of memory cache (in MB) for file/directory names used by Berkeley DB
   storage. (default is 10)
 
+FILE_TEST_LOOP_MIN_TIME
+  The test files loop will try to check all files within the specified time
+  given in seconds (default is 300).
+  It is possible for the loop to take more time if the master server is busy
+  or the machine doesn't have enough processing power to make all the needed
+  calculations.
+
 Options below are mandatory for all Shadow instances:
 
 MASTER_HOST
