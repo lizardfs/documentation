@@ -32,6 +32,11 @@ found on the chunkservers.
 OPTIONS
 =======
 
+-c
+  This option enables correct-only mode, which will restore chunk to a
+  previous version if possible, but will never erase any data.
+
+
 -n, -h, -H
   These options are described in lizardfs(1).
 
