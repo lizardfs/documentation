@@ -14,7 +14,7 @@ SYNOPSIS
 
 ::
 
-  lizardfs makesnapshot [-o] [-f] 'SOURCE'... 'DESTINATION'
+  lizardfs makesnapshot [-o] [-f] [-i] [-s <VALUE>] 'SOURCE'... 'DESTINATION'
 
 DESCRIPTION
 ===========
@@ -31,6 +31,15 @@ metadata entries for erased chunks, unless the trash feature is utilized.
 
 NOTE: if 'SOURCE' is a directory, it's copied as a whole; but if it's followed
 by a trailing slash, only the directory content is copied.
+
+OPTIONS
+=======
+
+-s <value>
+  This option is used to specify number of nodes that will be atomically
+  cloned.
+-i
+  ignore missing source nodes in snapshot request
 
 REPORTING BUGS
 ==============

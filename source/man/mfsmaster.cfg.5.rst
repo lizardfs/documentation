@@ -286,6 +286,11 @@ LOAD_FACTOR_PENALTY
   will be picked for operations less frequently.
   (default is 0, correct values are in the range of 0 to 0.5)
 
+SNAPSHOT_INITIAL_BATCH_SIZE
+  This option can be used to specify initial number of snapshotted nodes that
+  will be atomically cloned before enqueuing the task for execution in
+  fixed-sized batches. (default is 1000)
+
 .. note:: Chunks in master are tested in loop. Speed (or frequency) is
    regulated by the two options *CHUNKS_LOOP_MIN_TIME* and
    *CHUNKS_LOOP_MAX_CPS*. The first one defines the minimal time of the loop
