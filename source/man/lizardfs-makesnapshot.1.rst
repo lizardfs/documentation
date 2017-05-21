@@ -36,7 +36,7 @@ OPTIONS
 =======
 
 -s <value>
-  This option is used to specify number of nodes that will be atomically
+  This option is used to specify the number of nodes that will be atomically
   cloned.
 -i
   ignore missing source nodes in snapshot request
@@ -49,7 +49,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology Sp. z o.o.
+Copyright 2008-2009 Gemius SA, 2013-2017 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
