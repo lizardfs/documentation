@@ -5,7 +5,7 @@ Advanced configuration
 **********************
 .. auth-status-proof1/none
 
-.. _chunk_load_awareness::
+.. _chunk_load_awareness:
 
 Configuring chunkserver load awareness
 ======================================
