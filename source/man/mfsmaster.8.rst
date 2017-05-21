@@ -14,7 +14,7 @@ SYNOPSIS
 
 ::
 
-  mfsmaster [-f] [-c CFGFILE] [-u] [-d] [-t LOCKTIMEOUT] [ACTION]
+  mfsmaster [-f] [-c CFGFILE] [-u] [-d] [-t LOCKTIMEOUT] [-p PIDFILE] [ACTION]
   mfsmaster -s [-c CFGFILE]
   mfsmaster -v
   mfsmaster -h
@@ -82,6 +82,8 @@ files.
   run in foreground, don*t daemonize
 -t LOCKTIMEOUT
   how long to wait for lockfile (default is 60 seconds)
+-p PIDFILE
+  write process ID (pid) to given file
 
 ACTION
   is one of *start*, *stop*, *restart*, *reload*, *test*, *isalive* or
