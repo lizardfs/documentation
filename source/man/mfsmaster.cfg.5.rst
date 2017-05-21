@@ -250,6 +250,10 @@ FILE_TEST_LOOP_MIN_TIME
   or the machine doesn't have enough processing power to make all the needed
   calculations.
 
+AVOID_SAME_IP_CHUNKSERVERS
+  When this option is set to 1, process of selecting chunkservers for chunks
+  will try to avoid using those that share the same ip. (default is 0)
+
 Options below are mandatory for all Shadow instances:
 
 MASTER_HOST
