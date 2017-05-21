@@ -254,6 +254,15 @@ AVOID_SAME_IP_CHUNKSERVERS
   When this option is set to 1, process of selecting chunkservers for chunks
   will try to avoid using those that share the same ip. (default is 0)
 
+SNAPSHOT_INITIAL_BATCH_SIZE
+  This option can be used to specify initial number of snapshotted nodes that
+  will be atomically cloned before enqueuing the task for execution in
+  fixed-sized batches. (default is 1000)
+
+SNAPSHOT_INITIAL_BATCH_SIZE_LIMIT
+  This option specifies the maximum initial batch size set for snapshot
+  request. (default is 10000)
+
 Options below are mandatory for all Shadow instances:
 
 MASTER_HOST
