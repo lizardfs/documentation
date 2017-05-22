@@ -14,7 +14,7 @@ SYNOPSIS
 
 ::
 
-  lizardfs-cgiserver [-H 'BIND-HOST'] [-P 'BIND-PORT'] [-R 'ROOT-PATH'] [-v]
+  lizardfs-cgiserver [-p PIDFILEPATH] [-H BIND-HOST] [-P BIND-PORT] [-R ROOT-PATH] [-v]
   lizardfs-cgiserver* -h
 
 DESCRIPTION
@@ -40,6 +40,9 @@ OPTIONS
   local path to use as HTTP document root (default is CGIDIR set up at
   configure time)
 
+-p PIDFILEPATH
+  pidfile path, setting it triggers manual daemonization
+
 -v
   log requests on stderr
 
@@ -62,6 +65,5 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 
 SEE ALSO
 ========
-
 
 lizardfs(1),lizardfs(7)

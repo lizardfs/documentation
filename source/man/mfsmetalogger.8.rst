@@ -14,7 +14,7 @@ SYNOPSIS
 
 ::
 
-  mfsmetalogger [-f] [-c CFGFILE] [-u] [-d] [-t LOCKTIMEOUT] [ACTION]
+  mfsmetalogger [-f] [-c CFGFILE] [-p PIDFILE] [-u] [-d] [-t LOCKTIMEOUT] [ACTION]
   mfsmetalogger -s [-c CFGFILE]
   mfsmetalogger -v
   mfsmetalogger -h
@@ -43,6 +43,8 @@ configuration files.
   run in the foreground, don't daemonize
 -t LOCKTIMEOUT
   how long to wait for lockfile (default is 60 seconds)
+-p PIDFILE
+  write pid to given file
 
 ACTION
   is one of *start*, *stop*, *restart*, *reload*, *test*, *isalive* or *kill*.
@@ -78,7 +80,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology Sp. z o.o.
+Copyright 2008-2009 Gemius SA, 2013-2017 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
