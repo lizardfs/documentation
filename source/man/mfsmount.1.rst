@@ -48,19 +48,19 @@ LizardFS options
 
 -m, --meta, -o mfsmeta
    mount MFSMETA companion filesystem instead of primary LizardFS
--c CFGFILE, -o mfscfgfile=CFGFILE
+-c CFGFILE, -o "mfscfgfile=CFGFILE"
    loads file with additional mount options
 -n
    omit default mount options (-o allow_other,default_permissions)
 -p, -o askpassword
    prompt for password (interactive version of -o mfspassword='PASS')
--H HOST, -o mfsmaster=HOST
+-H HOST, -o mfsmaster\=HOST
    connect with LizardFS master on <HOST> (default is mfsmaster)
--P PORT, -o mfsport=PORT
+-P PORT, -o mfsport\=PORT
    connect with LizardFS master on <PORT> (default is 9421)
--B <HOST>, -o mfsbind=<HOST>
+-B <HOST>, -o mfsbind\=<HOST>
    local address to use for connecting with master instead of default one
--S <PATH>, -o mfssubfolder=<PATH>
+-S <PATH>, -o mfssubfolder\=<PATH>
    mount specified LizardFS directory (default is /, i.e. whole filesystem)
 -o enablefilelocks=[0,1]
    enables/disables global file locking (disabled by default)
@@ -70,106 +70,106 @@ LizardFS options
    authenticate to LizardFS master using directly given <MD5> (only if
    mfspassword option is not specified)
 -o mfsdelayedinit
-  connection with master is done in background - with this option mount can be
-  run without network (good for running from fstab / init scripts etc.)
+   connection with master is done in background - with this option mount can be
+   run without network (good for running from fstab / init scripts etc.)
 -o mfsacl
-  enable ACL support (disabled by default)
+   enable ACL support (disabled by default)
 -o mfsaclcacheto=<SEC>
-  set ACL cache timeout in seconds (default: 1.0)
+   set ACL cache timeout in seconds (default: 1.0)
 -o mfsaclcachesize=<N>
-  define ACL cache size in number of entries (0: no cache; default: 1000)
+   define ACL cache size in number of entries (0: no cache; default: 1000)
 -o mfsrwlock=<0|1>
-  when set to 1, parallel reads from the same descriptor are performed
-  (default: 1)
+   when set to 1, parallel reads from the same descriptor are performed
+   (default: 1)
 -o mfsmkdircopysgid=<N>
-  sgid bit should be copied during mkdir operation (on linux default: 1,
-  otherwise: 0)
+   sgid bit should be copied during mkdir operation (on linux default: 1,
+   otherwise: 0)
 -o mfssugidclearmode=<SMODE>
-  set sugid clear mode (see below)
+   set sugid clear mode (see below)
 -o mfsdebug
-  print some LizardFS-specific debugging information
+   print some LizardFS-specific debugging information
 -o mfscachemode=<CACHEMODE>
-  set cache mode (see DATA CACHE MODES; default is AUTO)
+   set cache mode (see DATA CACHE MODES; default is AUTO)
 -o mfscachefiles
-  (deprecated) preserve file data in cache (equivalent to -o
-  mfscachemode='YES')
+   (deprecated) preserve file data in cache (equivalent to -o
+   mfscachemode='YES')
 -o mfsattrcacheto=<SEC>
-  set attributes cache timeout in seconds (default: 1.0)
+   set attributes cache timeout in seconds (default: 1.0)
 -o mfsentrycacheto=<SEC>
-  set file entry cache timeout in seconds (default: 0.0, i.e. no cache)
+   set file entry cache timeout in seconds (default: 0.0, i.e. no cache)
 -o mfsdirentrycacheto=<SEC>
-  set directory entry cache timeout in seconds (default: 1.0)
+   set directory entry cache timeout in seconds (default: 1.0)
 -o mfswritecachesize=<N>
-  specify write cache size in MiB (in range: 16..2048 - default: 128)
+   specify write cache size in MiB (in range: 16..2048 - default: 128)
 -o mfscacheperinodepercentage=<N>
-  specify what part of the write cache non occupied by other inodes can a
-  single inode occupy (measured in %).
-  E.g. When N=75 and the inode X uses 10 MiB, and all other inodes use 20 MiB
-  out of 100 MiB cache, X can use 50 MiB more (since 75% of 80 MiB is 60 MiB).
-  Default: 25.
+   specify what part of the write cache non occupied by other inodes can a
+   single inode occupy (measured in %).
+   E.g. When N=75 and the inode X uses 10 MiB, and all other inodes use 20 MiB
+   out of 100 MiB cache, X can use 50 MiB more (since 75% of 80 MiB is 60 MiB).
+   Default: 25.
 -o mfschunkserverreadto=<MSEC>
-  set timeout for whole communication with a chunkserver during read operation
-  in milliseconds (default: 2000)
+   set timeout for whole communication with a chunkserver during read operation
+   in milliseconds (default: 2000)
 -o mfschunkserverwriteto=<MSEC>
-  set chunkserver response timeout during write operation in milliseconds
-  (default: 5000)
+   set chunkserver response timeout during write operation in milliseconds
+   (default: 5000)
 -o mfschunkserverrtt=<MSEC>
-  set timeout after which SYN packet is considered lost during the first retry
-  of connecting a chunkserver (default: 200)
+   set timeout after which SYN packet is considered lost during the first retry
+   of connecting a chunkserver (default: 200)
 -o mfschunkserverconnectreadto='MSEC'
-  set timeout for connecting with chunkservers during read operation in
-  milliseconds (default: 2000)
+   set timeout for connecting with chunkservers during read operation in
+   milliseconds (default: 2000)
 -o mfschunkserverwavereadto='MSEC'
-  set timeout for executing each wave of a read operation in milliseconds
-  (default: 500)
+   set timeout for executing each wave of a read operation in milliseconds
+   (default: 500)
 -o mfschunkservertotalreadto='MSEC'
-  set timeout for the whole communication with chunkservers during a read o
-  operation in milliseconds (default: 2000)
+   set timeout for the whole communication with chunkservers during a read o
+   operation in milliseconds (default: 2000)
 -o mfsrlimitnofile='N'
-  try to change limit of simultaneously opened file descriptors on startup
-  (default: 100000)
+   try to change limit of simultaneously opened file descriptors on startup
+   (default: 100000)
 -o mfsnice='LEVEL'
-  try to change nice level to specified value on startup (default: -19)
+   try to change nice level to specified value on startup (default: -19)
 -o mfswriteworkers='N'
-  define number of write workers (default: 10)
+   define number of write workers (default: 10)
 -o mfswritewindowsize='N'
-  define write window size (in blocks) for each chunk (default: 15)
+   define write window size (in blocks) for each chunk (default: 15)
 -o cacheexpirationtime=MSEC
-  set timeout for read cache entries to be considered valid in milliseconds
-  (0 disables cache) (default: 0)
+   set timeout for read cache entries to be considered valid in milliseconds
+   (0 disables cache) (default: 0)
 -o readaheadmaxwindowsize=KB
-  set max value of readahead window per single descriptor in kibibytes
-  (default: 0)
+   set max value of readahead window per single descriptor in kibibytes
+   (default: 0)
 -o mfsmemlock
-  try to lock memory (must be enabled at build time)
+   try to lock memory (must be enabled at build time)
 -o mfsdonotrememberpassword
-  do not remember password in memory - more secure, but when session is lost
-  then new session is created without password
+   do not remember password in memory - more secure, but when session is lost
+   then new session is created without password
 -o mfsioretries='N'
-  specify number of retries before I/O error is returned (default: 30)
+   specify number of retries before I/O error is returned (default: 30)
 -o mfsreportreservedperiod='N'
-  specify interval of reporting reserved inodes in seconds (default: 60)
+   specify interval of reporting reserved inodes in seconds (default: 60)
 -o mfsiolimits='PATH'
-  specify local I/O limiting configuration file (default: no I/O limiting)
+   specify local I/O limiting configuration file (default: no I/O limiting)
 
 General mount options (see mount(8) manual):
 ----------------------------------------------
 
 -o rw, -o ro
-  Mount file-system in read-write (default) or read-only mode respectively.
+   Mount file-system in read-write (default) or read-only mode respectively.
 -o suid, -o nosuid
-  Enable or disable suid/sgid attributes to work.
+   Enable or disable suid/sgid attributes to work.
 -o dev, -o nodev
-  Enable or disable character or block special device files interpretation.
+   Enable or disable character or block special device files interpretation.
 -o exec, -o noexec
-  Allow or disallow execution of binaries.
+   Allow or disallow execution of binaries.
 -o symlinkcachetimeout=<N>
-  Set timeout value for symlink cache timeout in seconds. Default value is
-  3600.
+   Set timeout value for symlink cache timeout in seconds. Default value is
+   3600.
 -o bandwidthoveruse=<N>
-  Define ratio of allowed bandwidth overuse when fetching data. Default value
-  is 1.25. This option is effective only with N+M goals (xors and erasure
-  codes).
+   Define ratio of allowed bandwidth overuse when fetching data. Default value
+   is 1.25. This option is effective only with N+M goals (xors and erasure
+   codes).
 
 DESCRIPTION
 ===========
@@ -256,9 +256,7 @@ A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 LizardFS. If not, see <http://www.gnu.org/licenses/>.
 
-.. only:: man
 SEE ALSO
 ========
 
-:manpage:`mfsmaster(8)`, :manpage:`lizardfs(1)`, :manpage:`lizardfs(7)`, :manpage:`mount(8)`
-
+mfsmaster(8), lizardfs(1), lizardfs(7), mount(8)

@@ -52,9 +52,7 @@ It is also possible to download the source package using::
 
    # apt-get source lizardfs
 
-.. important:
-   Before upgrading any existing LizardFS installation, please read the
-   instructions here: :ref:`upgrading`
+.. important:: Before upgrading any existing LizardFS installation, please read the instructions here: :ref:`upgrading`
 
 LizardFS consists of the following packages:
 
@@ -98,7 +96,7 @@ It is also possible to download the source package (SRPM) using::
    # yum install yum-utils
    # yumdownloader --source lizardfs
 
-..important: Before upgrading any existing LizardFS installation, please read the instructions here: :ref:`upgrading` .
+.. important:: Before upgrading any existing LizardFS installation, please read the instructions here: :ref:`upgrading`
 
 LizardFS consists of following packages:
 

@@ -83,7 +83,7 @@ FILES
 
 mfschunkserver.cfg
   configuration file for LizardFS chunkserver process; refer to
-  *mfschunkserver.cfg*(5) manual for details.
+  *mfschunkserver.cfg(5)* manual for details.
 
 mfshdd.cfg
   list of directories (mountpoints) used for LizardFS storage (one per line;

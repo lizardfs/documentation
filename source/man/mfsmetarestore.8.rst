@@ -15,13 +15,13 @@ SYNOPSIS
 
 ::
 
-  mfsmetarestore [-z] -m 'OLDMETADATAFILE' -o 'NEWMETADATAFILE' ['CHANGELOGFILE'...]
+  mfsmetarestore [-z] -m OLDMETADATAFILE -o NEWMETADATAFILE [CHANGELOGFILE...]
 
-  mfsmetarestore -m 'METADATAFILE'
+  mfsmetarestore -m METADATAFILE
 
-  mfsmetarestore [-z] -a [-d 'DIRECTORY']
+  mfsmetarestore [-z] -a [-d DIRECTORY]
 
-  mfsmetarestore* -g -d 'DIRECTORY'
+  mfsmetarestore* -g -d DIRECTORY
 
   mfsmetarestore -v
 
@@ -31,25 +31,21 @@ DESCRIPTION
 ===========
 
 When *mfsmetarestore* is called with both *-m* and *-o* options, it replays
-given 'CHANGELOGFILEs' on 'OLDMETADATAFILE' and writes result to
-'NEWMETADATAFILE'. Multiple change log files can be given.
+given *CHANGELOGFILEs* on *OLDMETADATAFILE* and writes result to
+*NEWMETADATAFILE*. Multiple change log files can be given.
 
-*mfsmetarestore* with just the *-m* 'METADATAFILE' option dumps LizardFS
+*mfsmetarestore* with just the *-m* *METADATAFILE* option dumps LizardFS
 metadata image file in human readable form.
 
 *mfsmetarestore* called with -a option automatically performs all operations
 needed to merge change log files. The master data directory can be specified
-using -d 'DIRECTORY' option.
+using -d DIRECTORY option.
 
 *mfsmetarestore* -g with path to metadata files, prints the latest metadata
 version that can be restored from disk.
 
 Prints 0 if metadata files are corrupted.
 
--v
-  print version information and exit
--?
-  print version information and exit
 -a
   autorestore mode (see above)
 -d <DATAPATH>
@@ -60,6 +56,8 @@ Prints 0 if metadata files are corrupted.
   specify output metadata image file
 -z
   ignore metadata checksum inconsistency while applying changelogs
+-v,-\?
+  print version information and exit
 
 FILES
 =====
