@@ -28,7 +28,7 @@ each file begins at 'chunk' (64MB) boundary; padding space is left empty.
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2016 Skytechnology sp. z o.o.
+2013-2017 Skytechnology sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
@@ -44,4 +44,4 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-lizardfs(1)
+lizardfs(1),lizardfs(7)
