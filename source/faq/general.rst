@@ -36,6 +36,11 @@ General Questions
   chunkservers on is supported since we make use of the underlying POSIX
   filesystems to store the bits and pieces.
 
+**How are the deletes managed, if there’s a garbage collector?**
+  Deleted files are sent to trash and removed when trashtime expires
+
+**Are the meta data servers are “inside” lizard or “outside”?**
+  Inside
 
 
 
