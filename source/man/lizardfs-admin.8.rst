@@ -120,6 +120,14 @@ save-metadata <metadataserver ip> <metadataserver port>
     --async
       Don't wait for the task to finish.
 
+
+list-tasks <master ip> <master port>
+     Lists tasks which are currently being executed on the master. The
+     returned id's can be used by the stop-task command.
+
+stop-task <master ip> <master port> <task id>
+     Stop execution of the task with the given id
+
 COMMON COMMAND OPTIONS
 ======================
 
@@ -136,7 +144,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-2015-2016 Skytechnology Sp. z o.o.
+2015-2017 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software
