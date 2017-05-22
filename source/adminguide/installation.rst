@@ -52,9 +52,9 @@ It is also possible to download the source package using::
 
    # apt-get source lizardfs
 
-.. important::
+.. important:
    Before upgrading any existing LizardFS installation, please read the
-   instructions here: https://github.com/lizardfs/lizardfs/blob/master/UPGRADE
+   instructions here: :ref:`upgrading`
 
 LizardFS consists of the following packages:
 
