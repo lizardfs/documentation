@@ -120,7 +120,6 @@ save-metadata <metadataserver ip> <metadataserver port>
     --async
       Don't wait for the task to finish.
 
-
 list-tasks <master ip> <master port>
      Lists tasks which are currently being executed on the master. The
      returned id's can be used by the stop-task command.
