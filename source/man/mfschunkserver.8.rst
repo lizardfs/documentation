@@ -1,5 +1,8 @@
+.. _mfschunkserver.8:
+
+*****************
 mfschunkserver(8)
-=================
+*****************
 
 NAME
 ====
@@ -124,4 +127,4 @@ LizardFS. If not, see <http://www.gnu.org/licenses/>.
 SEE ALSO
 ========
 
-mfsmaster(8), mfsmount(1), mfschunkserver.cfg(5), mfshdd.cfg(5), moosefs(7)
+mfsmaster(8), mfsmount(1), mfschunkserver.cfg(5), mfshdd.cfg(5), lizardfs(7)
