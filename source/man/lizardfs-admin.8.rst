@@ -4,7 +4,6 @@
 lizardfs-admin(8)
 *****************
 
-
 NAME
 ====
 
@@ -19,7 +18,6 @@ SYNOPSIS
 
 Available COMMANDs
 ==================
-
 
 chunks-health <master ip> <master port>
   Returns chunks health reports in the installation.
@@ -130,7 +128,6 @@ stop-task <master ip> <master port> <task id>
 COMMON COMMAND OPTIONS
 ======================
 
-
 --porcelain
   Make the output parsing-friendly.
 
@@ -138,7 +135,6 @@ REPORTING BUGS
 ==============
 
 Report bugs to <contact@lizardfs.org>.
-
 
 COPYRIGHT
 =========
