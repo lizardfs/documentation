@@ -38,7 +38,7 @@ High Availability
   LizardFS.
   Based on the :ref:`raft` algorithm, the uRaft service makes sure that all
   masternodes talk to each other and exchange information regarding their
-   health states.
+  health states.
 
   In order to ensure that a master exists, the nodes participate in votes.
   If the current master fails, uRaft moves a floating IP from the formerly
@@ -52,5 +52,5 @@ High Availability
 
    :ref:`raft`
 
-   :ref:`lizardfs_ha_cluster
+   :ref:`lizardfs_ha_clusterr`
 
