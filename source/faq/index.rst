@@ -14,5 +14,5 @@ Contents:
    clients
    platforms
    networking
-
+   ha
 
