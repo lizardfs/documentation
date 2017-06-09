@@ -52,8 +52,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'LizardFS'
-copyright = u'2016, Skytechnology Sp. z o.o. if not explicitly stated differently in respective documents'
+project = u'LizardFS Handbook'
+copyright = u' 2016,2017 by Skytechnology Sp. z o.o.. and is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License except for documents where explicitly stated differently.'
 author = u'Skytechnology Sp. z o.o. and the LizardFS Community'
 
 # The version info for the project you're documenting, acts as replacement for

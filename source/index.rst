@@ -26,6 +26,7 @@ Contents:
    ressources
    support
    references
+   authors
 
 
 Indices and tables
