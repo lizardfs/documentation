@@ -14,7 +14,104 @@ develop on any platform you would like.
 On Linux
 ========
 
+We are trying to standardize on gcc-6 so if you are using a non bleeding edge
+distro, you will need to fiddle a bit.
 
+.. _workspace_centos6:
+
+CentoOS-6 / RHEL-6 / ScientificLinux 6
+--------------------------------------
+
+Luckily the friendly people from CERN have created a complete environment for
+gcc-6 based development for all Enterprise Linuxes so here we go:
+
+Install the following packages:
+
+  For the backports from Fedora (needed or current cmake and buildtools)::
+
+    sudo yum install epel-release
+
+  For gcc6:
+
+    * On RHEL::
+
+        sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
+
+    * On Centos and SL::
+
+        sudo yum install centos-release-scl
+
+    * On all of them::
+
+        sudo yum install cmake zlib-devel fuse-devel Judy-devel asciidoc libtool automake autoconf-2.69 rpm-build rpmlint a2x
+
+        sudo yum install devtoolset-6 devtoolset-6-gcc-c++ devtoolset-6-libstdc++-devel
+
+    * If you want to build the libisal2 stuff yurself, add yasm and nasm to
+      the list::
+
+        sudo yum install yasm nasm
+
+To start working with the freshly installed gcc6 toolset, please enter::
+
+  scl enable devtoolset-6 bash
+
+Additional packages required and not provided by standard repos::
+
+  libisal2, current boost edition, autoconf-2.69.
+
+These dependencies can be obtained from our centos repositories and should
+work on all 3 enterprise repos.
+
+.. _workspace_centos7:
+
+CentoOS-7 / RHEL-7 / SL 7
+-------------------------
+
+As for The 6 series of the enterprise Linuces, the friendly people from CERN created a complete dev env for gcc6 based development. So again:
+
+nstall the following packages:
+
+  For the backports from Fedora (needed or current cmake and buildtools)::
+
+    sudo yum install epel-release
+
+  For gcc6:
+
+    * On RHEL::
+
+        sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
+
+    * On Centos and SL::
+
+        sudo yum install centos-release-scl
+
+    * On all of them::
+
+        sudo yum install cmake zlib-devel fuse-devel Judy-devel asciidoc libtool automake autoconf rpm-build rpmlint a2x boost-devel
+
+        sudo yum install devtoolset-6 devtoolset-6-gcc-c++ devtoolset-6-libstdc++-devel
+
+    * If you want to build the libisal2 stuff yurself, add yasm and nasm to
+      the list::
+
+        sudo yum install yasm nasm
+
+To start working with the freshly installed gcc6 toolset, please enter::
+
+  scl enable devtoolset-6 bash
+
+Additional packages required and not provided by standard repos::
+
+  libisal2
+
+These dependencies can be obtained from our centos repositories and should
+work on all 3 enterprise repos.
+
+.. _workspace_debian:
+
+Debian-8 / Ubuntu >= 16.10
+--------------------------
 
 .. _workspace_mac:
 
@@ -61,8 +158,9 @@ install the sphinx documentation engine::
 As on any other OS we have no preferences for a IDE on MacOS/X. You can use
 Xcode, eclipse, netbeans or whatever else fickle's your fancy.
 
-Our Documentation maintainer uses `Sublime Text 3 <http://www.sublimetext.com/>`_ and swears that it is the best editor since the
-invention of writing, but YMMV ;)
+Our Documentation maintainer uses `Sublime Text 3 <http://www.sublimetext.com/>
+`_ and swears that it is the best editor since the invention of writing, but
+YMMV ;)
 
 To build with your installed gcc6 you will need to set the following variables
 in your environment before invoking :ref:`cmake`::
@@ -73,15 +171,16 @@ in your environment before invoking :ref:`cmake`::
 
 homebrew is also the perfect place to get git and additions to git and gerrit.
 
-Some people had good experiences using `SmartGIT <http://www.syntevo.com/smartgit/>`_ but its not free.
+Some people had good experiences using `SmartGIT <http://www.syntevo.com/smartgit/>`_ but it is not free.
 
 Now you are ready to compile a fully featured LizardFS package on your Mac.
+
+.. _workspace_freebsd:
 
 On FreeBSD
 ==========
 
-.. note:: At the time of the editing of this article, FreeBSD 11 is about to
-   be released so all the instructions are for FreeBSD 11.
+.. note:: All the instructions are for FreeBSD 11.
 
 To create a working development environment on FreeBSD there are a range of
 ports or packages you will need to install::
@@ -92,6 +191,17 @@ ports or packages you will need to install::
   gmake
   cmake
   git
+  judy
+  boost
+
+If you want to make use of the storage extensions for intel platforms by
+intel, please install the
+
+::
+
+  isa-l
+
+package as well.
 
 The packages will install other dependencies required automagically.
 
@@ -99,7 +209,7 @@ For building the manpages and documentation you will require additionaly::
 
   hs-pandoc
   hs-pandoc-types
-  py27-sphinx-1.4.4
+  py-sphinx
 
 For linking to the right gcc version, you should set::
 
@@ -121,6 +231,8 @@ set the following variables in your environment or add them to your .bashrc::
   export SHELL=/usr/local/bin/bash
 
 We also strongly suggest to build LizardFS while working inside bash.
+
+
 
 
 
