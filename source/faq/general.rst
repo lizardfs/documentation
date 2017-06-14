@@ -39,8 +39,24 @@ General Questions
 **How are the deletes managed, if there’s a garbage collector?**
   Deleted files are sent to trash and removed when trashtime expires
 
-**Are the meta data servers are “inside” lizard or “outside”?**
+**Are the meta data servers “inside” lizard or “outside”?**
   Inside
+
+**How do LizarFS chunks get distributed ?**
+
+  The operation is daisy chained. The process actually looks roughly the following way:
+
+    * Client starts writing chunk to the first chunkserver.
+    * As soon as the header and the data part of the first slice of the chunk
+      arrive at the chunkserver it starts writing to the next one if goal >=2.
+    * Same goes for the next chunkserver if goal >=3
+    * As soon as the client has finished writing the chunk, it selects another
+      chunkserver to start the same process for the next chunk, unless you
+      define something else in your topology setup of course.
+
+  This, of course, is only true for replication goals. In EC mode it will be
+  distributed writes from the client to as many chunkservers as defined in the
+  EC goal so nothing of the above would apply.
 
 
 
