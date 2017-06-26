@@ -447,4 +447,9 @@ Create one mountpoint on your host for each VM (especially cool with KVM)
   working like a totaly separate connection and process. This is a workaround
   for the know limitations of the :ref:`fuse` library.
 
+.. _vmware_network:
+
+Best Practice for VMWare Networking
+===================================
+
 

@@ -50,7 +50,7 @@ Syntax of the mfsgoals.cfg file is::
 
 The # character starts comments.
 
-There can be up to 20 replication goals configured, with ids between 1 and 20
+There can be up to 40 replication goals configured, with ids between 1 and 40
 inclusive. Each file stored on the filesystem refers to some goal id and is
 replicated according to the goal currently associated with this id.
 
