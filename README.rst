@@ -1,8 +1,14 @@
-###########################
-lizardfs-new-documentation
-###########################
+#################
+LizardFS Handbook
+#################
 
-A take at a new documentation for the LizardFS project
+Please welcome to the LizardFS Handbook.
+
+This repository is the official source for the handbook which resides at
+http://docs.lizardfs.com/.
+
+The Handbook is a work in progress and you are welcome to join in and work on 
+it with us
 
 Please participate. For help on writing documentation (Tools, Workflows,
 Styleguide) see our Documentation Howto in the developers guide.
