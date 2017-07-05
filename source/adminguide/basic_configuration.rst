@@ -435,13 +435,18 @@ Configuring your Chunkservers
 =============================
 
 Your chunkservers are pretty simple to set up.
-Usualy, if your /etc/hosts files are setup correctly with the address of the master server and you do not require labeling (:ref:`labeling_chunkserver`), the mfschunkserver.cfg file can stay as it is. If you require to lock down the masterserver address, adjust the following line::
+Usualy, if your /etc/hosts files are setup correctly with the address of the
+master server and you do not require labeling (:ref:`labeling_chunkserver`),
+the mfschunkserver.cfg file can stay as it is. If you require to lock down the
+masterserver address, adjust the following line::
 
   MASTER_HOST = 10.0.10.230
 
 to lock down the master server to the 10.0.10.230 address.
 
-Now you need to specify where the chunkserver process will keep the actual data. This is done in the mfshdd.cfg file. You specify directories with their full path, one per line.
+Now you need to specify where the chunkserver process will keep the actual
+data. This is done in the mfshdd.cfg file. You specify directories with their
+full path, one per line.
 
 Example::
 
@@ -451,19 +456,14 @@ Example::
   # use directory '/mnt/hd2', but replicate all data from it:
   */mnt/hd2
 
-  # use directory '/mnt/hd3', but try to leave 5GiB on it:
-  /mnt/hd3 -5GiB
-
-  # use directory '/mnt/hd4', but use only 1.5TiB on it:
-  /mnt/hd4 1.5TiB
-
 The settings always assume that the directory is a dedicated device, so a HDD,
 a Raidset or a SSD and bases it's space calculation on that.
 
 Once this is setup, your chunkserver is ready and actively taking part in your
 lizardfs.
 
-To remove a directory from being used by lizardfs, just add a *\** to the beginning of the line in mfshdd.cfg::
+To remove a directory from being used by lizardfs, just add a *\** to the
+beginning of the line in mfshdd.cfg::
 
   # use directory '/mnt/hd2', but replicate all data from it:
   */mnt/hd2
@@ -479,7 +479,8 @@ Configuring the Metalogger
 The metalogger is used for desaster recovery should the master and
 shadowservers fail. The metadatabase can be rebuild from them. The setup is
 straightforward. You basically do not need to setup anything if your
-/etc/hosts is setup accordingly, otherwise you need to set the following in your mfsmetalogger.cfg file::
+/etc/hosts is setup accordingly, otherwise you need to set the following in
+your mfsmetalogger.cfg file::
 
   MASTER_HOST
   # address of LizardFS master host to connect with (default is mfsmaster)
