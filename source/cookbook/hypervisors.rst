@@ -453,3 +453,48 @@ Best Practice for VMWare Networking
 ===================================
 
 
+.. _proxmox:
+
+Using LizardFS as shared storage for ProxmoxVE
+==============================================
+
+Requirements::
+
+  Proxmox >= 4
+  LizardFS >= 3.10.6
+
+.. note:: This guide assumes you are familiar with proxmox and the Linux commandline and can mount / unmount and work with filesystems on a standard Debian Jessie platform.
+
+Using LizardFS as shared storage with Proxmox is pretty straighforward. There
+are a couple of models in which you can do this.
+
+ProxmoxVE nodes as LizardFS clients
+-----------------------------------
+
+This one is rather easy. Either add the Lizardfs.com repositories or use the
+official lizardFS packages from the debian project and install the
+lizardfs-client package.
+
+Now create multiple shared directories on each node, as described in
+:ref:`virtu_farms`. Now goto datacenter=> storage in your Proxmox GUI and
+select **add**. Select directory and in the popup select one of the
+directories you just mounted. Mark the box for **shared* and your done.
+Perform the same for each mountpoint and than go ahead and place your
+containers and VM's inside.
+
+You can also use those shared directories for your templates and backups to
+have them accessible in parallel from all the nodes.
+
+ProxmoxVE nodes as chunkservers and LizardFS clients
+----------------------------------------------------
+
+
+
+Using ProxmoxVE to manage a combined node with LizardFS chunkservers in lxc containers
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+.. seealso:: https://www.proxmox.com/
