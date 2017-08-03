@@ -165,9 +165,9 @@ YMMV ;)
 To build with your installed gcc6 you will need to set the following variables
 in your environment before invoking :ref:`cmake`::
 
-  export CC=/usr/local/bin/gcc6
+  export CC=/usr/local/bin/gcc-6
   export CXX=/usr/local/bin/g++-6
-  export CPP=/usr/local/bin/gcc6
+  export CPP=/usr/local/bin/gcc-6
 
 homebrew is also the perfect place to get git and additions to git and gerrit.
 
@@ -231,6 +231,9 @@ set the following variables in your environment or add them to your .bashrc::
   export SHELL=/usr/local/bin/bash
 
 We also strongly suggest to build LizardFS while working inside bash.
+
+Make sure your freebsd as well as your packages and ports are always up to
+date.
 
 
 
