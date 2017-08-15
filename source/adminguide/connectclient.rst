@@ -210,28 +210,29 @@ A full list of options can be displayed using::
 New Windows Client with ACL and AD support
 ------------------------------------------
 
-To utilise the ACL and AD support in the new Windows CLient you need to do the following:
+To utilise the ACL and AD support in the new Windows CLient you need to do the
+following:
 
-* Modify zour Active Directory domain controller settings
+* Modify your Active Directory domain controller settings
 
 ** run the following commands in the cmd shell of your Active Directory domain
    controller::
 
   Dism.exe /online /enable-feature /featurename:adminui /all  &REM admintools
-  Dism.exe /online /enable-feature /featurename:nis /all    &REM NIS server
-  Dism.exe /online /enable-feature /featurename:psync /all  &REM syncpasswd tools
-  shutdown /r /f -t 1                                       &REM reboot
+  Dism.exe /online /enable-feature /featurename:nis /all      &REM NIS server
+  Dism.exe /online /enable-feature /featurename:psync /all    &REM syncpasswd tools
+  shutdown /r /f -t 1                                         &REM reboot
 
 ** for users that need access to the LizardFS drive set fsgsf, tab
    "UNIX Attributes", property "NIS Domain". In the attached picture "skytest"
-   is name of our test domain and it should be selected. Other fields will set
-   themselves.
+   is the name of our test domain and it should be selected. Other fields will
+   set themselves.
 
-   .. image:: ../images/win-acl-ad.png
+.. image:: ../images/win-acl-ad.png
    :align: center
    :alt: Figure 3: view of required ACL settings
 
-   Figure 3: view of required AD settings
+   Figure 3: view of the required AD settings
 
 * install the new LizardFS Windows client with ACL support on the end user
   machines.
