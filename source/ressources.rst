@@ -7,6 +7,12 @@ Ressources
 General
 *******
 
+**LizardFS Community Site**
+  http://www.lizardfs.org/
+
+**LizardFS Forum**
+  http://www.lizardfs.org/forum/
+
 **Wikipedia article**
   https://en.wikipedia.org/wiki/LizardFS
 
@@ -30,15 +36,6 @@ General
 
 **LizardFS article on golem.de in german**
   http://www.golem.de/news/lizardfs-software-defined-storage-wie-es-sein-soll-1604-119518.html
-
-
-
-**************
-Admin specific
-**************
-
-
-
 
 ******************
 Developer Specific
@@ -99,6 +96,14 @@ Packages from the community
 **Archlinux**
   https://aur.archlinux.org/packages/lizardfs/
 
+**Debian / Ubuntu**
+  LizardFS is part of Debian. The Debian packages have a bit of a different
+  directory layout than the upstream ones and are not being compiled with the
+  Intel Storage Acceleration Library
+
+**Fedora**
+  There are now official packages in Fedora. The official packages are not
+  being compiled with the Intel Storage Acceleration Library
 
 
 
