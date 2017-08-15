@@ -25,13 +25,13 @@ Basic checks
   * network performance to clients
 
 * Check your license files for the correct name and location
-* Check your log files for errors. Lizardfs is very talkative and reports a
+* Check your log files for errors. LizardFS is very talkative and reports a
   lot.
 
 Check the speed of your network interface
 -----------------------------------------
 
-Verifying what your network interface is set to is pretty simple on linux, you
+Verifying what your network interface is set to is pretty simple on Linux, you
 can just use the *ethtool* program to tell you what your interface is actually
 set to::
 
@@ -65,8 +65,9 @@ example::
                                drv probe link
         Link detected: yes
 
-As you can see, the interface report a speed of 100Mb/s. It has
-Auto-negotiation enabled so is most probably connected to a 10Mb/s switch port.
+As you can see, the interface reports a speed of 100Mb/s. It has
+Auto-negotiation enabled so is most probably connected to a 100Mb/s switch
+port.
 
 .. seealso: https://www.kernel.org/pub/software/network/ethtool/
 
@@ -75,9 +76,9 @@ Checking the throughput of your network
 
 The best tool to verify if your network throughput is according to what you
 think it is would be the *iperf* tool. *iperf* allows you to verify the
-throughput between two machines. It is available for linux, windows, macOS,
-FreeBSD and all other posix compliant systems and most mobile phone OSes and
-is very easy to use.
+throughput between two machines. It is available for Linux, Windows, MacOS,
+FreeBSD and all other POSIX compliant systems and also most mobile phone OSes
+and is very easy to use.
 
 For more information about iperf, please check out https://iperf.fr/ .
 

@@ -5,7 +5,7 @@ LizardFS Manual Pages
 These Manual Pages get installed automatically on installation of lizardfs and
 can be also read in your system using::
 
-  man <commandname>
+  man <command name>
 
 on your system.
 

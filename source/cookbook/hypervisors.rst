@@ -1,7 +1,7 @@
 .. _cookbook_hypervisors:
 
 ************************************************
-LizardFS Hypervisors and Virtualisation Cookbook
+LizardFS Hypervisors and Virtualization Cookbook
 ************************************************
 
 .. auth-status-todo/none
@@ -28,12 +28,12 @@ with accessing the XenServer Console and using tools such as 'vi' to edit
 files.
 
 You should have already configured the networking on XenServer. This could be
-just a single network – XenServer installations usually have an 'internet
+just a single network – XenServer installations usually have an 'INTERNET
 facing' network – and then one, or more 'storage networks' – make sure IP
 addresses are setup that you can use for connecting to, or running LizardFS on
-(i.e. probably not internet facing).
+(i.e. probably not INTERNET facing).
 
-Prepairing Storage – if you need it
+Preparing Storage – if you need it
 -----------------------------------
 
 If you are going to use the XenServer itself to provide storage – you'll
@@ -288,7 +288,7 @@ Once that's done – if you've installed the LizardFS admin tools (and added the
 above Bash aliases) you can use::
 
   lfshealth - Display info on the 'health' of the LizardFS
-  lfsmounts - Display info on what's mounted the LizardFS filesystem
+  lfsmounts - Display info on what's mounted the LizardFS file system
   lfsdisks - Display info on all the disks provided by the chunk-servers on the system
   lfschunks - Display info on the chunk-servers on the system
 
@@ -402,7 +402,7 @@ NOTES
 
 .. note:: If the meta-server 'master' fails – you can promote one of the remaining 'shadow' servers to be the new master – but there must be only one 'master' on the system at any time (so the previous master will have to be reconfigured and come back as a 'shadow' server).
 
-.. note:: LizardFS provide 'lizard-uraft' – which utlizes the :ref:`raft` protocol to keep a 'master' server always available. It's designed for use by a minimum of 3 nodes (two of which can be the XenServer).
+.. note:: LizardFS provide 'lizard-uraft' – which utilizes the :ref:`raft` protocol to keep a 'master' server always available. It's designed for use by a minimum of 3 nodes (two of which can be the XenServer).
 
    This is covered in :ref:`lizardfs_ha_cluster` – along with 'best practices'.
 
@@ -420,31 +420,31 @@ NOTES
 Using LizardFS for Virtualization Farms
 =========================================
 
-If you want to use LizardFS as a Backend for your virtualization Farm, there
+If you want to use LizardFS as a back end for your virtualization Farm, there
 are multiple options.
 
 Use LizardFS from inside each VM
-  The LizardFS client on Linux utilises the :ref:`fuse` library which has
+  The LizardFS client on Linux utilizes the :ref:`fuse` library which has
   limits on the performance it can offer. To work around this one option would
   be to have each VM connect to the lizardfs system by itself. That way each
   VM has its own connection and gets the maximum performance possible via fuse.
 
 
-Create one mountpoint on your host for each VM (especially cool with KVM)
+Create one mount point on your host for each VM (especially cool with KVM)
   This is simple and efficient. Since the :ref:`fuse` library creates a new
-  instance for every mountpoint, each mountpoint gets the full performance of
+  instance for every mount point, each mount point gets the full performance of
   a :ref:`fuse` connection and that way gets around the limits a single fuse
-  connection currently has. So basically each VM, using a separate lizardfs
-  mountpoint each, will get full throughput until the host runs out of network
-  ressources.
+  connection currently has. So basically each VM, using a separate LizardFS
+  mount point each, will get full throughput until the host runs out of network
+  resources.
 
-  The setup is rather simple. Create multiple subdirectories in your lizardfs
+  The setup is rather simple. Create multiple subdirectories in your LizardFS
   and mount each one separately for each VM::
 
     mfsmount -S <lizardfs subdirectory> -c <mfsmount config file>
 
   Each mount will have its own instance and create its own :ref:`fuse` process
-  working like a totaly separate connection and process. This is a workaround
+  working like a totally separate connection and process. This is a workaround
   for the know limitations of the :ref:`fuse` library.
 
 .. _vmware_network:
@@ -463,23 +463,23 @@ Requirements::
   Proxmox >= 4
   LizardFS >= 3.10.6
 
-.. note:: This guide assumes you are familiar with proxmox and the Linux commandline and can mount / unmount and work with filesystems on a standard Debian Jessie platform.
+.. note:: This guide assumes you are familiar with Proxmox and the Linux command line and can mount / unmount and work with file systems on a standard Debian Jessie platform.
 
-Using LizardFS as shared storage with Proxmox is pretty straighforward. There
+Using LizardFS as shared storage with Proxmox is pretty straightforward. There
 are a couple of models in which you can do this.
 
 ProxmoxVE nodes as LizardFS clients
 -----------------------------------
 
 This one is rather easy. Either add the Lizardfs.com repositories or use the
-official lizardFS packages from the debian project and install the
+official lizardFS packages from the Debian project and install the
 lizardfs-client package.
 
 Now create multiple shared directories on each node, as described in
 :ref:`virtu_farms`. Now goto datacenter=> storage in your Proxmox GUI and
-select **add**. Select directory and in the popup select one of the
+select **add**. Select directory and in the pop up select one of the
 directories you just mounted. Mark the box for **shared* and your done.
-Perform the same for each mountpoint and than go ahead and place your
+Perform the same for each mount point and than go ahead and place your
 containers and VM's inside.
 
 You can also use those shared directories for your templates and backups to

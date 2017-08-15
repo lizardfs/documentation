@@ -7,18 +7,18 @@ Configuring Replication Modes
 LizardFS supports 3 different modes of replication.
 
 .. note:: All replication settings are based on chunks, not on nodes. So if you
-         have lets say, 5 chunkservers in a EC3+1 configuration, chunks will
+         have lets say, 5 chunk servers in a EC3+1 configuration, chunks will
          spread among them but one set will always be 4 chunks. This way all
-         active chunkservers are being used and the data/parity chunks get
+         active chunk servers are being used and the data/parity chunks get
          nicely distributed amongst them. For details refer to the
          :ref:`technical_whitepaper`.
 
 In the simplest one, the simple goal setup, you specify how many copies of
 every chunk of a file or directory will be copied to how many and optionally
-also "which" chunkservers.
+also "which" chunk servers.
 
-Note that the write modus here is: client writes chunk to ONE chunkserver and
-this chunkserver replicates this chunk to the other chunkservers.
+Note that the write modus here is: client writes chunk to ONE chunk server and
+this chunk server replicates this chunk to the other chunk servers.
 
 The second replication mode is called XOR. It is similar to a classic RAID5
 scenario in that you have N data chunks and 1 parity chunk. The maximum number
@@ -26,11 +26,11 @@ of data chunks in this case is 9.
 
 The third and most advanced mode of replication is the EC mode which does
 advanced erasure coding with a configurable amount of data and parity copies.
-In this mode clients write quasi parallel to the chunkservers. The maximum
+In this mode clients write quasi parallel to the chunk servers. The maximum
 number of data chunks as well as of parity chunks is 32.
 
-.. note:: To ensure proper repair procedure in case of a broken chunkserver,
-          make sure to always have one chunkserver more than your configured
+.. note:: To ensure proper repair procedure in case of a broken chunk server,
+          make sure to always have one chunk server more than your configured
           goals/XOR/EC requires.
 
 Now that you know what they are, lets start configuring them....
@@ -51,11 +51,11 @@ Syntax of the mfsgoals.cfg file is::
 The # character starts comments.
 
 There can be up to 40 replication goals configured, with ids between 1 and 40
-inclusive. Each file stored on the filesystem refers to some goal id and is
+inclusive. Each file stored on the file system refers to some goal id and is
 replicated according to the goal currently associated with this id.
 
-By default, goal 1 means one copy on any chunkserver, goal 2 means two copies
-on any two chunkservers and so on. The purpose of mfsgoals.cfg is to override
+By default, goal 1 means one copy on any chunk server, goal 2 means two copies
+on any two chunk servers and so on. The purpose of mfsgoals.cfg is to override
 this behavior, when desired. The file is a list of goal definitions, each
 consisting of an id, a name and a list of labels.
 
@@ -64,17 +64,17 @@ consisting of an id, a name and a list of labels.
   this goal id, their effective goal will change.
 
 **Name**
-  is a human readable name used by the user interface tools (mfssetgoal,
-  mfsgetgoal). A name can consist of up to 32 alphanumeric characters: a-z,
-  A-Z, 0-9, _.
+  is a human readable name used by the user interface tools (lizardfs setgoal,
+  lizardfs getgoal). A name can consist of up to 32 alphanumeric characters:
+  a-z, A-Z, 0-9, _.
 
 **list of labels**
-  is a list of chunkserver labels as defined in the mfschunkserver.cfg file.
+  is a list of chunk server labels as defined in the mfschunkserver.cfg file.
   A label can consist of up to 32 alphanumeric characters: a-z, A-Z, 0-9, _.
   For each file using this goal and for each label, the system will try to
-  maintain a copy of the file on some chunkserver with this label. One label
+  maintain a copy of the file on some chunk server with this label. One label
   may occur multiple times - in such case the system will create one copy per
-  each occurrence. The special label _ means "a copy on any chunkserver".
+  each occurrence. The special label _ means "a copy on any chunk server".
 
 Note that changing the definition of a goal in mfsgoals.cfg affects all files
 which currently use a given goal id.
@@ -156,14 +156,14 @@ Setting up XOR
 Setting XOR goals works in a similar way as setting standard goals. Instead of
 just defining *id* *name* *:* *list of labels*, you add between the *:* and
 the *list of labels* the xor definition ($xor2 for 2+1, $xor3 for 3+1 ...) and
-surround the labels with {}. If you do not specify an labels all chunkservers
+surround the labels with {}. If you do not specify any labels all chunk servers
 known to the system will be used. Each set will be of the size specified by
-your XOR definition but writes will be spread over all chunkservers.
+your XOR definition but writes will be spread over all chunk servers.
 
-For example if you have 5 chunkservers and define $xor2 (2 data and 1 parity
-chunk per set), the first set could write to chunkserver 1,2 and 3, the second
-one to chunkserver 2,3,4 and the next to chunkserver 1,3,5. The maximum number
-of data chunks is currently 9.
+For example if you have 5 chunk servers and define $xor2 (2 data and 1 parity
+chunk per set), the first set could write to chunk server 1,2 and 3, the second
+one to chunk server 2,3,4 and the next to chunk server 1,3,5. The maximum
+number of data chunks is currently 9.
 
 Example
 -------
@@ -171,19 +171,20 @@ Example
 This goes into :ref:`mfsgoals.cfg.5` and sets custom goals 15,16 and 17::
 
   15 default_xor3 : $xor3 # simple xor with 3 data and 1 parity chunks on all
-                          # defined chunkservers. Each set will be written to
-                          # 4 chunkservers but sets will be load balanced so
-                          # all participating chunkservers will be utilized.
+                          # defined chunk servers. Each set will be written to
+                          # 4 chunk servers but sets will be load balanced so
+                          # all participating chunk servers will be utilized.
 
   16 fast_read : $xor2 { ssd ssd hdd } # simple xor with 2 data and 1 parity
-                                       # utilizing only 2 chunkservers, ssd
+                                       # utilizing only 2 chunk servers, ssd
                                        # and hdd and writing 2 copies to the
-                                       # ssd chunkservers and one to the hdd
-                                       # chunkserver.
+                                       # ssd chunk servers and one to the hdd
+                                       # chunk server.
 
   17 xor5 : $xor5 { hdd _ }            # XOR with 5 data and 1 parity drive
                                        # and at least one part of each set
-                                       # written to the chunkserver labeled hdd
+                                       # written to the chunk server labeled
+                                       # hdd
 
 Applying, showing and listing goals works the same way as for
 :ref:`standard_goals`.
@@ -202,23 +203,23 @@ Example
 This goes into :ref:`mfsgoals.cfg.5` and sets custom goals 18, 19 and 20::
 
   18 first_ec : $ec(3,1)
-  # Use ec3+1 on all chunkservers. Load will be balanced and each write will
+  # Use ec3+1 on all chunk servers. Load will be balanced and each write will
   # consist of 3 data and 1 parity part
 
   19 ec32_ssd : $ec(3,2) { ssd ssd ssd ssd ssd }
-  # Use ec3+2 but write only to chunkservers labeled ssd. Each write will
+  # Use ec3+2 but write only to chunk servers labeled ssd. Each write will
   # consist of 3 data and 2 parity parts.
 
   20 ec53_mixed : $ec(5,3) { hdd ssd hdd _ _ _ _ _ }
-  # Use ec5+3 on all chunkservers but always write 2 parts to chunkservers
-  # labeled hdd and 1 part to chunkservers labeled ssd. The remaining parts go
-  # to any chunkserver. Each write will have 5 data and 3 parity parts. Load
-  # will be distributed amongst all chunkservers except for 2 parts which will
-  # be written to chunkservers labeled hdd and 1 part which will be written to
-  # chunkserver ssd on every write.
+  # Use ec5+3 on all chunk servers but always write 2 parts to chunk servers
+  # labeled hdd and 1 part to chunk servers labeled ssd. The remaining parts go
+  # to any chunk server. Each write will have 5 data and 3 parity parts. Load
+  # will be distributed amongst all chunk servers except for 2 parts which will
+  # be written to chunk servers labeled hdd and 1 part which will be written to
+  # chunk server ssd on every write.
 
 As you can see EC is extremely flexible and is also our fastest replication
-mode since writes from the client get spread over the chunkservers according
+mode since writes from the client get spread over the chunk servers according
 to the goals set.
 
 .. seealso::

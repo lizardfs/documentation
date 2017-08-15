@@ -30,12 +30,12 @@ Create a mountpoint::
 
    $ mkdir /mnt/lizardfs
 
-Mount the filesystem to the mountpoint with just the default options from
+Mount the file system to the mount point with just the default options from
 mfsmount.cfg if any::
 
    $ mfsmount /mnt/lizardfs
 
-That's it. Simple, straight and easy.a
+That's it. Simple, straight and easy.
 
 Optional settings for performance on \*NIX
 ------------------------------------------
@@ -43,7 +43,7 @@ Optional settings for performance on \*NIX
 **big_writes**
 
 On most systems adding big_writes to the options will significantly increase
-your throughput since it will force the fuse libraray to use writes > 4k.
+your throughput since it will force the fuse library to use writes > 4k.
 
 Example::
 
@@ -55,11 +55,11 @@ nosuid, nodev and noatime.
 **Read ahead cache**
 
 If you want to make use of the read ahead caching feature which will
-significantly improve your read performance, you will require to configure
+significantly improve your read performance, you will need to configure
 the following options::
 
   -o cacheexpirationtime=MSEC      set timeout for read cache entries to be considered valid in milliseconds (0 disables cache) (default: 0)
-  -o readaheadmaxwindowsize=KB     set max value of readahead window per single descriptor in kibibytes (default:
+  -o readaheadmaxwindowsize=KB     set max value of read ahead window per single descriptor in kibibytes (default:
 
 Example::
 
@@ -67,16 +67,20 @@ Example::
 
 Reasonable values::
 
-* cacheexpirationtime - depends on latency, 500 should be alright for most installations. Higher values = data will be kept in cache longer, but it will also occupy more RAM.
-* readaheadmaxwindowsize - depends on latency and cacheexpirationtime, 1024-8192 are usually fine. Higher values = bigger portions of data asked in single request.
+* cacheexpirationtime - depends on latency, 500 should be alright for most
+  installations. Higher values = data will be kept in cache longer, but it
+  will also occupy more RAM.
+* readaheadmaxwindowsize - depends on latency and cacheexpirationtime,
+  1024-8192 are usually fine. Higher values = bigger portions of data asked in
+  single request.
 
-readaheadmaxwindowsize can be adjusted to tyour local requirements - starting
-from 1024 and increasing it until tests show no performance gain is a good
-idea.
+readaheadmaxwindowsize can be adjusted to your local requirements - starting
+from 1024 and increasing it in small steps until your tests show no more
+performance gain is a good idea.
 
 You can now store your files on your brand new installation.
 
-See the :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` manpage for more options
+See the :ref:`mfsmount.1` and :ref:`mfsmount.cfg.5` man page for more options
 
 See :ref:`fuse` to find out more about the fuse library.
 
@@ -111,7 +115,7 @@ Install our client from exe package provided
 
 Add your credentials and the address and port of the master server.
 
-Select the drive you want your lizardFS filesystem to appear as in your
+Select the drive you want your lizardFS file system to appear as in your
 windows session.
 
 It should look like in the following image:
@@ -174,7 +178,7 @@ Command                 Description
 -H HOST                 set master server host address.
 -P PORT                 set master server port. Default 9421.
 -D DRIVE                set <DRIVE> as a mount point i.e. \D:\. Default L:
--f SUBFOLDER            mount only given LizardFS subfolder
+-f SUBFOLDER            mount only given LizardFS sub folder
 -uid UID                set new UID. Default is 1000.
 -gid GID                set new GID. Default is 1000.
 -umask UMASK            set new UMASK. Default is 000.
@@ -195,7 +199,7 @@ and start it by running::
 
   LizardFSController -s
 
-If you would like to uninstall the service again, just run::
+If you would like to un install the service again, just run::
 
   LizardFSController -u
 

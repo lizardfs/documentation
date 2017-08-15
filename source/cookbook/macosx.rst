@@ -12,7 +12,7 @@ Automounting a lizardFS volume
 ==============================
 
 Since macOS is a bit restrictive starting with the ElCapitain version,
-automounting lizardfs requires a bit of fiddling.
+auto mounting LizardFS requires a bit of fiddling.
 
 First you will need to disable Apple's SIP, also known as the "rootless"
 feature. The rootless feature is aimed at preventing Mac OS X compromise by
@@ -58,7 +58,7 @@ contents::
 
 Save the file. Now lets add the required things to your automounter.
 
-In **/etc/auto_master** add the folowing line::
+In **/etc/auto_master** add the following line::
 
   /-      auto_lizardfs
 
@@ -86,9 +86,9 @@ and test if your automounting works:
 If everything works OK, reboot again into *Recovery Mode* by pressing CMD and
 follow the steps to disable SIP, but put **enable** after csrutil instead of
 **disable**. After reboot your mac will be protected again and have a nice
-lizardfs automount running.
+LizardFS automount running.
 
-.. note:: The mounted filesystem will not show up in the finder. You will need
+.. note:: The mounted file system will not show up in the finder. You will need
    to either access it from the command line or if you want to use the finder,
    press Shift + Command + G and enter the folder path there manually.
 

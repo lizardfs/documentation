@@ -32,7 +32,7 @@ other OSes, please consult the :ref:`cookbook`.
 The /etc/hosts file
 -------------------
 
-Since LizardFS is a network based Filesystem, your network setup is crucial,
+Since LizardFS is a network based File system, your network setup is crucial,
 especially the name resolution service which helps computers in the network
 find each other. There are two basic ways that computers find each other by
 name: static entries in the /etc/hosts file or the DNS System.
@@ -113,8 +113,8 @@ File systems for LizardFS servers
 =================================
 
 .. note:: Due to its speed and stability we recommend the XFS or ZFS
-          filesystems on production servers. XFS was developed for Silicon
-          Graphics, and is a mature and stable filesystem. ZFS was developed
+          file systems on production servers. XFS was developed for Silicon
+          Graphics, and is a mature and stable file system. ZFS was developed
           by SUN Microsystems and is used for heavy duty storage by Systems
           from numerous Storage System Vendors.
 
@@ -134,7 +134,7 @@ same block to both devices to the same position.
 For the chunkservers
 --------------------
 
-If you are using XFS as the filesystem for the chunkserver directories, we
+If you are using XFS as the file system for the chunkserver directories, we
 recommend the following mount options::
 
   rw,noexec,nodev,noatime,nodiratime,largeio,inode64,barrier=0
@@ -144,7 +144,7 @@ performance increase especially in case of many chunks. It also increases the
 size of the directories gives LizardFS more space in to put its data.
 
 Depending on the hardware you use and if you are utilizing caching RAID
-controllers, it could make sense to adjust the scheduler on your filesystems.
+controllers, it could make sense to adjust the scheduler on your file systems.
 How you do a that is documented here:
 
 http://www.cyberciti.biz/faq/linux-change-io-scheduler-for-harddisk/
@@ -156,7 +156,7 @@ here:
 
 http://xfs.org/index.php/XFS_FAQ
 
-If you would like to use the high performance ZFS filesystem, please check the
+If you would like to use the high performance ZFS file system, please check the
 :ref:`cookbook` for further information.
 
 .. _master_server_config:
@@ -226,9 +226,9 @@ the things that are important are:
 
 The addresses your master server is to listen on, if not all::
 
-  ATOML_LISTEN_HOST # IP address to listen on for metalogger connections (* means any)
-  MATOCS_LISTEN_HOST # IP address to listen on for chunkserver connections (* means any)
-  MATOTS_LISTEN_HOST # IP address to listen on for tapeserver connections (* means any)
+  ATOML_LISTEN_HOST # IP address to listen on for meta logger connections (* means any)
+  MATOCS_LISTEN_HOST # IP address to listen on for chunk server connections (* means any)
+  MATOTS_LISTEN_HOST # IP address to listen on for tape server connections (* means any)
   MATOCL_LISTEN_HOST # IP address to listen on for client (mount) connections (* means any)
 
 The ports your master server is supposed to listen on, if not the default ones::
@@ -236,7 +236,7 @@ The ports your master server is supposed to listen on, if not the default ones::
   MATOML_LISTEN_PORT # port to listen on for metalogger connections (default is 9419)
   MATOCS_LISTEN_PORT # port to listen on for chunkserver connections (default is 9420)
   MATOCL_LISTEN_PORT # port to listen on for client (mount) connections (default is 9421)
-  MATOTS_LISTEN_PORT # Port to listen on for tapeserver connections (default is 9424)
+  MATOTS_LISTEN_PORT # Port to listen on for tape server connections (default is 9424)
 
 The user and group you would like your master to run as (default is *mfs*)::
 
@@ -356,7 +356,7 @@ The options are:
   NFS)
 
 **nonrootmeta**
-  allows non-root users to use filesystem mounted in the meta mode (option
+  allows non-root users to use file system mounted in the meta mode (option
   available only in this mode). See :ref:`mount_meta` .
 
 
@@ -390,11 +390,11 @@ Examples
   # read/write fashion. Also allow subdirectories to be mounted directly by
   # those clients.
   # Map the root user to UID *0*. Allow users to set the trashtime (time when
-  # files in the trash get autopruned) between
+  # files in the trash get auto pruned) between
   # 2h30m and 2 weeks.
 
 Utilizing all of these options you will be able to do quite flexible setups,
-like optimizing for virtualization as described in out Cookbook at
+like optimizing for virtualization as described in our Cookbook at
 :ref:`virtu_farms` .
 
 Now that you know how to setup your namespace, the next step would be to set
@@ -408,21 +408,22 @@ for geo replication. A description of how to set them up can be found here
 
 .. _shadow_server_config:
 
-Configuring your Shadowmaster
-=============================
+Configuring your shadow master
+===============================
 
-Your shadowmaster is configured in nearly the same way as your Master. Since
+Your shadow master is configured in nearly the same way as your Master. Since
 it is supposed to take over the functionality of the Master in case of a
-failure of the Master, it has to keep its metadatabase in sync and besides that have all the configurations of the masterserver mirrored.
+failure of the Master, it has to keep its meta database in sync and besides
+that have all the configurations of the master server mirrored.
 
-Settings specific to the Shadowmaster:
+Settings specific to the Shadow master:
 
 In the mfsmaster.cfg file::
 
-  # Set the personality to be that of a Shadowmaster:
+  # Set the personality to be that of a Shadow master:
   PERSONALITY = shadow
 
-  # Set the address where the metadatabase is synced from:
+  # Set the address where the meta database is synced from:
   MASTER_HOST = 10.0.10.230
 
 The files mfsexports.cfg, mfsgoals.cfg and mfstopology.cfg must be
@@ -431,14 +432,14 @@ synchronized with the master server.
 
 .. _chunk_server_config:
 
-Configuring your Chunkservers
-=============================
+Configuring your chunk servers
+==============================
 
 Your chunkservers are pretty simple to set up.
 Usually, if your /etc/hosts files are setup correctly with the address of the
 master server and you do not require labeling (:ref:`labeling_chunkserver`),
 the mfschunkserver.cfg file can stay as it is. If you require to lock down the
-masterserver address, adjust the following line::
+master server address, adjust the following line::
 
   MASTER_HOST = 10.0.10.230
 
@@ -477,7 +478,7 @@ Configuring the Metalogger
 ==========================
 
 The metalogger is used for disaster recovery should the master and
-shadowservers fail. The metadatabase can be rebuild from them. The setup is
+shadow servers fail. The meta database can be rebuild from them. The setup is
 straightforward. You basically do not need to setup anything if your
 /etc/hosts is setup accordingly, otherwise you need to set the following in
 your mfsmetalogger.cfg file::
@@ -502,11 +503,11 @@ installation either follow the example installation and just add an entry for
 
 .. _labeling_chunkserver:
 
-Labeling your chunkserver
-=========================
+Labeling your chunk server
+==========================
 
 To be able to setup which goals are going to be performed on which
-chunkservers, you need to be able to identify them in your goal definition.
+chunk servers, you need to be able to identify them in your goal definition.
 To achieve this, we use labels.
 
 The label for the Chunkservers is set in the mfschunkserver.cfg file. ::
@@ -517,16 +518,16 @@ After changing the configuration you must reload the chunkserver::
 
    $ mfschunkserver -c path/to/config reload
 
-If there is no LABEL entry in the config, the chunkserver has a default label
+If there is no LABEL entry in the config, the chunk server has a default label
 of “_” (i.e. wild card), which has a special meaning when defining goals and
-means “any chunkserver”.
+means “any chunk server”.
 
-Multiple chunkservers can have the same label than they are basically a group
-of chunkservers where you can use the label to write a chunk or a piece of XOR
-or EC set to "any" chunkserver in that group.
+Multiple chunk servers can have the same label, than they are basically a group
+of chunk servers where you can use the label to write a chunk or a piece of XOR
+or EC set to "any" chunk server in that group.
 
-Show labels of connected chunkservers
--------------------------------------
+Show labels of connected chunk servers
+--------------------------------------
 
 From the command line::
 

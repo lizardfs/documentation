@@ -16,10 +16,10 @@ LizardFS is a networking, highly available, distributed file system. It
 spreads data over several physical localizations (servers), which are visible
 to a user as one resource. For standard file operations LizardFS acts as other
 Unix-alike file systems. It has hierarchical structure (directory tree),
-stores files' attributes (permissions, last access and modification times) as
+stores file attributes (permissions, last access and modification times) as
 well as making it possible to create special files (block and character
 devices, pipes and sockets), symbolic links (file names pointing to another
-files accessible locally, not necessarily on LizardFS) and hard links
+file accessible locally, not necessarily on a LizardFS) and hard links
 (different names of files which refer to the same data on LizardFS). Access to
 the file system can be limited based on IP address and/or password.
 

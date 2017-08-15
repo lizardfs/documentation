@@ -135,7 +135,7 @@ Upgrading to LizardFS 2.5.4
 
     * CGI server 2.5.4 is compatible with all versions of the master server
       (1.6.27 -- 2.5.2), so it can be upgraded at any time. Because of a bug
-      in older versions of the CGI serve it has to be stopped manually before
+      in older versions of the CGI server it has to be stopped manually before
       being upgraded (otherwise installation of the newer package may fail).
 
     When upgrading from other releases:
@@ -158,7 +158,7 @@ Upgrading to LizardFS 2.5.2
 
     * Upgrade the master server
 
-    * Clients, chunkservers and the master server can be upgraded in any
+    * Clients, chunkservers and the master server can be upgraded in any order
       (all of them are compatible with each other), either one by one or all
       at once.
 

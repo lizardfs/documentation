@@ -7,27 +7,28 @@ Advanced configuration
 
 .. _chunk_load_awareness:
 
-Configuring chunkserver load awareness
-======================================
+Configuring chunk server load awareness
+=======================================
 
-In a default setup, your chunks will be tried to be evenly distributed
-according to goals and ec configurations among the chunkservers within a
-defined label group (check here :ref:`labeling_chunkserver` for labels). While
-this is the perfect setting for most cases, in some cases, for example if your
-chunkservers are doing other, non lizardFS related workloads, you will want to
-have the distribution be also based on the amount of I/O load each chunkserver
-is handling in a given moment.
+In a default setup the system will try to distribute all chunks evenly
+according to the predefined goals and/or ec configurations. This is also what
+happens to chunk servers in a defined label group (check here :ref:`
+labeling_chunk server` for labels). While this is the perfect setting for most
+cases, other case might require a different setting, for example if your chunk
+servers are doing other non LizardFS related workloads, you will want to have
+the distribution be based also on the amount of I/O load each chunk server is
+handling at a given moment.
 
 This functionality can be achieved by setting the ::
 
   ENABLE_LOAD_FACTOR
 
-setting in the chunkserver's mfschunkserver.cfg configuration file. By default
-this is disabled and the setting is a per chunkserver setting.
+setting in the chunk server's mfschunkserver.cfg configuration file. By default
+this is disabled and the setting is a per chunk server setting.
 
-Additionaly it is possible to define a **penalty** configuration option in the
+Additionally it is possible to define a **penalty** configuration option in the
 master configuration file (The setting for this is **LOAD_FACTOR_PENALTY**),
-if he is found to be under heavy I/O load.
+if tit is found to be under heavy I/O load.
 
 .. _rack_awareness:
 
@@ -55,8 +56,8 @@ ADDRESS can be represented as:
 
 The switch number can be specified as a positive 32-bit integer.
 
-Distances calculated from mfstopology.cfg are used to sort chunkservers during
-read/write operations. Chunkservers closer (with lower distance) to a client
+Distances calculated from mfstopology.cfg are used to sort chunk servers during
+read/write operations. Chunk servers closer (with lower distance) to a client
 will be favored over further away ones.
 
 Please note that new chunks are still created at random to ensure their equal
@@ -70,8 +71,8 @@ As for now, distance between switches can be set to 0, 1, 2:
 
   2 - switch numbers differ
 
-The topology feature works well with chunkserver labeling - a combination of
-the two can be used to make sure that clients read to/write from chunkservers
+The topology feature works well with chunk server labeling - a combination of
+the two can be used to make sure that clients read to/write from chunk servers
 best suited for them (e.g. from the same network switch).
 
 
@@ -138,14 +139,15 @@ where:
 
 .. _mount_meta:
 
-Mounting the metadata
-=====================
+Mounting the meta data
+======================
 
-LizardFS metadata can be managed through a special mountpoint called META.
-META allows to control trashed items (undelete/delete them permanently) and
-view files that are already deleted but still held open by clients.
+LizardFS meta data can be managed through a special mount point called META.
+This mount point allows to control trashed items (undelete/delete them
+permanently) and view files that are already deleted but still held open by
+clients.
 
-To be able to mount metadata you need to add the “mfsmeta” parameter to the
+To be able to mount meta data you need to add the “mfsmeta” parameter to the
 mfsmount command::
 
    # mfsmount /mnt/lizardfs-meta -o mfsmeta
@@ -154,7 +156,7 @@ after that you will see the following line at mtab::
 
    mfsmeta#10.32.20.41:9321 on /mnt/lizardfs-meta type fuse (rw,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other)
 
-The structure of the mounted metadata directory will look like this::
+The structure of the mounted meta data directory will look like this::
 
    /mnt/lizardfs-meta/
                       ├── reserved
@@ -166,8 +168,8 @@ The structure of the mounted metadata directory will look like this::
 Trash directory
 ----------------
 
-Each file with a trashtime higher than zero will be present here. You can
-recover those files or delete files permanently.
+Each file with a 'trashtime' setting above zero will be present here. You
+can recover those files or delete them permanently.
 
 Recovering files from the trash
 -------------------------------
@@ -188,8 +190,8 @@ In order to delete a file permanently, just remove it from trash.
 Reserved directory
 ------------------
 
-If you delete a file, but someone else use this file and keep an open
-descriptor, you will see this file in here until descriptor is closed.
+If you delete a file, but someone else uses this file and keeps an open
+descriptor, you will see this file in here until the descriptor is closed.
 
 .. _lizardfs_ha_cluster:
 
@@ -197,15 +199,16 @@ Deploying LizardFS as a HA Cluster
 ==================================
 
 LizardFS can be run as a high-availability cluster on several nodes. When
-working in HA mode, a dedicated daemon watches the status of the metadata
-servers and performs a fail over whenever it detects a master server crashed
-(e.g. due to power outage). The state of the available participating servers
-is constantly monitored via a lightweight protocol doing a 'heartbeat' like
-check on the other nodes. Running LizardFS installation as a HA-cluster
-significantly increases its availability. Since uRaft uses :ref:`quorum` a
-reasonable minimum of metadata servers in a HA installation is at least 3, to
-make sure that a proper election with a 'majority' of voices can be done. For
-details on the underlying algorithm, check :ref:`raft` in the glossary.
+working in HA mode, a dedicated daemon watches the status of the meta data
+servers and performs a fail over whenever it detects a master server has
+crashed (e.g. due to a power outage). The state of the available participating
+servers is being constantly monitored via a lightweight protocol doing a
+'heartbeat' like check on the other nodes. Running a LizardFS installation as
+a HA-cluster significantly increases its availability. Since uRaft uses
+:ref:`quorum` a reasonable minimum of meta data servers in a HA installation
+is at least 3, to make sure that a proper election with a 'majority' of voices
+can be done. For details on the underlying algorithm, check :ref:`raft` in the
+glossary.
 
 In order to deploy LizardFS as a high-availability cluster, follow the steps
 below.
@@ -225,10 +228,10 @@ the only fields essential for uraft are::
 
    PERSONALITY = ha-cluster-managed
    ADMIN_PASSWORD = your-lizardfs-password
-   MASTER_HOST = the floating ip so that the participating hosts know where to sync the metadatabase from
+   MASTER_HOST = the floating ip so that the participating hosts know where to sync the meta database from
 
 For a fresh installation, execute the standard steps for the lizardfs-master
-(creating mfsexports file, empty metadata file etc.). Do not start the
+(creating mfsexports file, empty meta data file etc.). Do not start the
 lizardfs-master daemon yet.
 
 Fill the lizardfs-uraft config file (/etc/mfs/lizardfs-uraft.cfg). Configurable
@@ -278,7 +281,7 @@ The LizardFS installation will be accessible at 192.168.0.100 ::
    URAFT_NODE_ADDRESS = node2                  # hostname of second node
    URAFT_NODE_ADDRESS = node3:99427            # hostname and custom port of third node
    URAFT_ID = 0                                # URAFT_ID for this node
-   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip adddress for this cluster
+   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip address for this cluster
    URAFT_FLOATING_NETMASK = 255.255.255.0      # Netmask for the floating ip
    URAFT_FLOATING_IFACE = eth1                 # Network interface for the floating ip on this node
 
@@ -287,7 +290,7 @@ The LizardFS installation will be accessible at 192.168.0.100 ::
    URAFT_NODE_ADDRESS = node2                  # hostname of second node
    URAFT_NODE_ADDRESS = node3:99427            # hostname and custom port of third node
    URAFT_ID = 1                                # URAFT_ID for this node
-   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip adddress for this cluster
+   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip address for this cluster
    URAFT_FLOATING_NETMASK = 255.255.255.0      # Netmask for the floating ip
    URAFT_FLOATING_IFACE = eth1                 # Network interface for the floating ip on this node
 
@@ -296,7 +299,7 @@ The LizardFS installation will be accessible at 192.168.0.100 ::
    URAFT_NODE_ADDRESS = node2                  # hostname of second node
    URAFT_NODE_ADDRESS = node3:99427            # hostname and custom port of third node
    URAFT_ID = 2                                # URAFT_ID for this node
-   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip adddress for this cluster
+   URAFT_FLOATING_IP = 192.168.0.100           # Shared (floating) ip address for this cluster
    URAFT_FLOATING_NETMASK = 255.255.255.0      # Netmask for the floating ip
    URAFT_FLOATING_IFACE = eth1                 # Network interface for the floating ip on this node
 

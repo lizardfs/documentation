@@ -6,7 +6,7 @@ Configuring Optional Features
 .. auth-status-proof1/none
 
 LizardFS comes with a range of optional features whose configuration does not
-belong into the "basic" or "advanced" modes.
+belong in the basic or advanced modes.
 
 
 Configuring LTO handling
@@ -15,7 +15,7 @@ Configuring LTO handling
 Installation
 ------------
 
-THe LizardFS tapeserver package can be installed via::
+THe LizardFS tape server package can be installed via::
 
    $ apt-get install lizardfs-tapeserver # Debian/Ubuntu
    $ yum install lizardfs-tapeserver # CentOS/RedHat
@@ -25,7 +25,7 @@ Configuration
 
 The configuration file for the lizardfs-tapeserver is located at
 /etc/mfs/lizardfs-tapeserver.cfg.
-The tapeserver needs a working mountpoint of your LizardFS installation.
+The tape server needs a working mount point on your LizardFS installation.
 Configuration consists mainly of listing changer and volume devices of a tape
 library.
 
@@ -60,7 +60,7 @@ Installation can be easily verified using the lizardfs-admin command::
    $ lizardfs-admin list-tapeserver MASTER_ADDR MASTER_PORT
 
 If the installation succeeded, the command above should result in listing all
-tapeservers connected to the current master.
+tape servers connected to the current master.
 
 Verification if tape storage works properly can be achieved by the steps below:
 

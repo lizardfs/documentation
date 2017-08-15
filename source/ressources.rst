@@ -64,7 +64,7 @@ Third Party AddOns
 **LizardFS in Grafana**
   This plugin/script for Telegraf will collect the metrics from LizardFS and
   stores it into InfluxDB, then you can view your metrics in Grafana on a
-  templated dashboard.
+  \templated dashboard.
 
   https://blog.kruyt.org/lizardfs-in-grafana/
 

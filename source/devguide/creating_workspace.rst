@@ -60,7 +60,7 @@ Additional packages required and not provided by standard repos::
 
   libisal2, current boost edition, autoconf-2.69.
 
-These dependencies can be obtained from our centos repositories and should
+These dependencies can be obtained from our CentOS repositories and should
 work on all 3 enterprise repos.
 
 .. _workspace_centos7:
@@ -70,7 +70,7 @@ CentoOS-7 / RHEL-7 / SL 7
 
 As for The 6 series of the enterprise Linuces, the friendly people from CERN created a complete dev env for gcc6 based development. So again:
 
-nstall the following packages:
+Install the following packages:
 
   For the backports from Fedora (needed or current cmake and buildtools)::
 
@@ -82,7 +82,7 @@ nstall the following packages:
 
         sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
 
-    * On Centos and SL::
+    * On CentOS and SL::
 
         sudo yum install centos-release-scl
 

@@ -21,7 +21,7 @@ directly to the block device underneath.
 
 To enable DirectIO on your installation, you need to update the
 *.lizardfs_tweaks* file in the root of your mounted LizardFS. This is done by
-issuing the following on a mounted filesystem::
+issuing the following on a mounted file system::
 
   echo "DirectIO=true" > .lizardfs_tweaks
 
@@ -49,7 +49,7 @@ on the :ref:`raft` algorithm developed by Diego Ongaro and John Ousterhout.
 HA with only 2 masters
 ----------------------
 
-.. warning:: This is unsupported and only recommended if setup by certified engineering personel.
+.. warning:: This is unsupported and only recommended if setup by certified engineering personnel.
 
 Since it is a :ref:`quorum` based algorithm we usually recommend to users to
 have 1 master and 2 shadow nodes. But there is a way to run your HA with one
@@ -62,7 +62,7 @@ All that is required to switch a node to "non master" mode is setting::
   URAFT_ELECTOR_MODE = 1
 
 in the lizardfs-uraft.cfg file. Everything else must be setup like it would
-be a normale lizardfs-master with uraft node except that the master will never
+be a normal lizardfs-master with uraft node except that the master will never
 be put into a real **master** role.
 
 
@@ -72,7 +72,7 @@ be put into a real **master** role.
 ZFS on Linux
 ============
 
-:ref:`zfs` is a high performance 128 bit filesystem developed by SUN
+:ref:`zfs` is a high performance 128 bit file system developed by SUN
 Microsystems. We will show you here the basics how to install it on Linux. For
 specifics how to fine tune, optimize and manage zfs, please consult the links
 in the "see also" part at the end of the ZFS articles. On Linux we use the
@@ -96,7 +96,7 @@ And than the open-zfs project repository::
 
   $ yum localinstall -y --nogpgcheck http://archive.zfsonlinux.org/epel/zfs-release.el7.noarch.rpm
 
-after which you can install the sources required and automativaly build the
+after which you can install the sources required and automatically build the
 required modules on your system::
 
   yum install -y kernel-devel zfs
@@ -111,7 +111,7 @@ Test if you can use the zfs commands::
   zfs list
   zpool list
 
-Now you can install zpools and filesystems with ZFS.
+Now you can install zpools and file systems with ZFS.
 
 .. seealso::
 
