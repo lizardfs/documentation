@@ -258,7 +258,7 @@ See variety of options by running those commands::
    $ man lizardfs-admin or $ lizardfs-admin -h
 
 
-Now that you are done with your quick and dirty installation, you can try
+Now that you are done with your basic installation, you can try
 connecting clients to your fresh LizardFS instance. This is documented in the
 :ref:`connectclient` part of the :ref:`adminguide`.
 
