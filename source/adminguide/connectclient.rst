@@ -54,8 +54,8 @@ nosuid, nodev and noatime.
 
 **Read ahead cache**
 
-If you want to make use of the read ahead caching feature which will sig-
-nificantly improve your read performance, you will require to configure
+If you want to make use of the read ahead caching feature which will
+significantly improve your read performance, you will require to configure
 the following options::
 
   -o cacheexpirationtime=MSEC      set timeout for read cache entries to be considered valid in milliseconds (0 disables cache) (default: 0)
@@ -70,8 +70,9 @@ Reasonable values::
 * cacheexpirationtime - depends on latency, 500 should be alright for most installations. Higher values = data will be kept in cache longer, but it will also occupy more RAM.
 * readaheadmaxwindowsize - depends on latency and cacheexpirationtime, 1024-8192 are usually fine. Higher values = bigger portions of data asked in single request.
 
-readaheadmaxwindowsize can be adjusted to the installation - starting with
-1024 and increasing it until tests show no performance gain is a good idea.
+readaheadmaxwindowsize can be adjusted to tyour local requirements - starting
+from 1024 and increasing it until tests show no performance gain is a good
+idea.
 
 You can now store your files on your brand new installation.
 
@@ -149,14 +150,14 @@ Windows™ service
 ----------------
 
 The Windows™ Client can also be run as a Windows™ Service. This is provided by
-the **LizardSControler** command.
+the **LizardFSController** command.
 
 Basic configuration
 ^^^^^^^^^^^^^^^^^^^
 
 Minimal configuration::
 
-  LizardSControler -p -lic-file <LICENSE_FILE> -H <ADDRESS_OF_MASTER>
+  LizardFSController -p -lic-file <LICENSE_FILE> -H <ADDRESS_OF_MASTER>
 
 where LICENSE_FILE should be the name of the file containing a valid License
 and ADDRESS_OF_MASTER should be the hostname or IP address of the LizardFS
@@ -188,23 +189,47 @@ Installation and runtime
 After you have done the configration, you can add the service to your Windows
 system by running::
 
-  LizardSControler -i
+  LizardFSController -i
 
 and start it by running::
 
-  LizardSControler -s
+  LizardFSController -s
 
 If you would like to uninstall the service again, just run::
 
-  LizardSControler -u
+  LizardFSController -u
 
 To terminate the service, run::
 
-  LizardSControler -t
+  LizardFSController -t
 
 A full list of options can be displayed using::
 
-  LizardSControler -help
+  LizardFSController -help
+
+New Windows Client with ACL and AD support
+------------------------------------------
+
+To utilise the ACL and AD support in the new Windows CLient you need to do the following:
+
+* Modify zour Active Directory domain controller settings
+
+** run the following commands in the cmd shell of your Active Directory domain
+   controller::
+
+  Dism.exe /online /enable-feature /featurename:adminui /all  &REM admintools
+  Dism.exe /online /enable-feature /featurename:nis /all    &REM NIS server
+  Dism.exe /online /enable-feature /featurename:psync /all  &REM syncpasswd tools
+  shutdown /r /f -t 1                                       &REM reboot
+
+** for users that need access to the LizardFS drive set fsgsf, tab
+   "UNIX Attributes", property "NIS Domain". In the attached picture "skytest"
+   is name of our test domain and it should be selected. Other fields will set
+   themselves.
+
+* install the new LizardFS Windows client with ACL support on the end user
+  machines.
+
 
 
 
