@@ -16,7 +16,7 @@ Setting DirectIO for your setup
 
 In some cases we have experienced that the caching mechanism in some systems
 may slow down performance significantly. What has helped is switching the
-caching off and moving to Direct IO which ommits the OS cache and writes
+caching off and moving to Direct IO which omits the OS cache and writes
 directly to the block device underneath.
 
 To enable DirectIO on your installation, you need to update the
@@ -42,7 +42,7 @@ The changes are effective immediately.
 URAFT Cookbook
 ==============
 
-The HA system utilised by LizardFS to keep your master servers always alive is
+The HA system utilized by LizardFS to keep your master servers always alive is
 called uraft. It has been developed by Sky Technologies Sp. z o.o. and is based
 on the :ref:`raft` algorithm developed by Diego Ongaro and John Ousterhout.
 
@@ -51,9 +51,9 @@ HA with only 2 masters
 
 .. warning:: This is unsupported and only recommended if setup by certified engineering personel.
 
-Since it is a :ref:`quorum` based algorithm we usualy recommend to users to
+Since it is a :ref:`quorum` based algorithm we usually recommend to users to
 have 1 master and 2 shadow nodes. But there is a way to run your HA with one
-master, one shadow and a raft only addon on one of your chunkservers. This
+master, one shadow and a raft only add-on on one of your chunkservers. This
 stub will still run a master server daemon but it will never switch it to
 active so it can be running anything.
 
@@ -73,15 +73,15 @@ ZFS on Linux
 ============
 
 :ref:`zfs` is a high performance 128 bit filesystem developed by SUN
-Microsystems. We wil show you here the basics how to install it on Linux. For
-specifics how to finetune, optimize and manage zfs, please consult the links
-in the seealso part at the end of the ZFS articles. On Linux we use the
+Microsystems. We will show you here the basics how to install it on Linux. For
+specifics how to fine tune, optimize and manage zfs, please consult the links
+in the "see also" part at the end of the ZFS articles. On Linux we use the
 Open-ZFS way and do not use FUSE to get maximum performance.
 
 Installing ZFS on RHEL/Centos 7
 ===============================
 
-To aoid all the licensing discussions (we do not get into that but you can
+To avoid all the licensing discussions (we do not get into that but you can
 read up on it <here https://www.softwarefreedom.org/resources/2016/
 linux-kernel-cddl.html>_ if you like) the Open-ZFS project has a way where you
 while installing the driver compile it yourself and that way get around all
@@ -111,7 +111,7 @@ Test if you can use the zfs commands::
   zfs list
   zpool list
 
-Now you can install zpools and flesystems with ZFS.
+Now you can install zpools and filesystems with ZFS.
 
 .. seealso::
 
@@ -127,7 +127,7 @@ Now you can install zpools and flesystems with ZFS.
 
    * `ZFS in the Ubuntu Wiki <https://wiki.ubuntuusers.de/ZFS_on_Linux/>`_
 
-   * `How to install and use ZFS on Ubuntu and why you'd wnat to <http://www.howtogeek.com/272220/how-to-install-and-use-zfs-on-ubuntu-and-why-youd-want-to/>`_
+   * `How to install and use ZFS on Ubuntu and why you'd want to <http://www.howtogeek.com/272220/how-to-install-and-use-zfs-on-ubuntu-and-why-youd-want-to/>`_
 
    * `An extensive Guide about ZFS on Debian by Aaron Toponce <https://pthree.org/2012/04/17/install-zfs-on-debian-gnulinux/>`_
 

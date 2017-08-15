@@ -12,7 +12,7 @@ There are several methods for getting LizardFS software. The easiest and most
 common method is to get packages by adding repositories for use with package
 management tools such as the Advanced Package Tool (APT) or Yellowdog Updater,
 Modified (YUM). You may also retrieve pre-compiled packages from the LizardFS
-repository. Finally, you can retrieve tarballs or clone the LizardFS source
+repository. Finally, you can retrieve tar balls or clone the LizardFS source
 code repository and build LizardFS yourself.
 
 
@@ -135,9 +135,9 @@ Installing LizardFS from source.
 
 The current LizardFS source code can be obtained from our :ref:`github`
 (https://github.com/lizardfs/lizardfs) project page.
-You can either download a tarball from there by choosing the respective
+You can either download a tar ball from there by choosing the respective
 version in the **Branch** tab on the left or use :ref:`git` to clone the
-sourcetree.
+source tree.
 
 LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow
 the directions outlined below.

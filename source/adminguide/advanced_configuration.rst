@@ -57,10 +57,10 @@ The switch number can be specified as a positive 32-bit integer.
 
 Distances calculated from mfstopology.cfg are used to sort chunkservers during
 read/write operations. Chunkservers closer (with lower distance) to a client
-will be favoured over further away ones.
+will be favored over further away ones.
 
 Please note that new chunks are still created at random to ensure their equal
-distribution. Rebalancing procedures ignore topology configuration as well.
+distribution. Re balancing procedures ignore topology configuration as well.
 
 As for now, distance between switches can be set to 0, 1, 2:
 
@@ -198,14 +198,14 @@ Deploying LizardFS as a HA Cluster
 
 LizardFS can be run as a high-availability cluster on several nodes. When
 working in HA mode, a dedicated daemon watches the status of the metadata
-servers and performs a failover whenever it detects a master server crashed
+servers and performs a fail over whenever it detects a master server crashed
 (e.g. due to power outage). The state of the available participating servers
 is constantly monitored via a lightweight protocol doing a 'heartbeat' like
 check on the other nodes. Running LizardFS installation as a HA-cluster
 significantly increases its availability. Since uRaft uses :ref:`quorum` a
 reasonable minimum of metadata servers in a HA installation is at least 3, to
 make sure that a proper election with a 'majority' of voices can be done. For
-details on the underlying algorythm, check :ref:`raft` in the glossary.
+details on the underlying algorithm, check :ref:`raft` in the glossary.
 
 In order to deploy LizardFS as a high-availability cluster, follow the steps
 below.
@@ -256,7 +256,7 @@ fields are:
 **ELECTION_TIMEOUT_MAX**
   Maximum election timeout (ms), defaults to 600
 **HEARTBEAT_PERIOD** = 20
-  Period between hearbeat messages between uraft nodes (ms), defaults to 20.
+  Period between heartbeat messages between uraft nodes (ms), defaults to 20.
 **LOCAL_MASTER_CHECK_PERIOD**
   How often uRaft checks if local master is alive (ms), defaults to 250.
 

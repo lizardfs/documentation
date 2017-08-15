@@ -29,7 +29,7 @@ DATA CACHE MODES
 ----------------
 
 There are three cache modes: *NO*, *YES* and *AUTO*. The default option is
-*AUTO* and you shuldn't change it unless you really know what you are doing.
+*AUTO* and you shouldn't change it unless you really know what you are doing.
 In *AUTO* mode data cache is managed automatically by mfsmaster.
 
 NO,NONE or NEVER

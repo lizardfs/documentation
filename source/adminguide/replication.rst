@@ -14,7 +14,7 @@ LizardFS supports 3 different modes of replication.
          :ref:`technical_whitepaper`.
 
 In the simplest one, the simple goal setup, you specify how many copies of
-every chunk of a file or directory will be copied to how many and optionaly
+every chunk of a file or directory will be copied to how many and optionally
 also "which" chunkservers.
 
 Note that the write modus here is: client writes chunk to ONE chunkserver and
@@ -26,7 +26,7 @@ of data chunks in this case is 9.
 
 The third and most advanced mode of replication is the EC mode which does
 advanced erasure coding with a configurable amount of data and parity copies.
-In this mode clients wirte quasi parallel to the chunkservers. The maximum
+In this mode clients write quasi parallel to the chunkservers. The maximum
 number of data chunks as well as of parity chunks is 32.
 
 .. note:: To ensure proper repair procedure in case of a broken chunkserver,
@@ -74,7 +74,7 @@ consisting of an id, a name and a list of labels.
   For each file using this goal and for each label, the system will try to
   maintain a copy of the file on some chunkserver with this label. One label
   may occur multiple times - in such case the system will create one copy per
-  each occurence. The special label _ means "a copy on any chunkserver".
+  each occurrence. The special label _ means "a copy on any chunkserver".
 
 Note that changing the definition of a goal in mfsgoals.cfg affects all files
 which currently use a given goal id.
@@ -87,7 +87,7 @@ Example of goal definitions::
    	3 3 : _ _ _ # one of the default goals (three copies anywhere)
    	8 not_important_file : _ # only one copy
    	11 important_file : _ _
-   	12 local_copy_on_mars : mars _ # at least one copy in the Martian datacenter
+   	12 local_copy_on_mars : mars _ # at least one copy in the Martian data center
    	13 cached_on_ssd : ssd _
    	14 very_important_file : _ _ _ _
 

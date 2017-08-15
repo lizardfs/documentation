@@ -125,7 +125,7 @@ READ_AHEAD_KB
 MAX_READ_BEHIND_KB
   try to fix out-of-order read requests; the value tells how much of skipped
   data to read if an offset of some read operation is greater than the offset
-  where the previos operation finished (default is 0, i.e. don't read any
+  where the previous operation finished (default is 0, i.e. don't read any
   skipped data; the value is aligned down to 64 KiB)
 
 CREATE_NEW_CHUNKS_IN_MOOSEFS_FORMAT

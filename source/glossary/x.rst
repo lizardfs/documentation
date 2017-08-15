@@ -73,7 +73,7 @@ XFS
   IRIX, and only with specialized hardware.
 
   A notable XFS user, NASA Advanced Supercomputing Division, takes advantage
-  of these capabilities deploying two 300+ terabyte XFS filesystems on two SGI
+  of these capabilities deploying two 300+ terrabyte XFS filesystems on two SGI
   Altix archival storage servers, each of which is directly attached to
   multiple Fibre Channel disk arrays.
 

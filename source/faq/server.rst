@@ -42,7 +42,7 @@ Server related
 .. not completely ready yet ....
 
    **What is the format of the chunk names on the chunkservers ?**
-   The format for the chunkservers is hardcoded in the files::
+   The format for the chunkservers is hard coded in the files::
 
      src/chunkserver/chunk_filename_parser.h
      src/chunkserver/chunk_filename_parser.cc

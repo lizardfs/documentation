@@ -16,7 +16,7 @@ High Availability
    current master has to be demoted (if still possible) and an existing shadow
    has to be promoted manually.
 
-   If the failover happens automatically, a good state of high availability is
+   If the fail over happens automatically, a good state of high availability is
    achieved on a service level. Thus the term "High Availability" refers to
    keeping the master role alive when everything goes down under.
 
@@ -27,7 +27,7 @@ High Availability
    One would be to demote and promote manually if you need to.
    The better way would be to delegate that task to a mechanism
    which knows the current state of all (possible) master nodes and
-   can perform the failover procedure automatically.
+   can perform the fail over procedure automatically.
 
    Known methods, when only using open-source software, are building Pacemaker/
    Corosync clusters with self-written OCF agents. Another way could be using
@@ -35,11 +35,11 @@ High Availability
 
 **This is too complicated! I need a better solution for High Availability.**
 
-  An officialy supported way to achieve high availablity of the master is to
+  An officially supported way to achieve high availability of the master is to
   obtain the uRaft component from Skytechnology Sp. z o.o., the company behind
   LizardFS.
   Based on the :ref:`raft` algorithm, the uRaft service makes sure that all
-  masternodes talk to each other and exchange information regarding their
+  master nodes talk to each other and exchange information regarding their
   health states.
 
   In order to ensure that a master exists, the nodes participate in votes.

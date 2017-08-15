@@ -19,6 +19,7 @@ Main contributors:
 * Artur Kornacki
 * Łukasz Pietrzak
 * Adam Ochmanski
+* Pawel Kalinowski
 
 Additional content has been provided by:
 
@@ -26,11 +27,11 @@ Additional content has been provided by:
 * Karl Pielorz - :ref:`xenserver_storage`
 * Various member of the LizardFS community
 
-Sructural work provided by:
+Structural work provided by:
 
 * Wolfram Eifler
 
-Various Manpages where taken and adopted from the MooseFS Project
+Various Man pages where taken and adopted from the MooseFS Project
 
 If you think that you should be part of this page, please contact the
 documentation maintainer.

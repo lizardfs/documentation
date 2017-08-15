@@ -38,8 +38,8 @@ PERSONALITY
 
     PERSONALITY = master
 
-  means that this instance of metadata server acts as main metadata server
-  govering all file system metadata modifications. ::
+  means that this instance of metadata server acts as the main metadata server
+  governing all file system metadata modifications. ::
 
     PERSONALITY = shadow
 
@@ -54,7 +54,7 @@ PERSONALITY
     PERSONALITY = ha-cluster-managed
 
   means that this instance is managed by HA cluster, server runs in *shadow*
-  mode as long as its not remotly promoted to *master*.
+  mode as long as its not remotely promoted to *master*.
 
 DATA_PATH
   where to store metadata files and lock file
@@ -152,7 +152,7 @@ MATOTS_LISTEN_PORT
   Port to listen on for tapeserver connections (default is 9424)
 
 CHUNKS_LOOP_MAX_CPS
-  Chunks loop shouldn*t check more chunks per seconds than given number
+  Chunks loop shouldn't check more chunks per seconds than given number
   (default is 100000)
 
 CHUNKS_LOOP_MIN_TIME
@@ -194,8 +194,8 @@ ENDANGERED_CHUNKS_MAX_CAPACITY
   (default is 1Mi, i.e. no more than 1Mi chunks will be kept in a queue).
 
 ACCEPTABLE_DIFFERENCE
-  The maximum difference between disk usage on chunkservers that doesn*t
-  trigger chunk rebalancing
+  The maximum difference between disk usage on chunkservers that doesn't
+  trigger chunk re balancing
   (default is 0.1, i.e. 10%).
 
 CHUNKS_REBALANCING_BETWEEN_LABELS
@@ -267,7 +267,7 @@ AVOID_SAME_IP_CHUNKSERVERS
 
 SNAPSHOT_INITIAL_BATCH_SIZE
   This option can be used to specify initial number of snapshotted nodes that
-  will be atomically cloned before enqueuing the task for execution in
+  will be atomically cloned before en queuing the task for execution in
   fixed-sized batches. (default is 1000)
 
 SNAPSHOT_INITIAL_BATCH_SIZE_LIMIT
@@ -299,7 +299,7 @@ LOAD_FACTOR_PENALTY
 
 SNAPSHOT_INITIAL_BATCH_SIZE
   This option can be used to specify initial number of snapshotted nodes that
-  will be atomically cloned before enqueuing the task for execution in
+  will be atomically cloned before en queuing the task for execution in
   fixed-sized batches. (default is 1000)
 
 .. note:: Chunks in master are tested in loop. Speed (or frequency) is

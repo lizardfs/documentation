@@ -14,7 +14,7 @@ FC/FibreChannel
 
   Most block storage runs over Fibre Channel Fabrics and supports many upper level protocols. Fibre Channel Protocol (FCP) is a transport protocol that predominantly transports SCSI commands over Fibre Channel networks. Mainframe computers run the FICON command set over Fibre Channel because of its high reliability and throughput. Fibre Channel is the most popular network for flash memory being transported over the NVMe interface protocol.
 
-  The folowing Variants of FC are an overview of FC native speeds:
+  The following Variants of FC are an overview of FC native speeds:
 
   *Fibre Channel Variants*
 

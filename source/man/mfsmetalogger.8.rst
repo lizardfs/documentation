@@ -55,7 +55,7 @@ FILES
 
 *mfsmetalogger.cfg*
   configuration file for LizardFS metalogger process; refer to the
-  mfsmetalogger.cfg(5) manual page for defails
+  mfsmetalogger.cfg(5) manual page for details
 
 *mfsmetalogger.lock*
   PID file of running LizardFS metalogger process

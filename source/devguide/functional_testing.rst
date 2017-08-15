@@ -119,7 +119,7 @@ where:
         ContinuousTests
            tests using LizardFS mountpoint to populate LizardFS
            installation with data and validate them;
-           these tests are desigend to be run continuously,
+           these tests are designed to be run continuously,
 
     <TEST_NAME> is the name of your test.
 

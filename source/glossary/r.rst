@@ -47,7 +47,7 @@ the same series of states.
 .. seealso::
 
    * `The Raft Consensus Algorithm <https://raft.github.io/>`_
-      Contains a nice visualisatio of how the election process works.
+      Contains a nice visualization of how the election process works.
 
 
 .. _rpm:

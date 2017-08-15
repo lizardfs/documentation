@@ -26,7 +26,7 @@ To ease the authoring-process and to uphold the quality of our documentation
 every section goes through at least the following stages:
 
 #. **todo** (this section needs a helping hand)
-#. **writing** (somebody is writing content, others: please dont interfere)
+#. **writing** (somebody is writing content, others: please don't interfere)
 #. **proof1** (proofreading stage 1, somebody with appropriate knowledge
    checks the written content for correctness regarding facts and
    understandability)
@@ -60,12 +60,12 @@ All in all a section-start should look like::
 
   .. auth-status-writing/wolfram@example.com
 
-.. note:: This mechanism is meant to make our lives easier, *please* dont
+.. note:: This mechanism is meant to make our lives easier, *please* don't
    use it for commanding others! The only one who is entitled to put an
-   email-addres in a authoring-tag is the person owning that address. It is
+   email-address in a authoring-tag is the person owning that address. It is
    used to indicate "i take responsibility for that section". Misusing
    mechanisms for command-like "you take responsibility" actions will
-   definitly kill our motivation.
+   definitely kill our motivation.
 
 
 
@@ -103,9 +103,9 @@ Styleguide / Organizing Files
 
 Headers are taken from the Python documentation project::
 
-  Parts:            ############## (with overline)
+  Parts:            ############## (with over line)
 
-  Chapters:         ************** (with overline)
+  Chapters:         ************** (with over line)
 
   Sections:         ===========
 
@@ -118,8 +118,8 @@ Headers are taken from the Python documentation project::
 
 * Table of Content (ToC) depth: 2 Levels (Also 2 levels in every Part except
   for the glossary)
-* Subdirectories are for separate manuals that should be buildable standalone.
-* The manual pages should be buildable as man pages standalone.
+* Subdirectories are for separate manuals that should be build able standalone.
+* The manual pages should be build able as man pages standalone.
 * Add .. code-block:: <lang> to literal blocks so that they get highlighted.
   Prefer relying on automatic highlighting simply using :: (two colons). This
   has the benefit that if the code contains some invalid syntax, it won’t be
@@ -162,10 +162,10 @@ First:
 
  * apt-get install pandoc pandoc-data
 
-Than (the sphinx in the debian repo is too old) :
+Than (the sphinx in the Debian repo is too old) :
 
  * choose a place for your virtual environment for sphinx
- * setup a virtual enironment for sphinx::
+ * setup a virtual environment for sphinx::
 
    $ virtualenv sphinx
 
@@ -200,7 +200,7 @@ To install sphinx correctly on MacOS/X you will need to make use of a virtual
 python environment::
 
  * choose a place for your virtual environment for sphinx
- * setup a virtual enironment for sphinx::
+ * setup a virtual environment for sphinx::
 
    $ virtualenv sphinx
 
@@ -226,7 +226,7 @@ packages::
   hs-pandoc-types
   py27-sphinx-1.4.4
 
-FreeBSD keeps its sphinx prety actual so there should be no problem in
+FreeBSD keeps its sphinx pretty actual so there should be no problem in
 building the docs.
 
 Build-Process
@@ -269,7 +269,7 @@ Submitting your work
 Read :ref:`submitting_patches` for information about our conventions. In short
 this means for us:
 
-* First line of the commit-message is preceeded by "doc: ", The first character
+* First line of the commit-message is preceded by "doc: ", The first character
   of the remaining line has to be uppercase. First line is of form::
 
     doc: Short-description max-length 65 characters

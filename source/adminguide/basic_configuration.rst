@@ -83,9 +83,9 @@ Basic network adjustments for Linux
 
 .. maybe this should go into the cookbook or into advanced config ??
 
-By default Linux systems come with relatively small window sizes for tcp and
-udp frames which could lead to fragmentation and lowered performance.
-Especialy if your servers use 10G or faster interfaces we would recommend to
+By default Linux systems come with relatively small window sizes for TCP and
+UDP frames which could lead to fragmentation and lowered performance.
+Especially if your servers use 10G or faster interfaces we would recommend to
 adjust your network settings by adding the following entries to your /etc/
 sysctl.conf file or placing a new file called "lizardfs.conf" into the /etc/
 sysconf.d/ directory containing the following entries::
@@ -125,9 +125,9 @@ The Master keeps all of his records in memory but does frequent backups to
 drives which should therefore be very fast, but do not have to be very large.
 A standard 250G SSD should suffice. As a file system we would recommend
 something fast, like XFS. Do not use a HW RAID controller to mirror your
-drives, SSDs usualy have identical lifespan so block level mirroring would
+drives, SSDs usually have identical lifespan so block level mirroring would
 just lead to two dead SSDs instead of one. An alternative would be ZFS
-mirroring which is not lowlevel but data based and does not always write the
+mirroring which is not low level but data based and does not always write the
 same block to both devices to the same position.
 
 
@@ -141,9 +141,9 @@ recommend the following mount options::
 
 This disables unneeded features from the mount which gives a slight
 performance increase especially in case of many chunks. It also increases the
-size of the directories gives lizardfs more space in to put its data.
+size of the directories gives LizardFS more space in to put its data.
 
-Depending on the hardware you use and ifyou are utilising caching RAID
+Depending on the hardware you use and if you are utilizing caching RAID
 controllers, it could make sense to adjust the scheduler on your filesystems.
 How you do a that is documented here:
 
@@ -166,8 +166,8 @@ Configuring your Master
 
 The master server is the heart of the LizardFS ecosystem. It keeps all meta
 information about every file, every chunk and every slice if in ec mode. It
-knows what is where and how to find it. It is also resposible to organize
-georeplication and topology and fix the effects of broken drives and
+knows what is where and how to find it. It is also responsible to organize
+geo replication and topology and fix the effects of broken drives and
 chunkservers.
 
 The metadata database
@@ -179,7 +179,7 @@ its metadata database. The default location, which can be adjusted in the
 
   /var/lib/mfs/metadata.mfs
 
-There is an empty metdata file available which you can use to create a new
+There is an empty metadata file available which you can use to create a new
 one. If you want to use the default location, just issue a::
 
   $ cp /var/lib/mfs/metadata.mfs.empty /var/lib/mfs/metadata.mfs
@@ -205,7 +205,7 @@ the things that are important are:
     PERSONALITY = master
 
   means that this instance of metadata server acts as main metadata server
-  govering all file system metadata modifications. ::
+  governing all file system metadata modifications. ::
 
     PERSONALITY = shadow
 
@@ -220,7 +220,7 @@ the things that are important are:
     PERSONALITY = ha-cluster-managed
 
   means that this instance is managed by a HA cluster, server runs in
-  *shadow*  mode as long as its not remotly promoted to *master*. For details
+  *shadow*  mode as long as its not remotely promoted to *master*. For details
   on running LizardFS with HA Master please refer to :ref:`lizardfs_ha_cluster`
   .
 
@@ -294,14 +294,14 @@ So in the directory field you can specify the whole namespace, **/**, or
 subdirectories like: **/home** or **/vm1**. The special value **.** represents
 the meta file system, which is described in :ref:`mount_meta` .
 You can specify different access rights, options, passwords and user mappings
-for every single directory and split your namespace utlising those options
+for every single directory and split your namespace utilizing those options
 into multiple sub namespaces if required. Check out the examples for how
 different directories can be set to different options.
 
 Options
 ^^^^^^^
 
-To give you maximum flexibility LizardFS provides a range of mount options so you can finetune settings for every piece of your namespace.
+To give you maximum flexibility LizardFS provides a range of mount options so you can fine tune settings for every piece of your namespace.
 
 None of them are required. If you do not provide any options, the default set
 of::
@@ -378,7 +378,7 @@ Examples
 
   10.0.0.0-10.0.0.5    /test   rw,maproot=nobody,password=test
   # Allow 10.0.0.0 - 10.0.0.5 to access the directory /test except for its
-  # subdirectores in a read/write fashion using the password *test*. Map all
+  # subdirectories in a read/write fashion using the password *test*. Map all
   # accesses by the root user to the user *nobody*.
 
   10.1.0.0/255.255.0.0 /public rw,mapall=1000:1000
@@ -386,14 +386,14 @@ Examples
   # in a read/write fashion and map everybody to the UID *1000* and GID *1000*.
 
   10.2.0.0/16          /      rw,alldirs,maproot=0,mintrashtime=2h30m,maxtrashtime=2w
-  # Give access to the whole namespae to the 10.2.0.0/16 network in a
-  # read/write fashion. Also allowsubdirectories to be mounted directly by
+  # Give access to the whole namespace to the 10.2.0.0/16 network in a
+  # read/write fashion. Also allow subdirectories to be mounted directly by
   # those clients.
-  # Map the root user to UID *0*. Allow users to set the trahtime (time when
-  # files in the tash get autopruned) between
+  # Map the root user to UID *0*. Allow users to set the trashtime (time when
+  # files in the trash get autopruned) between
   # 2h30m and 2 weeks.
 
-Utilising all of these options you will be able to do quite flexible setups,
+Utilizing all of these options you will be able to do quite flexible setups,
 like optimizing for virtualization as described in out Cookbook at
 :ref:`virtu_farms` .
 
@@ -401,8 +401,8 @@ Now that you know how to setup your namespace, the next step would be to set
 custom goals/replication modes, described in :ref:`replication` and QoS/IO
 Limits, described in the :ref:`lizardfs_qos` chapter.
 
-Network awareness / topology are further advanced topics, especialy required
-for georeplication. A description of how to set them up can be found here
+Network awareness / topology are further advanced topics, especially required
+for geo replication. A description of how to set them up can be found here
 :ref:`rack_awareness` .
 
 
@@ -435,7 +435,7 @@ Configuring your Chunkservers
 =============================
 
 Your chunkservers are pretty simple to set up.
-Usualy, if your /etc/hosts files are setup correctly with the address of the
+Usually, if your /etc/hosts files are setup correctly with the address of the
 master server and you do not require labeling (:ref:`labeling_chunkserver`),
 the mfschunkserver.cfg file can stay as it is. If you require to lock down the
 masterserver address, adjust the following line::
@@ -460,23 +460,23 @@ The settings always assume that the directory is a dedicated device, so a HDD,
 a Raidset or a SSD and bases it's space calculation on that.
 
 Once this is setup, your chunkserver is ready and actively taking part in your
-lizardfs.
+LizardFS.
 
-To remove a directory from being used by lizardfs, just add a *\** to the
+To remove a directory from being used by LizardFS, just add a *\** to the
 beginning of the line in mfshdd.cfg::
 
   # use directory '/mnt/hd2', but replicate all data from it:
   */mnt/hd2
 
-Lizardfs will replicate all the data from it somewhere else. Once you see in
-the webinterface that all data has been safely copied away, you can update the
+LizardFS will replicate all the data from it somewhere else. Once you see in
+the web interface that all data has been safely copied away, you can update the
 file and remove the line and than remove the device associated with it from
 your chunkserver.
 
 Configuring the Metalogger
 ==========================
 
-The metalogger is used for desaster recovery should the master and
+The metalogger is used for disaster recovery should the master and
 shadowservers fail. The metadatabase can be rebuild from them. The setup is
 straightforward. You basically do not need to setup anything if your
 /etc/hosts is setup accordingly, otherwise you need to set the following in
@@ -518,7 +518,7 @@ After changing the configuration you must reload the chunkserver::
    $ mfschunkserver -c path/to/config reload
 
 If there is no LABEL entry in the config, the chunkserver has a default label
-of “_” (i.e. wildcard), which has a special meaning when defining goals and
+of “_” (i.e. wild card), which has a special meaning when defining goals and
 means “any chunkserver”.
 
 Multiple chunkservers can have the same label than they are basically a group
@@ -532,7 +532,7 @@ From the command line::
 
    $ lizardfs-admin list-chunkservers <master ip> <master port>
 
-Via the cgi (webinterface):
+Via the cgi (web interface):
 
 In the ‘Servers’ tab in the table ‘Chunk Servers’ there is a column ‘label’
 where labels of the chunkservers are displayed.

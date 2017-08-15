@@ -194,8 +194,8 @@ ports or packages you will need to install::
   judy
   boost
 
-If you want to make use of the storage extensions for intel platforms by
-intel, please install the
+If you want to make use of the storage extensions for Intel platforms by
+Intel, please install the
 
 ::
 
@@ -203,9 +203,9 @@ intel, please install the
 
 package as well.
 
-The packages will install other dependencies required automagically.
+The packages will install other dependencies required auto-magically.
 
-For building the manpages and documentation you will require additionaly::
+For building the manpages and documentation you will require additionally::
 
   hs-pandoc
   hs-pandoc-types
@@ -221,7 +221,7 @@ For making bash work correctly, please add the following to /etc/fstab::
 
   fdesc         /dev/fd         fdescfs rw      0   0
 
-Before you can build LizardFS with your newly setup build envionment, please
+Before you can build LizardFS with your newly setup build environment, please
 set the following variables in your environment or add them to your .bashrc::
 
   export CC=/usr/local/bin/gcc6
@@ -232,7 +232,7 @@ set the following variables in your environment or add them to your .bashrc::
 
 We also strongly suggest to build LizardFS while working inside bash.
 
-Make sure your freebsd as well as your packages and ports are always up to
+Make sure your FreeBSD as well as your packages and ports are always up to
 date.
 
 

@@ -33,7 +33,7 @@ The metadata server can work in one of two modes (personalities):
 * shadow
 
 If the metadata server works with *master* personality it acts as the main
-metadata server govering all file system metadata modifications.
+metadata server governing all file system metadata modifications.
 If the metadata server works with *shadow* personality it acts as backup
 metadata server ready for immediate deployment as new *master* in case of the
 current *master* failing.
@@ -67,7 +67,7 @@ files.
   print usage information and exit
 -f
   (deprecated, use *start* action instead)
-  forcily run LizardFS master process, without trying to kill
+  forcibly run LizardFS master process, without trying to kill
   previous instance (this option allows to run LizardFS master if stale PID
   file exists)
 -s

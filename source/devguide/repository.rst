@@ -13,7 +13,7 @@ Repository rules
 *  We do strive to maintain backward compatibility. Changes which make
    existing installations break during an upgrade, won't be accepted.
 
-*  Your changes most probably will be rebased to the top of the master before
+*  Your changes most probably will be re based to the top of the master before
    being pushed to the repository. This makes the git tree simpler if there is
    no important reason to add any branches and merges there.
 
@@ -30,7 +30,7 @@ Commit messages
      tag: Description in the imperative mood.
 
    The description begins with a capital letter. It's role is describe what
-   the commit does (does it fix a bug? refactor some code? adds a new test?
+   the commit does (does it fix a bug? re factor some code? adds a new test?
    adds a new feature? extends an existing feature? updates documentation?)
    and which functionality, part of the code or module does it concern.
 
@@ -155,11 +155,11 @@ two fields to qualify the patch.
   **0** is used when making comments, that has no effect on whether or not the
   patch should be merged.
 
-  **+1** is used by the CI system if the build is succesfull
+  **+1** is used by the CI system if the build is successful
 
   **+1** is used by the reviewer, when the expected result has been verified.
 
-.. note:: a patch will NOT be merged unless the CI system shows a successfull
+.. note:: a patch will NOT be merged unless the CI system shows a successful
           build.
 
 Updating a patch

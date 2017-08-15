@@ -34,7 +34,7 @@ Lines starting with *#* character are ignored.
     n.n.n.n/m.m.m.m IP class specified by network address and mask
     f.f.f.f-t.t.t.t IP range specified by from-to addresses (inclusive)
 
-'SWITCH-NUMBER' can be specified as any positive 32-bit numer.
+'SWITCH-NUMBER' can be specified as any positive 32-bit number.
 
 NOTES
 =====
@@ -47,7 +47,7 @@ different, but switch numbers are the same and *2* when switch numbers are
 different
 
 Distances are used only to sort chunkservers during read and write operations.
-New chunks are still created randomly. Also rebalance routines do not take
+New chunks are still created randomly. Also re balance routines do not take
 distances into account.
 
 

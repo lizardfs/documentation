@@ -7,13 +7,13 @@ lizardfs(7)
 NAME
 ====
 
-lizardfs - a networking, distributed, highly available file system
+lizardFS - a networking, distributed, highly available file system
 
 DESCRIPTION
 ===========
 
 LizardFS is a networking, highly available, distributed file system. It
-spreads data over several physical localisations (servers), which are visible
+spreads data over several physical localizations (servers), which are visible
 to a user as one resource. For standard file operations LizardFS acts as other
 Unix-alike file systems. It has hierarchical structure (directory tree),
 stores files' attributes (permissions, last access and modification times) as
@@ -45,7 +45,7 @@ A LizardFS installation consists of five types of machines:
  master metadata server (or 'the master')
    a managing server - single computer managing the whole filesystem, storing
    metadata for every file (information on size, attributes and file
-   localisation(s), including all information about non-regular files, i.e.
+   localization(s), including all information about non-regular files, i.e.
    directories, sockets, pipes and devices.
 
  metadata server shadows (or 'the shadow master')

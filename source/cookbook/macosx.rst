@@ -48,7 +48,7 @@ It should give you the message::
 
   System Integrity Protection status: disabled.
 
-Now you are ready to add the required script to /sbin. Use your favourite
+Now you are ready to add the required script to /sbin. Use your favorite
 editor and create the file **/sbin/mount_lizardfs** with the following
 contents::
 
@@ -83,14 +83,14 @@ and test if your automounting works:
 
   ls -l DIRECTORY
 
-If everything works ok, reboot again into *Recovery Mode* by pressing CMD and
+If everything works OK, reboot again into *Recovery Mode* by pressing CMD and
 follow the steps to disable SIP, but put **enable** after csrutil instead of
 **disable**. After reboot your mac will be protected again and have a nice
 lizardfs automount running.
 
 .. note:: The mounted filesystem will not show up in the finder. You will need
    to either access it from the command line or if you want to use the finder,
-   press Shift + Command + G and enter the fodler path there manualy.
+   press Shift + Command + G and enter the folder path there manually.
 
 .. seealso::
    * http://useyourloaf.com/blog/using-the-mac-os-x-automounter/

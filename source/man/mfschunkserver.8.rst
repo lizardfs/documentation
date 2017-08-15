@@ -53,7 +53,7 @@ OPTIONS
 
 -f
   (deprecated, use *start* action instead)
-  forcily run LizardFS chunkserver process, without trying to kill previous
+  forcibly run LizardFS chunkserver process, without trying to kill previous
   instance (this option allows to run LizardFS chunkserver if stale PID file
   exists)
 
@@ -111,7 +111,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-Copyright 2008-2009 Gemius SA, 2013-2017 Skytechnology sp. z o.o.
+Copyright 2008-2009 Gemius SA, 2013-2017 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software

@@ -46,7 +46,7 @@ ZFS
 
    * `ZFS in the Ubuntu Wiki <https://wiki.ubuntuusers.de/ZFS_on_Linux/>`_
 
-   * `How to install and use ZFS on Ubuntu and why you'd wnat to <http://www.howtogeek.com/272220/how-to-install-and-use-zfs-on-ubuntu-and-why-youd-want-to/>`_
+   * `How to install and use ZFS on Ubuntu and why you'd want to <http://www.howtogeek.com/272220/how-to-install-and-use-zfs-on-ubuntu-and-why-youd-want-to/>`_
 
    * `An extensive Guide about ZFS on Debian by Aaron Toponce <https://pthree.org/2012/04/17/install-zfs-on-debian-gnulinux/>`_
 

@@ -93,7 +93,7 @@ Report bugs to <contact@lizardfs.org>.
 COPYRIGHT
 =========
 
-2013-2017 Skytechnology sp. z o.o.
+2013-2017 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software

@@ -55,14 +55,14 @@ xorN
   for each file using this goal, the system will split the file into N+1 parts
   (N ordinary + 1 parity). For reading, any N of the parts are necessary. If
   labels are specified, parts will be kept on chunkservers with these labels.
-  Otherwise, default wildcard labels will be used. N can be in range from 2 to
+  Otherwise, default wild card labels will be used. N can be in range from 2 to
   9.
 
 ec(K,M)
   for each file using this goal, the system will split the file into K + M
   parts (K data parts and M parity). For reading, any K of the parts are
   necessary. If labels are specified, parts will be kept on chunkservers with
-  these labels. Otherwise, default wildcard labels will be used. K can be in
+  these labels. Otherwise, default wild card labels will be used. K can be in
   range from 2 to 32 and M from 1 to 32.
 
   If the type is unspecified it is assumed to be *std*.

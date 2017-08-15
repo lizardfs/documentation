@@ -11,9 +11,9 @@ Linux
 Basic checks
 ------------
 
-* Check if your nodes are all reachable by ip address as well as by hostname
+* Check if your nodes are all reachable by IP address as well as by hostname
 * Check if your network has the right throughput
-* Check if your disks are all working and do not repport errors
+* Check if your disks are all working and do not report errors
 * Check your Chunkservers for:
 
   * Broken Disks
@@ -31,8 +31,8 @@ Basic checks
 Check the speed of your network interface
 -----------------------------------------
 
-Veryfying what your network interface is set to is pretty simple on linux, you
-can just use the *ethtool* program to tell you what your interface is actualy
+Verifying what your network interface is set to is pretty simple on linux, you
+can just use the *ethtool* program to tell you what your interface is actually
 set to::
 
   ethtool <interface>
@@ -66,7 +66,7 @@ example::
         Link detected: yes
 
 As you can see, the interface report a speed of 100Mb/s. It has
-Auto-negotiation enabled so is most probably connected to a 10Mb/s switchport.
+Auto-negotiation enabled so is most probably connected to a 10Mb/s switch port.
 
 .. seealso: https://www.kernel.org/pub/software/network/ethtool/
 

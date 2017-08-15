@@ -186,7 +186,7 @@ Command                 Description
 Installation and runtime
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you have done the configration, you can add the service to your Windows
+After you have done the configuration, you can add the service to your Windows
 system by running::
 
   LizardFSController -i
@@ -210,7 +210,7 @@ A full list of options can be displayed using::
 New Windows Client with ACL and AD support
 ------------------------------------------
 
-To utilise the ACL and AD support in the new Windows CLient you need to do the
+To utilize the ACL and AD support in the new Windows CLient you need to do the
 following:
 
 
