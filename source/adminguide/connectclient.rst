@@ -227,6 +227,12 @@ To utilise the ACL and AD support in the new Windows CLient you need to do the f
    is name of our test domain and it should be selected. Other fields will set
    themselves.
 
+   .. image:: ../images/win-acl-ad.png
+   :align: center
+   :alt: Figure 3: view of required ACL settings
+
+   Figure 3: view of required AD settings
+
 * install the new LizardFS Windows client with ACL support on the end user
   machines.
 
