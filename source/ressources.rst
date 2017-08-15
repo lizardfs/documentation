@@ -61,6 +61,13 @@ Developer Specific
 Third Party AddOns
 ******************
 
+**LizardFS in Grafana**
+  This plugin/script for Telegraf will collect the metrics from LizardFS and
+  stores it into InfluxDB, then you can view your metrics in Grafana on a
+  templated dashboard.
+
+  https://blog.kruyt.org/lizardfs-in-grafana/
+
 **puppet-lizardfs**
 
   The puppet-lizardfs module lets you use Puppet to install and configure LizardFS automatically.
