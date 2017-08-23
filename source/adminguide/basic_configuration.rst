@@ -464,10 +464,15 @@ Configuring the Web Interface
 
 The lizardfs cgiserver does not require much configuration. After the
 installation either follow the example installation and just add an entry for
-*mfsmaster* to your /etc/hosts file, or,  ...
+*mfsmaster* to your /etc/hosts file. If you do not call your master mfsmaster,
+you can always define which mater to connect to via the URL.
 
-.. todo: how do we change the place this looks for the master server ? Any
-         config possible ?
+Example::
+
+http://10.100.33.15:9425/mfs.cgi?materhost=192.168.99.100
+
+Would open the we interface that is running on host 192.100.33.15 and connect it
+to the lizardFS master server running on 192.168.99.100.
 
 .. _labeling_chunkserver:
 
