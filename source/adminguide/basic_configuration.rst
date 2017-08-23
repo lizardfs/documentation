@@ -77,38 +77,6 @@ The ntpd time service
 
 .. todo: needs inclusion of article from Wolfram
 
-
-Basic network adjustments for Linux
------------------------------------
-
-.. maybe this should go into the cookbook or into advanced config ??
-
-By default Linux systems come with relatively small window sizes for TCP and
-UDP frames which could lead to fragmentation and lowered performance.
-Especially if your servers use 10G or faster interfaces we would recommend to
-adjust your network settings by adding the following entries to your /etc/
-sysctl.conf file or placing a new file called "lizardfs.conf" into the /etc/
-sysconf.d/ directory containing the following entries::
-
-  net.ipv4.tcp_window_scaling = 1
-
-  net.core.rmem_max=1677721600
-  net.core.rmem_default=167772160
-  net.core.wmem_max=1677721600
-  net.core.wmem_default=167772160
-  net.core.optmem_max= 2048000
-
-  # set minimum size, initial size, and maximum size in bytes
-  net.ipv4.tcp_rmem= 1024000 8738000 1677721600
-  net.ipv4.tcp_wmem= 1024000 8738000 1677721600
-  net.ipv4.tcp_mem= 1024000 8738000 1677721600
-  net.ipv4.udp_mem= 1024000 8738000 1677721600
-  net.core.netdev_max_backlog = 30000
-  net.ipv4.tcp_no_metrics_save = 1
-
-These values are taken from a 10G setup, you probably need to adjust them if
-you have lower or faster networking interfaces.
-
 File systems for LizardFS servers
 =================================
 
@@ -409,7 +377,7 @@ for geo replication. A description of how to set them up can be found here
 .. _shadow_server_config:
 
 Configuring your shadow master
-===============================
+==============================
 
 Your shadow master is configured in nearly the same way as your Master. Since
 it is supposed to take over the functionality of the Master in case of a
