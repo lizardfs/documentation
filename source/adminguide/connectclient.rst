@@ -65,7 +65,7 @@ Example::
 
   mfsmount -o cacheexpirationtime=500 -o readaheadmaxwindowsize=4096 mountpoint/
 
-Reasonable values::
+Reasonable values:
 
 * cacheexpirationtime - depends on latency, 500 should be alright for most
   installations. Higher values = data will be kept in cache longer, but it

@@ -158,9 +158,8 @@ install the sphinx documentation engine::
 As on any other OS we have no preferences for a IDE on MacOS/X. You can use
 Xcode, eclipse, netbeans or whatever else fickle's your fancy.
 
-Our Documentation maintainer uses `Sublime Text 3 <http://www.sublimetext.com/>
-`_ and swears that it is the best editor since the invention of writing, but
-YMMV ;)
+Our Documentation maintainer uses `Sublime Text3 <http://www.sublimetext.com/>`_
+and swears that it is the best editor since the invention of writing, but YMMV.
 
 To build with your installed gcc6 you will need to set the following variables
 in your environment before invoking :ref:`cmake`::
@@ -171,7 +170,8 @@ in your environment before invoking :ref:`cmake`::
 
 homebrew is also the perfect place to get git and additions to git and gerrit.
 
-Some people had good experiences using `SmartGIT <http://www.syntevo.com/smartgit/>`_ but it is not free.
+Some people had good experiences using
+`SmartGIT <http://www.syntevo.com/smartgit/>`_ but it is not free.
 
 Now you are ready to compile a fully featured LizardFS package on your Mac.
 
