@@ -5,7 +5,7 @@ LizardFS linux CookBook
 ***********************
 .. auth-status-proof1/none
 
-.. _linux_network_tuning
+.. _linux_network_tuning:
 
 Basic network adjustments for Linux
 -----------------------------------

@@ -490,7 +490,7 @@ lizardfs-client package.
 Now create multiple shared directories on each node, as described
 in :ref:`virtu_farms`. Than goto datacenter=>storage in your Proxmox GUI and
 select **add**. Select directory and in the pop up select one of the
-directories you just mounted. Mark the box for **shared* and your done.
+directories you just mounted. Mark the box for **shared** and your done.
 Perform the same for each mount point and than go ahead and place your
 containers and VM's inside.
 
