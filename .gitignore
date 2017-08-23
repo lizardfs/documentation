@@ -33,7 +33,6 @@ compile_commands.json
 
 # Debian builds #
 #################
-/Makefile
 /debian/files
 /debian/*.debhelper
 /debian/*.substvars
@@ -52,3 +51,4 @@ compile_commands.json
 i###################################
 *.sublime-project
 *.sublime-workspace
+.idea/

@@ -19,7 +19,6 @@ Contents:
    optional_features
    connectclient
    security
-   optimizing
    troubleshooting
    upgrading
    manpages

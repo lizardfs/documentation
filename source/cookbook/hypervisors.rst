@@ -34,7 +34,7 @@ addresses are setup that you can use for connecting to, or running LizardFS on
 (i.e. probably not INTERNET facing).
 
 Preparing Storage – if you need it
------------------------------------
+----------------------------------
 
 If you are going to use the XenServer itself to provide storage – you'll
 need to prepare drives / directories on the server.
