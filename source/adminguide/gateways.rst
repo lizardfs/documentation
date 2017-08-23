@@ -26,10 +26,21 @@ all configuration options and advaced setups is available at:
 
 * https://github.com/nfs-ganesha/nfs-ganesha/wiki/Configurationfile
 
+Basic considerations for the setup
+----------------------------------
+
+You can set the ganesha node to be either a data node or a metadata node or both.
+There is probably no big deal if a node is set to both but never used.
+
+The main rule is, a data node HAS to be located on the same node as a
+chunkserver. Thiings will break if this is not the case.
+
+A metadata node can be standalone.
+
 Installing LizardFS-NFS-Ganesha on CentOS/RHEL 7
 ------------------------------------------------
 
-If you use a minimal or a  container isntall of redhat or centos 7,
+If you use a minimal or a  container install of redhat or centos 7,
 please install an openssh-server first so you can work remotely::
 
   # yum install openssh-server
@@ -151,9 +162,9 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 +==================================+=====+=========+=============+===============================================================+
 | name                             |     |         | LizardFS    | Name of the FSAL module. Must be LizardFS                     |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| hostname                         |     |         |             | Name or IP address of PNFS_MD node                            |
+| hostname                         |     |         |             | Name/IP of the LizardFS Master or Floating IP for uraft       |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| port                             | 1   | 65535   | 9421        | Port the PNDS_MD node listens on                              |
+| port                             | 1   | 65535   | 9421        | Port the master is listening on                               |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | mountpoint                       |     |         | nfs-ganesha | Name / Label shown in GUI for this instance of ganesha        |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
