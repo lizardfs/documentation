@@ -32,60 +32,56 @@ Installing LizardFS-NFS-Ganesha on CentOS/RHEL 7
 If you use a minimal or a  container isntall of redhat or centos 7,
 please install an openssh-server first so you can work remotely::
 
-  yum install openssh-server
-  systemctl enable sshd
-  systemctl start sshd
+  # yum install openssh-server
+  # systemctl enable sshd
+  # systemctl start sshd
 
 install man, vim and tmux to have sysadmin tools and help ready::
 
-  yum install man vim
+  # yum install man vim
 
 Install the epel repository for some basic back ports that will be required,
 like python3.4 and some others::
 
-  yum -y install epel-release
-  yum -y update
-  yum -y upgrade
+  # yum -y install epel-release
+  # yum -y update
+  # yum -y upgrade
 
-Now install the required dependencies first:
+Now install the required dependencies first::
 
-yum install python34
+  # yum install python34
 
 Now go to the directory you downloaded our packages to and install::
 
-  yum -y install ./libntirpc-1.5.3-1.el7.centos.x86_64.rpm
-  yum -y install ./libtirpc-1.0.2-0.el7.centos.x86_64.rpm  \
-  ./nfs-utils-2.1.1-5.rc5.el7.centos.x86_64.rpm \
-  ./rpcbind-0.2.4-7.rc2.el7.centos.x86_64.rpm  \
-  ./gssproxy-0.7.0-9.el7.centos.x86_64.rpm
+  # yum -y install ./libntirpc-1.5.3-1.el7.centos.x86_64.rpm
+  # yum -y install ./libtirpc-1.0.2-0.el7.centos.x86_64.rpm ./nfs-utils-2.1.1-5.rc5.el7.centos.x86_64.rpm ./rpcbind-0.2.4-7.rc2.el7.centos.x86_64.rpm ./gssproxy-0.7.0-9.el7.centos.x86_64.rpm
 
+It is important that the second command is one line becuase the packages depend on each other.
 Now install the nfs-ganesha packages we provide::
 
-  yum install nfs-ganesha-2.5.1.1-1.el7.centos.x86_64.rpm
-  yum install nfs-ganesha-vfs-2.5.1.1-1.el7.centos.x86_64.rpm
+  # yum -y install nfs-ganesha-2.5.1.1-1.el7.centos.x86_64.rpm
+  # yum -y install nfs-ganesha-vfs-2.5.1.1-1.el7.centos.x86_64.rpm
 
-And finally the packages from our addon:
+And finally the packages from our addon::
 
-  yum -y install lizardfs-lib-client-3.12.0-0el7.x86_64.rpm
-  yum -y install lizardfs-nfs-ganesha-3.12.0-0el7.x86_64.rpm
+  # yum -y install lizardfs-lib-client-3.12.0-0el7.x86_64.rpm
+  # yum -y install lizardfs-nfs-ganesha-3.12.0-0el7.x86_64.rpm
 
-On the master also install the uraft for NFS package:
+On the master also install the uraft for NFS package::
 
-  yum -y install lizardfs-nfs-uraft-3.9.3-0el7.x86_64.rpm
-
+  # yum -y install lizardfs-nfs-uraft-3.9.3-0el7.x86_64.rpm
 
 If you require the services of autofs, install our back ported autofs as well::
 
-  autofs-5.1.2-2.el7.centos.x86_64.rpm
+  # yum -y install autofs-5.1.2-2.el7.centos.x86_64.rpm
 
 On the Ganesha Metadataserver which can but do not have to be installed on the
 lizardfs masters ( they can also be running on separate boxes, just need to
 connect to the masters via IP) you will need to run::
 
-  yum -y install lizardfs-nfs-uraft-3.9.3-0el7.x86_64.rpm
+  # yum -y install lizardfs-nfs-uraft-3.9.3-0el7.x86_64.rpm
 
 to install the HA uraft system for NFS.
-
 
 
 ganecha.conf example file
