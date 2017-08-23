@@ -68,7 +68,8 @@ work on all 3 enterprise repos.
 CentoOS-7 / RHEL-7 / SL 7
 -------------------------
 
-As for The 6 series of the enterprise Linuces, the friendly people from CERN created a complete dev env for gcc6 based development. So again:
+As for The 6 series of the enterprise Linuces, the friendly people from CERN
+created a complete dev env for gcc6 based development. So again:
 
 Install the following packages:
 
@@ -172,6 +173,8 @@ in your environment before invoking :ref:`cmake`::
 homebrew is also the perfect place to get git and additions to git and gerrit.
 
 Some people had good experiences using `SmartGIT <http://www.syntevo.com/smartgit/>`_ but it is not free.
+
+What you will require for acceptable ec speed will be the isa-l library.
 
 Now you are ready to compile a fully featured LizardFS package on your Mac.
 
