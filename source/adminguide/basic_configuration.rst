@@ -469,7 +469,7 @@ you can always define which mater to connect to via the URL.
 
 Example::
 
-http://10.100.33.15:9425/mfs.cgi?materhost=192.168.99.100
+  http://10.100.33.15:9425/mfs.cgi?materhost=192.168.99.100
 
 Would open the we interface that is running on host 192.100.33.15 and connect it
 to the lizardFS master server running on 192.168.99.100.

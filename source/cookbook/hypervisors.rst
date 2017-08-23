@@ -16,9 +16,12 @@ Requirements::
   LizardFS >= 3.10.4
   XenServer >= 7
 
-XenServer 7 is required since it makes use of CentOS 7 as the underlying OS and LizardFS provides packages for CentOS 7.
+XenServer 7 is required since it makes use of CentOS 7 as the underlying OS
+and LizardFS provides packages for CentOS 7.
 
-.. warning:: Installing 3rd party components – such as the LizardFS client, and server components may invalidate any support provided by Citrix for your installation.
+.. warning:: Installing 3rd party components – such as the LizardFS client,
+             and server components may invalidate any support provided by Citrix
+             for your installation.
 
 Pre-requisites
 --------------
@@ -173,8 +176,9 @@ it has available. For our example we edited 'mfshdd.cfg' and added::
 Setting up the Meta Server ('master')
 +++++++++++++++++++++++++++++++++++++
 
-If you're running the master / meta-server under XenServer you need to make one node a 'master' and the other a 'shadow'.
-You will need to copy the example configs to the real files:
+If you're running the master / meta-server under XenServer you need to make one
+node a 'master' and the other a 'shadow'.
+You will need to copy the example configs to the real configuration files:
 
 .. code-block:: bash
 
@@ -398,11 +402,17 @@ the LizardFS – and have the LizardFS storage repository available.
 NOTES
 -----
 
-.. note:: If you make one of your XenServer's the meta-server master – it must be up and running in order for the other nodes to use the storage.
+.. note:: If you make one of your XenServer's the meta-server master – it must
+          be up and running in order for the other nodes to use the storage.
 
-.. note:: If the meta-server 'master' fails – you can promote one of the remaining 'shadow' servers to be the new master – but there must be only one 'master' on the system at any time (so the previous master will have to be reconfigured and come back as a 'shadow' server).
+.. note:: If the meta-server 'master' fails – you can promote one of the
+          remaining 'shadow' servers to be the new master – but there must be
+          only one 'master' on the system at any time (so the previous master
+          will have to be reconfigured and come back as a 'shadow' server).
 
-.. note:: LizardFS provide 'lizard-uraft' – which utilizes the :ref:`raft` protocol to keep a 'master' server always available. It's designed for use by a minimum of 3 nodes (two of which can be the XenServer).
+.. note:: LizardFS provide 'lizard-uraft' – which utilizes the :ref:`raft`
+          protocol to keep a 'master' server always available. It's designed
+          for use by a minimum of 3 nodes (two of which can be the XenServer).
 
    This is covered in :ref:`lizardfs_ha_cluster` – along with 'best practices'.
 
@@ -463,7 +473,9 @@ Requirements::
   Proxmox >= 4
   LizardFS >= 3.10.6
 
-.. note:: This guide assumes you are familiar with Proxmox and the Linux command line and can mount / unmount and work with file systems on a standard Debian Jessie platform.
+.. note:: This guide assumes you are familiar with Proxmox and the Linux command
+          line and can mount / unmount and work with file systems on a standard
+          Debian stretch platform.
 
 Using LizardFS as shared storage with Proxmox is pretty straightforward. There
 are a couple of models in which you can do this.
@@ -475,8 +487,8 @@ This one is rather easy. Either add the Lizardfs.com repositories or use the
 official lizardFS packages from the Debian project and install the
 lizardfs-client package.
 
-Now create multiple shared directories on each node, as described in
-:ref:`virtu_farms`. Now goto datacenter=> storage in your Proxmox GUI and
+Now create multiple shared directories on each node, as described
+in :ref:`virtu_farms`. Than goto datacenter=>storage in your Proxmox GUI and
 select **add**. Select directory and in the pop up select one of the
 directories you just mounted. Mark the box for **shared* and your done.
 Perform the same for each mount point and than go ahead and place your
@@ -488,13 +500,12 @@ have them accessible in parallel from all the nodes.
 ProxmoxVE nodes as chunkservers and LizardFS clients
 ----------------------------------------------------
 
+.. TODO:: write the proxmox article
 
 
-Using ProxmoxVE to manage a combined node with LizardFS chunkservers in lxc containers
-------------------------------------------------------------------------------------------------
+Using ProxmoxVE to manage a combined node with chunkservers in lxc containers
+-----------------------------------------------------------------------------
 
-
-
-
+.. TODO:: write the cobined proxmox article
 
 .. seealso:: https://www.proxmox.com/
