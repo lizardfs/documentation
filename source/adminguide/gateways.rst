@@ -32,7 +32,7 @@ Basic considerations for the setup
 You can set the ganesha node to be either a data node or a metadata node or both.
 There is probably no big deal if a node is set to both but never used.
 
-The main rule is, a data node HAS to be located on the same node as a
+The main rule is, a data node **HAS** to be located on the same node as a
 chunkserver. Thiings will break if this is not the case.
 
 A metadata node can be standalone.
@@ -100,6 +100,7 @@ ganecha.conf example file
 
 This is an example of a combined metadata and data node. A node with this
 configuration has to be on a chunkserver and will connect to a masterserver at
+192.168.99.100.
 
 ::
 
@@ -131,8 +132,11 @@ configuration has to be on a chunkserver and will connect to a masterserver at
       # Exporting FSAL
       FSAL {
           Name = LizardFS;
+          # The address of the LizardFS Master Server or Floating IP
           hostname = "192.168.99.100";
+          # The port to connect to on the Master Server
           port = "9421";
+          # How often to retry to connect
           io_retries = 5;
           cache_expiration_time_ms = 2500;
       }
@@ -144,8 +148,9 @@ configuration has to be on a chunkserver and will connect to a masterserver at
   LizardFS {
       # Is this a NFS metadataserver ?
       PNFS_MDS = true;
-      # Is this a NFS dataserver ?
+      # Is this a NFS dataserver and is it installed on an active chunkserver?
       PNFS_DS = true;
+      # A node can be either one or both.
   }
 
   NFSV4 {
@@ -208,3 +213,5 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 The **name** value has to be set to **LizardFS** or nfs-ganesha will not choose
 the LizardFS FSAL and will not be able to use LizardFS as a backend.
 
+.. _TODO: add descriptions for undescribed FSAL options
+.. _TODO: add description for uraft-nfs

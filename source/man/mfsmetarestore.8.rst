@@ -56,7 +56,7 @@ Prints 0 if metadata files are corrupted.
   specify output metadata image file
 -z
   ignore metadata checksum inconsistency while applying changelogs
--v,-\?
+-v
   print version information and exit
 
 FILES
