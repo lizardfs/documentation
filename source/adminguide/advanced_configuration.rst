@@ -98,14 +98,14 @@ LizardFS
 
 Example 1::
 
-   # All client share 1MiB/s bandwidth
-	limit unclassified 1024
+    # All client share 1MiB/s bandwidth
+    limit unclassified 1024
 
 Example 2::
 
-   # All clients in blkio/a group are limited to 1MiB/s, other clients are blocked
-	subsystem blkio
-	limit /a 1024
+    # All clients in blkio/a group are limited to 1MiB/s, other clients are blocked
+    subsystem blkio
+    limit /a 1024
 
 Example 3::
 
@@ -166,7 +166,7 @@ The structure of the mounted meta data directory will look like this::
 .. _meta_trash:
 
 Trash directory
-----------------
+---------------
 
 Each file with a 'trashtime' setting above zero will be present here. You
 can recover those files or delete them permanently.
@@ -176,11 +176,15 @@ Recovering files from the trash
 
 In order to recover a file, just must move it to the undel/ directory. Files
 are represented by their inode number and path, so the file dir1/dir2/file.txt
-with inode 5 will be present at trash/5|dir1|dir2|file.txt,
-recovering it would be performed like this::
+with inode 5 will be present at::
+
+   trash/5|dir1|dir2|file.txt,
+
+and recovering it would be performed like this::
 
    $ cd trash
    $ mv ‘5|dir1|dir2|file.txt’ undel/
+
 
 Removing files permanently
 --------------------------

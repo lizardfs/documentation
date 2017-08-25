@@ -1,12 +1,14 @@
 .. _functional_tests:
 
-****************************
+.. auth-status-frozen/none
+
+***************************
 LizardFS functional testing
-****************************
+***************************
 
 
 How to set up a testing environment?
-=====================================
+====================================
 
 Functional tests configure and run testing LizardFS installation several times.
 The testing installation runs all system modules on a single computer.
