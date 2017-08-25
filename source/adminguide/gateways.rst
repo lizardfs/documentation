@@ -177,11 +177,11 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | io_retries                       | 0   | 1024    | 30          | I/O retries connecting to LizardFS                            |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| chunkserver_round_time_ms        | 0   | 65536   | 200         |                                                               |
+| chunkserver_round_time_ms        | 0   | 65536   | 200         |            |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | chunkserver_connect_timeout_ms   | 0   | 65535   | 2000        | Time after which a chunkserver connection is defined dead     |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| chunkserver_wave_read_timeout_ms | 0   | 65535   | 500         |                                                               |
+| chunkserver_wave_read_timeout_ms | 0   | 65535   | 500         | Timeout for executing each wave of a read operation           |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | cache_expiration_time_ms         | 0   | 65536   | 1000        | How long till chunks get thrown out of the cache              |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
@@ -195,7 +195,7 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | chunkserver_write_timeout_ms     | 0   | 60000   | 5000        | How long to wait for the chunkserver to complete a write cycle|
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| cache_per_inode_percentage       | 0   | 80      | 25          |                                                               |
+| cache_per_inode_percentage       | 0   | 80      | 25          | Max. percentage of write cache per single inode               |                                                   |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | symlink_cache_timeout_s          | 0   | 60000   | 3600        | How long to wait for a response from the symlink cache in sec.|
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
@@ -213,5 +213,32 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 The **name** value has to be set to **LizardFS** or nfs-ganesha will not choose
 the LizardFS FSAL and will not be able to use LizardFS as a backend.
 
+
+
+Providing HA to the NFS Ganesha Plugin
+======================================
+
+For commercial customers HA is provided by the uraft package. Installation and
+basic setup should be done according to the instrauctions in
+:ref:’lizardfs_ha_cluster’ .
+
+You should take into account that you need one uraft per service, so if you want
+your masters and your ganesha metadata nodes on the same boxes, you need to
+install uraft once for the masters and once for the nfs metadata servers. In
+such a setup it is vital to make sure that the two instances listen on
+different ports and manage different ip addresses.
+
+Assuming that your master server uraft seetup is setup according to the defaults
+in the :ref:’lizardfs_ha_cluster’ chapter, we would suggest to use port 9527 and
+9528 as port and status port in your uraft setup for NFS as follows:
+
+URAFT_PORT = 9527
+URAFT_STATUS_PORT: 9528
+
+and make sure that you use a designated floating IP for your NFS services.
+
+All other settings should be as described in :ref:’lizardfs_ha_cluster’ .
+
+
+
 .. _TODO: add descriptions for undescribed FSAL options
-.. _TODO: add description for uraft-nfs
