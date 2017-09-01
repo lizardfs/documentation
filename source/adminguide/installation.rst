@@ -18,8 +18,8 @@ code repository and build LizardFS yourself.
 
 .. _get_and_install_debian:
 
-Installing from Debian packages
-+++++++++++++++++++++++++++++++
+Installing from Debian or Ubuntu packages
++++++++++++++++++++++++++++++++++++++++++
 
 First, add a our key which is needed to verify the signatures of LizardFS
 packages::
