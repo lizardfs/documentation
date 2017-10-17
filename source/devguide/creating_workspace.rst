@@ -167,7 +167,7 @@ in your environment before invoking :ref:`cmake`::
 
   export CC=/usr/local/bin/gcc-6
   export CXX=/usr/local/bin/g++-6
-  export CPP=/usr/local/bin/gcc-6
+  export CPP=/usr/local/bin/cpp-6
 
 homebrew is also the perfect place to get git and additions to git and gerrit.
 
@@ -229,7 +229,7 @@ set the following variables in your environment or add them to your .bashrc::
 
   export CC=/usr/local/bin/gcc6
   export CXX=/usr/local/bin/g++6
-  export CPP=/usr/local/bin/gcc6
+  export CPP=/usr/local/bin/cpp6
   export MAKE=/usr/local/bin/gmake
   export SHELL=/usr/local/bin/bash
 
