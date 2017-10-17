@@ -18,7 +18,7 @@ in LizardFS to provide:
 * pNFS Services
 
 Our implementation supports all features ganesha provides and is able to handle
-classic goal replocation setups as well es erasure coding setups in the back.
+classic goal replication setups as well es erasure coding setups in the back.
 
 The config part of our manual only handles the configuration of the LizardFS
 FSAL plus some basic ganesha configuration. A full documentation describing
@@ -95,7 +95,7 @@ connect to the masters via IP) you will need to run::
 to install the HA uraft system for NFS.
 
 
-ganecha.conf example file
+ganesha.conf example file
 -------------------------
 
 This is an example of a combined metadata and data node. A node with this
@@ -177,7 +177,7 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | io_retries                       | 0   | 1024    | 30          | I/O retries connecting to LizardFS                            |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| chunkserver_round_time_ms        | 0   | 65536   | 200         |            |
+| chunkserver_round_time_ms        | 0   | 65536   | 200         |                                                               |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | chunkserver_connect_timeout_ms   | 0   | 65535   | 2000        | Time after which a chunkserver connection is defined dead     |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
@@ -209,6 +209,7 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | fileinfo_cache_max_size          | 100 | 1000000 |             | Maximum size of the fileinfo cache                            |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
+
 
 The **name** value has to be set to **LizardFS** or nfs-ganesha will not choose
 the LizardFS FSAL and will not be able to use LizardFS as a backend.
