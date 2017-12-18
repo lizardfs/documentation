@@ -14,7 +14,7 @@ Providing advanced NFS services via the NFS Ganesha plugin
 NFS Ganesha is a widely known and used userspace NFS daemon. It is being used
 in LizardFS to provide:
 
-* Basic NFS Services
+* Basic NFS v3 and v4 Services
 * pNFS Services
 
 Our implementation supports all features ganesha provides and is able to handle
@@ -47,10 +47,6 @@ please install an openssh-server first so you can work remotely::
   # systemctl enable sshd
   # systemctl start sshd
 
-install man, vim and tmux to have sysadmin tools and help ready::
-
-  # yum install man vim
-
 Install the epel repository for some basic back ports that will be required,
 like python3.4 and some others::
 
@@ -58,51 +54,46 @@ like python3.4 and some others::
   # yum -y update
   # yum -y upgrade
 
-Now install the required dependencies first::
+install man, vim and tmux to have sysadmin tools and help ready::
 
-  # yum install python34
+  # yum install man vim tmux
 
-Now go to the directory you downloaded our packages to and install::
+Add the lizardfs centos dependencies repository by putting the following into the file
+/etc/yun.conf.d/lizardfs-deps.repo::
 
-  # yum -y install ./libntirpc-1.5.3-1.el7.centos.x86_64.rpm
-  # yum -y install ./libtirpc-1.0.2-0.el7.centos.x86_64.rpm ./nfs-utils-2.1.1-5.rc5.el7.centos.x86_64.rpm ./rpcbind-0.2.4-7.rc2.el7.centos.x86_64.rpm ./gssproxy-0.7.0-9.el7.centos.x86_64.rpm
+  [lizardfs-deps]
+  name=LizardFS Dependency Packages
+  baseurl=http://packages.lizardfs.com/yum/el7-deps/
+  enabled=1
+  gpgcheck=0
+  gpgkey=
 
-It is important that the second command is one line becuase the packages depend on each other.
-Now install the nfs-ganesha packages we provide::
 
-  # yum -y install nfs-ganesha-2.5.1.1-1.el7.centos.x86_64.rpm
-  # yum -y install nfs-ganesha-vfs-2.5.1.1-1.el7.centos.x86_64.rpm
+Update your repository index::
 
-And finally the packages from our addon::
+  # yum update
 
-  # yum -y install lizardfs-lib-client-3.12.0-0el7.x86_64.rpm
-  # yum -y install lizardfs-nfs-ganesha-3.12.0-0el7.x86_64.rpm
 
-On the master also install the uraft for NFS package::
+Install the lizardfs ganesha dependencies and nfs ganesha (same for master and chunk server)::
 
-  # yum -y install lizardfs-nfs-uraft-3.9.3-0el7.x86_64.rpm
+   # yum install -y lizardfs-nfs-ganesha lizardfs-lib-client libntirpc nfs-ganesha
 
-If you require the services of autofs, install our back ported autofs as well::
+After configuring ganesha, add it to your system startup with::
 
-  # yum -y install autofs-5.1.2-2.el7.centos.x86_64.rpm
+  # systemctl enable nfs-ganesha
 
-On the Ganesha Metadataserver which can but do not have to be installed on the
-lizardfs masters ( they can also be running on separate boxes, just need to
-connect to the masters via IP) you will need to run::
 
-  # yum -y install lizardfs-nfs-uraft-3.9.3-0el7.x86_64.rpm
+If you have a subscription install the uraft for NFS packae on the master too::
 
-to install the HA uraft system for NFS.
+  # yum -y install lizardfs-nfs-uraft
 
 
 ganesha.conf example file
 -------------------------
 
-This is an example of a combined metadata and data node. A node with this
-configuration has to be on a chunkserver and will connect to a masterserver at
-192.168.99.100.
+This is an example of a combined metadata node configuration. The ganesha metadata node connects to the lizardfs master
+server with the ip address 192.168.99.100::
 
-::
 
   ###################################################
   #
@@ -128,6 +119,8 @@ configuration has to be on a chunkserver and will connect to a masterserver at
       # Required for access (default is None)
       # Could use CLIENT blocks instead
       Access_Type = RW;
+      Squash = None;
+      Attr_Expiration_Time = 0;
 
       # Exporting FSAL
       FSAL {
@@ -149,13 +142,17 @@ configuration has to be on a chunkserver and will connect to a masterserver at
       # Is this a NFS metadataserver ?
       PNFS_MDS = true;
       # Is this a NFS dataserver and is it installed on an active chunkserver?
-      PNFS_DS = true;
-      # A node can be either one or both.
+      PNFS_DS = false;
   }
 
   NFSV4 {
       Grace_Period = 5;
   }
+
+
+The chunkservers for this installation would have the same configuration file, except that PNDS_MDS would be set to
+false and PNFS_DS set to true. All other settings would be the same. That way you would have configured a ganesha data
+node, using the local chunkserver and connecting to the lizardfs master server at 192.168.99.100.
 
 
 
@@ -199,7 +196,7 @@ Options for the LizardFS FSAL part of the ganesha.conf file
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | symlink_cache_timeout_s          | 0   | 60000   | 3600        | How long to wait for a response from the symlink cache in sec.|
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
-| debug_mode                       |     |         | false       | Rin im debug mode and provide tons of aditional output        |
+| debug_mode                       |     |         | false       | Run im debug mode and provide tons of aditional output        |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
 | keep_cache                       | 0   | 2       | 0           |                                                               |
 +----------------------------------+-----+---------+-------------+---------------------------------------------------------------+
