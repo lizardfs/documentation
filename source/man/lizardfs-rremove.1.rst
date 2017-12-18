@@ -1,20 +1,20 @@
 .. _lizardfs_rremove.1:
 
 *******************
-lizardfs-rremove(1)
+lizardfs rremove(1)
 *******************
 
 NAME
 ====
 
-lizardfs-rremove - remove recursively
+lizardfs rremove - remove recursively
 
 SYNOPSIS
 ========
 
 ::
 
-  lizardfs-rremove* [*-l*] 'OBJECT'...
+  lizardfs rremove* [*-l*] 'OBJECT'...
 
 DESCRIPTION
 ===========
@@ -30,7 +30,7 @@ OPTIONS
   timeout is 60 seconds)
 
 COPYRIGHT
-==========
+=========
 Copyright 2016-2017 Skytechnology Sp. z o.o.
 
 LizardFS is free software: you can redistribute it and/or modify it under the
