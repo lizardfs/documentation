@@ -33,9 +33,11 @@ You can set the ganesha node to be either a data node or a metadata node or both
 There is probably no big deal if a node is set to both but never used.
 
 The main rule is, a data node **HAS** to be located on the same node as a
-chunkserver. Thiings will break if this is not the case.
+chunkserver. Things will break if this is not the case.
 
 A metadata node can be standalone.
+
+.. warning:: ganesha NFS support is only available on Linux
 
 Installing LizardFS-NFS-Ganesha on CentOS/RHEL 7
 ------------------------------------------------
