@@ -18,6 +18,7 @@ Contents:
    advanced_configuration
    optional_features
    connectclient
+   gateways
    security
    troubleshooting
    upgrading
