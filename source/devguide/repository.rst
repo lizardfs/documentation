@@ -1,4 +1,4 @@
-.. repository_rules:
+.. _repository_rules:
 
 *******************************
 Repository rules
@@ -16,6 +16,8 @@ Repository rules
 *  Your changes most probably will be re based to the top of the master before
    being pushed to the repository. This makes the git tree simpler if there is
    no important reason to add any branches and merges there.
+
+.. _commit_messages:
 
 Commit messages
 ---------------
@@ -80,6 +82,8 @@ Commit messages
 *  Use reasonable numbers of commits (possibly one) per change. Don't create
    commits which fix many independent things. Don't split a single change into
    many commits if there is no reason to do this.
+
+.. _code_review:
 
 Code review process
 -------------------

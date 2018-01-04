@@ -11,4 +11,5 @@ review.
 You can read about this here:
 https://help.github.com/articles/about-pull-requests/ how to use them.
 
-Please make sure to follow our :ref:`versioning` which are part of the next chapter.
+Please make sure to follow our :ref:`versioning` and :ref:`repository_rules`
+which are part of the next chapter.
