@@ -61,7 +61,7 @@ install man, vim and tmux to have sysadmin tools and help ready::
   # yum install man vim tmux
 
 Add the lizardfs centos dependencies repository by putting the following into the file
-/etc/yun.conf.d/lizardfs-deps.repo::
+/etc/yun.repos.d/lizardfs-deps.repo::
 
   [lizardfs-deps]
   name=LizardFS Dependency Packages
