@@ -500,12 +500,17 @@ have them accessible in parallel from all the nodes.
 ProxmoxVE nodes as chunkservers and LizardFS clients
 ----------------------------------------------------
 
-.. TODO:: write the proxmox article
+This is what we use for functional testing, development and some even for their private lizard setups.
+It is pretty simple.
+
+Just use lxc containers as chunk servers and masters. Nothing much to it. Standard setup like any other lizardFS server.
+
 
 
 Using ProxmoxVE to manage a combined node with chunkservers in lxc containers
 -----------------------------------------------------------------------------
 
+This will have to wait until someone will write a proxmox gui module for lizardfs :)
 .. TODO:: write the cobined proxmox article
 
 .. seealso:: https://www.proxmox.com/
