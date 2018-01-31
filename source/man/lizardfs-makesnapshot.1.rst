@@ -1,13 +1,13 @@
 .. _lizardfs-makesnapshot.1:
 
 ************************
-lizardfs-makesnapshot(1)
+lizardfs makesnapshot(1)
 ************************
 
 NAME
 ====
 
-lizardfs-makesnapshot - make lazy copies
+lizardfs makesnapshot - make lazy copies
 
 SYNOPSIS
 ========

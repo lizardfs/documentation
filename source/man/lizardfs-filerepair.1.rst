@@ -1,13 +1,13 @@
 .. _lizardfs-filerepair.1:
 
 **********************
-lizardfs-filerepair(1)
+lizardfs filerepair(1)
 **********************
 
 NAME
 ====
 
-lizardfs-filerepair - repair broken files
+lizardfs filerepair - repair broken files
 
 SYNOPSIS
 ========
@@ -40,7 +40,7 @@ OPTIONS
 -n, -h, -H
   These options are described in lizardfs(1).
 
-OPYRIGHT
+COPYRIGHT
 =========
 
 2013-2017 Skytechnology Sp. z o.o.

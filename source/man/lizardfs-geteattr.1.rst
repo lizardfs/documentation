@@ -1,13 +1,13 @@
 .. _lizardfs-geteattr.1:
 
 ********************
-lizardfs-geteattr(1)
+lizardfs geteattr(1)
 ********************
 
 NAME
 ====
 
-lizardfs-geteattr, lizardfs-seteattr,  lizardfs-deleattr - get, set or delete extra attributes
+lizardfs geteattr, lizardfs seteattr,  lizardfs deleattr - get, set or delete extra attributes
 
 SYNOPSIS
 ========
@@ -49,7 +49,7 @@ EXTRA ATTRIBUTES
   This flag is similar to above. It prevents directory entries from being
   cached in kernel.
 
-OPYRIGHT
+COPYRIGHT
 =========
 
 2013-2017 Skytechnology Sp. z o.o.

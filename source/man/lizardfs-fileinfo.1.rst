@@ -1,13 +1,13 @@
 .. _lizardfs-fileinfo.1:
 
 ********************
-lizardfs-fileinfo(1)
+lizardfs fileinfo(1)
 ********************
 
 NAME
 ====
 
-lizardfs-fileinfo - locate chunks
+lizardfs fileinfo - locate chunks
 
 SYNOPSIS
 ========

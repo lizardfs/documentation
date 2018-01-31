@@ -1,13 +1,13 @@
 .. _lizardfs-getgoal.1:
 
 *******************
-lizardfs-getgoal(1)
+lizardfs getgoal(1)
 *******************
 
 NAME
 ====
 
-lizardfs-getgoal, lizardfs-setgoal, lizardfs-rgetgoal, lizardfs-rsetgoal - change or retrieve goal
+lizardfs getgoal, lizardfs setgoal, lizardfs rgetgoal, lizardfs rsetgoal - change or retrieve goal
 
 SYNOPSIS
 ========

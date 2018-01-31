@@ -1,13 +1,13 @@
 .. _lizardfs-repquota.1:
 
 ********************
-lizardfs-repquota(1)
+lizardfs repquota(1)
 ********************
 
 NAME
 ====
 
-lizardfs-repquota, lizardfs-setquota - retrieves and sets quotas for specified
+lizardfs repquota, lizardfs setquota - retrieves and sets quotas for specified
 users and groups
 
 SYNOPSIS

@@ -1,13 +1,13 @@
 .. _lizardfs-chekfile.1:
 
 *********************
-lizardfs-checkfile(1)
+lizardfs checkfile(1)
 *********************
 
 NAME
 ====
 
-lizardfs-checkfile - print information about chunks
+lizardfs checkfile - print information about chunks
 
 SYNOPSIS
 ========

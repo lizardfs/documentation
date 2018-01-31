@@ -1,13 +1,13 @@
 .. _lizardfs-appenchunks.1:
 
 ************************
-lizardfs-appendchunks(1)
+lizardfs appendchunks(1)
 ************************
 
 NAME
 ====
 
-lizardfs-appendchunks - lazy append chunks
+lizardfs appendchunks - lazy append chunks
 
 SYNOPSIS
 ********

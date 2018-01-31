@@ -1,13 +1,13 @@
 .. _lizardfs-gettrashtime.1:
 
 ************************
-lizardfs-gettrashtime(1)
+lizardfs gettrashtime(1)
 ************************
 
 NAME
 ====
 
-lizardfs-gettrashtime, lizardfs-settrashtime, lizardfs-rgettrashtime, lizardfs-rsettrashtime - get or set trash time
+lizardfs gettrashtime, lizardfs settrashtime, lizardfs rgettrashtime, lizardfs rsettrashtime - get or set trash time
 
 SYNOPSIS
 ========

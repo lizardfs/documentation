@@ -1,13 +1,13 @@
 .. _lizardfs-dirinfo.1:
 
 *******************
-lizardfs-dirinfo(1)
+lizardfs dirinfo(1)
 *******************
 
 NAME
 ====
 
-lizardfs-dirinfo - show directories stats
+lizardfs dirinfo - show directories stats
 
 SYNOPSIS
 ========
@@ -28,7 +28,7 @@ OPTIONS
 -n, -h, -H
   These options are described in lizardfs(1).
 
-OPYRIGHT
+COPYRIGHT
 =========
 
 2013-2017 Skytechnology Sp. z o.o.
