@@ -8,7 +8,7 @@ LizardFS linux CookBook
 .. _linux_network_tuning:
 
 Basic network adjustments for Linux
------------------------------------
+===================================
 
 By default Linux systems come with relatively small window sizes for TCP and
 UDP frames which could lead to fragmentation and lowered performance.

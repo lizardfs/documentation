@@ -462,6 +462,7 @@ Create one mount point on your host for each VM (especially cool with KVM)
 Best Practice for VMWare Networking
 ===================================
 
+Currently only NFS is supported for connections from VMWare ESX Hosts.
 
 .. _proxmox:
 
@@ -506,11 +507,11 @@ It is pretty simple.
 Just use lxc containers as chunk servers and masters. Nothing much to it. Standard setup like any other lizardFS server.
 
 
-
 Using ProxmoxVE to manage a combined node with chunkservers in lxc containers
 -----------------------------------------------------------------------------
 
 This will have to wait until someone will write a proxmox gui module for lizardfs :)
+
 .. TODO:: write the cobined proxmox article
 
 .. seealso:: https://www.proxmox.com/
