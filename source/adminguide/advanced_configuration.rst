@@ -329,3 +329,5 @@ When running telnet locally on a node, it is sufficient to use::
 Please check if you have the :ref:`sudo` package installed and that the 'mfs'
 user has been added with the right permissions to the /etc/sudoers file.
 
+For more advanced concepts, like 2 active uRaft servers and a quorum node, please check the :ref:`uraft_cookbook` .
+
