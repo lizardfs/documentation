@@ -23,7 +23,7 @@ Contents:
    cookbook/index
    glossary/index
    release_notes
-   ressources
+   resources
    support
    references
    authors
