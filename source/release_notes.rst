@@ -9,11 +9,13 @@ Release 3.13.0-rc1
 Date: 2018-07-14
  
 **Assets**
+
 * https://github.com/lizardfs/lizardfs/archive/v3.13.0-rc1.zip
 * https://github.com/lizardfs/lizardfs/archive/v3.13.0-rc1.tar.gz
   
   
 **Features**
+
 * uRaft HA
 * fixes to EC handling
 * nfs-ganesha plugin changed to use only C code
@@ -22,6 +24,7 @@ Date: 2018-07-14
 * many fixes
 
 **Detailed info**
+
 * uRaft HA
 uRaft is HA solution designed for use with LizardFS. It allows for seamless switching
 of  the master server in case of hardware failure. More information about uRaft is available
@@ -58,10 +61,12 @@ Release 3.12.0
 Date: 2017-12-21
 
 **Assets**
+
 * https://github.com/lizardfs/lizardfs/archive/v3.12.0.zip
 * https://github.com/lizardfs/lizardfs/archive/v3.12.0.tar.gz
 
 **Features**
+
 * C API
 * nfs-ganesha plugin
 * RichACL - a new POSIX + NFSv4 compatible ACL standard
@@ -119,6 +124,7 @@ Release 3.11.1 -- 3.11.3
 Date: 2017-07-13
 
 **Assets**
+
 * https://github.com/lizardfs/lizardfs/archive/v3.11.3.zip
 * https://github.com/lizardfs/lizardfs/archive/v3.11.3.tar.gz
 
@@ -138,10 +144,12 @@ Release 3.11.0
 Date: 2017-05-11
 
 **Assets**
+
 * https://github.com/lizardfs/lizardfs/archive/v3.11.0.zip
 * https://github.com/lizardfs/lizardfs/archive/v3.11.0.tar.gz
 
 **Features**
+
 * master: improve ACL implementation
 * master: add option to avoid same-ip chunkserver replication
 * master: add minimal goal configuration option
@@ -159,6 +167,7 @@ Date: 2017-05-11
 * all: many fixes
 
 **Detailed info**
+
 * Readahead
 Clients can now benefit from integrated readahead mechanism.
 In order to enable readahead, please mount with the following options:
@@ -189,6 +198,7 @@ Release 3.10.6
 Date: 2017-01-17
 
 **Assets**
+
 * https://github.com/lizardfs/lizardfs/archive/v3.10.6.zip
 * https://github.com/lizardfs/lizardfs/archive/v3.10.6.tar.gz
 
@@ -204,10 +214,12 @@ Release 3.10.4
 Date: 2017-10-19
 
 **Assets**
+
 * https://github.com/lizardfs/lizardfs/archive/v3.10.4.zip
 * https://github.com/lizardfs/lizardfs/archive/v3.10.4.tar.gz
 
 **Features**
+
 * task manager performance improvements (speeding up massive metadata
 * operations: snapshots, setting trash time, setting goal, etc.)
 * fixing an error in trash files that caused #487 and #489 github issues
