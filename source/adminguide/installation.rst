@@ -66,7 +66,7 @@ LizardFS consists of the following packages:
 * lizardfs-common – LizardFS common files required by lizardfs-master,
   lizardfs-chunkserver and lizardfs-metalogger
 * lizardfs-dbg – Debugging symbols for all the LizardFS binaries
-* lizardfs-uraft - High Availability solution based on RAFT algorithm
+* lizardfs-uraft - High Availability solution based on RAFT algorithm (from version 3.13)
 
 
 Installing from RedHAT EL / CentOS Packages
