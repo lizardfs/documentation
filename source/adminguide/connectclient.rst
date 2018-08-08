@@ -73,6 +73,9 @@ Reasonable values:
 * readaheadmaxwindowsize - depends on latency and cacheexpirationtime,
   1024-8192 are usually fine. Higher values = bigger portions of data asked in
   single request.
+* IMPORTANT! Version 3.12 had cacheexpirationtime set by default to 300 (300ms).
+  The subsequent versions have this value reverted to 0, because caching is not
+  appropriate for some use cases. Please use cacheexpirationtime=0 for turning off cache in 3.12.
 
 readaheadmaxwindowsize can be adjusted to your local requirements - starting
 from 1024 and increasing it in small steps until your tests show no more
