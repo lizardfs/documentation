@@ -95,7 +95,18 @@ Third Party AddOns
 
   Github repository: https://github.com/stenub/lizardfs_ansible_playbook
 
+**lizardfs docker plugin**
 
+  A Docker volume driver plugin for mounting a LizardFS filesystem.
+  Allows you to transparently provide storage for your Docker containers
+  using LizardFS. This plugin can be used in combination with our
+  LizardFS Docker Image to create a fully containerized, 
+  clustered storage solution for Docker Swarm.
+  
+  Author: zicklag
+  
+  Github repository: https://github.com/kadimasolutions/docker-plugin_lizardfs
+  
 ***************************
 Packages from the community
 ***************************
