@@ -1,5 +1,5 @@
 ##########
-Ressources
+Resources
 ##########
 .. auth-status-writing/none
 
