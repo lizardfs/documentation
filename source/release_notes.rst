@@ -25,7 +25,7 @@ Date: 2018-07-14
 * uRaft HA
 uRaft is HA solution designed for use with LizardFS. It allows for seamless switching
 of  the master server in case of hardware failure. More information about uRaft is available
-in LizardfFS Handbook (https://docs.lizardfs.com/index.html)
+in LizardfFS Handbook (https://docs.lizardfs.com/adminguide/advanced_configuration.html#deploying-lizardfs-as-a-ha-cluster)
 
 * fixes to EC handling
 After extensive tests we decided to improve the mechanism of calculating parities greater than 4 e.g EC( 6,5) After this upgrade the system will show chunks of parities as endangered until the system automatically recalculates. 
