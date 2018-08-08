@@ -5,10 +5,10 @@ Upgrading Lizardfs
 ******************
 .. auth-status-proof1/none
 
-Upgrading to LizardFS 3.10.X
+Upgrading to LizardFS 3.13.x
 ============================
 
-    Direct upgrade is possible from LizardFS 2.6.0 - 3.10.x.
+    Direct upgrade is possible from LizardFS 2.6.0 - 3.12.x.
 
     * See upgrade notes for 3.10.0 for a detailed description
 
