@@ -224,3 +224,128 @@ Date: 2017-10-19
 * operations: snapshots, setting trash time, setting goal, etc.)
 * fixing an error in trash files that caused #487 and #489 github issues
 * other minor fixes and improvements
+
+*******
+Release 3.10.4
+*******
+Date: 2016-09-14
+
+**Assets**
+
+* https://github.com/lizardfs/lizardfs/archive/v3.10.2.zip
+* https://github.com/lizardfs/lizardfs/archive/v3.10.2.tar.gz
+
+**Features**
+
+Master:
+
+* redesign in-memory representation of file system objects - at least 30% reduction in RAM usage
+* name storage: a possibility to keep all file names in BerkeleyDB, thus saving even more RAM
+* redesign of trash - increased performance, reduced RAM usage and CPU pressure
+* huge boost of responsiveness - lengthy operations split into asynchronous bits
+* OPERATIONS_DELAY config entries, which allow postponing metadata operations on restart/disconnect
+* mount: make big snapshot, setgoal and settrashtime operations asynchronous to improve responsiveness
+* fix improper handling of endangered chunks
+
+Chunkserver:
+
+* memory optimizations - at least 60% reduction in RAM usage
+* introduce smart descriptor management
+
+Tools:
+
+* brand new lizardfs command, a unified replacement for mfs* tools with prompt and bash completion
+
+Other:
+
+* various fixes and community requests
+
+**Detailed info**
+
+Master’s memory and CPU
+With 3.10.2, the master is much more memory-efficient and responsive. RAM usage reduction was accomplished through redesigning the way it keeps metadata in memory, adding a possibility to keep some metadata in on-disk database (see USE_BDB_FOR_NAME_STORAGE in mfsmaster.cfg file for reference). Responsiveness was dramatically increased by recognizing all potentially lengthy operations and splitting their execution in smaller time bits. It applied to both in-master maintenance procedures and client’s requests like snapshotting/changing goal of very big directories.
+
+lizardfs tool:
+3.10.2 comes with new client tool: lizardfs utility. See man lizardfs, lizardfs -h for details. Aside from known functionalities like setting/getting goals, making snapshots, etc. it comes with bash-like prompt and bash completion.
+
+Examples:
+lizardfs setgoal -r ec32 a/
+
+lizardfs makesnapshot dira/ dirb/
+
+lizardfs fileinfo a/*
+
+lizardfs <<EOF
+fileinfo a/*
+setgoal -r 3 a
+getgoal a/2
+EOF
+
+What’s next:
+In next release, paths and build system is to be unified with the one from official Debian repository (e.g. configuration directory will officially become /etc/lizardfs). Also, more asynchronous client commands are coming including recursive-remove operation. A so called “minimal goal setting”, which will probably be named MIN_REDUNDANCY_LEVEL is being implemented as well. Finally, more news on native HA (μRaft) will appear.
+
+*******
+Release 3.10
+*******
+Date: 2016-08-04
+
+**Assets**
+
+* https://github.com/lizardfs/lizardfs/archive/v.3.10.0.zip
+* https://github.com/lizardfs/lizardfs/archive/v.3.10.0.tar.gz
+
+**Features**
+
+* erasure code goals (aka K+M goals)
+* per directory quotas
+* improved interaction with legacy chunkservers and mounts
+* ports for OSX and FreeBSD
+* updated mfsfileinfo output with xor/ec goals
+* many fixes
+
+**Detailed info**
+
+* Erasure code goals
+
+For each file using ec(K+M) goal, the system will split the file into K parts and generate M parity parts. Any K parts are required to be able to reproduce file contents.
+
+If labels are specified, parts will be kept on chunkservers with these labels. Otherwise, default wildcard labels will be used.
+
+This kind of goal allows M of K+M copies to be lost and the file would still remain accessible. Erasure code goal occupies M/K extra space.
+
+Please note that minimal K value is 2 and minimal M value is 1.
+
+Examples of new goal configuration:
+5 ec32 : $ec(3,2){ A B _ _ _ }
+6 ec43 : $ec(4,3)
+
+* Per directory quotas
+
+It is now possible to set inode/size limits per directory.
+In case of multiple quota rules, the most restrictive one is always effective.
+Example:
+
+mfssetquota -d 10M 100M 50M 1G /mnt/lizardfs/a/directory
+
+* Improved interaction with legacy chunkservers and mounts
+
+Pre-2.6.0 mounts and chunkservers used to be not fully compatible with 3.9.x servers, which complicated the upgrade process. Those issues are now solved - new mounts are perfectly capable of communicating with legacy chunkservers and vice versa.
+This rule has one exception: for consistency reasons, replication from new chunkservers to old ones is disabled.
+
+* Ports for OSX and FreeBSD
+
+LizardFS is now buildable for those systems.
+
+Fixes:
+
+* denying replication during scan
+* atomicity of replication process
+* sending proper error codes to master
+* proper handling of replication limits during rebalancing
+* removal of splice call
+* removing possible livelock in master networking
+* adding missing update in inodes id pool
+
+Next release (unstable now) will contain a massive set of patches which make the cluster more responsive.
+Also, a great reduction of master's and chunkserver's RAM usage is to be expected (at least 30% less resources needed).
+An improved client tool for managing goals/quotas/files etc. is coming as well.
