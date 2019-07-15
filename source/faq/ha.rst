@@ -47,8 +47,8 @@ High Availability
   active node to the new designated master. All uRaft nodes have to be part of
   one network and must be able to  talk to each other.
 
-  The uRaft component can be obtained by signing a support contract with
-  SkyTechnology Sp. z o.o..
+  The uRaft component is now a part of LizardFS 3.13.0-rc1 and can be downloaded
+  from the `LizardFS Download Page <https://lizardfs.com/download/>`_.
 
 .. seealso::
 
