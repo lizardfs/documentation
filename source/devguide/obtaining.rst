@@ -9,17 +9,17 @@ Obtaining and installing LizardFS from source
 Installing LizardFS from source
 +++++++++++++++++++++++++++++++
 
-The current LizardFS source code can be obtained from our :ref:`GitHub` `project page<https://github.com/lizardfs/lizardfs>`_. You can either download a ``zip`` archive by choosing the respective version in the ``Branch`` tab or use :ref:`git` to clone the source tree.
+The current LizardFS source code can be obtained from our :ref:`GitHub` `project page <https://github.com/lizardfs/lizardfs>`_. You can either download a ``zip`` archive by choosing the respective version in the ``Branch`` tab or use :ref:`git` to clone the source tree.
 
 LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow the directions outlined below.
 
-0. Install all required dependencies. For Ubuntu or Debian run::
+0. Install all required dependencies. For `Debian-based distributions <https://en.wikipedia.org/wiki/Category:Debian-based_distributions>`_ run::
 
     apt install git cmake g++ libspdlog-dev libfuse3-dev libfuse-dev fuse isal libisal-dev libboost-all-dev asciidoc-base zlib1g-dev pkg-config libthrift-dev libcrcutil-dev libjudy-dev libpam0g-dev libdb-dev libgtest-dev
     
    Note that packages' names may vary on different Linux distributions.
 
-1. Create a build directory inside the source directory::
+1. Create a build directory ``build`` inside the source directory::
 
     cd lizardfs
     mkdir build
@@ -37,7 +37,7 @@ LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow t
    
      cmake -LAH ..
    
-   If you want to enable tests, run::
+   If you want to enable Google tests, run::
    
      cmake .. -DENABLE_TESTS=ON
 
