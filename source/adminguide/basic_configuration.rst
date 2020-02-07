@@ -105,7 +105,7 @@ For the chunkservers
 If you are using XFS as the file system for the chunkserver directories, we
 recommend the following mount options::
 
-  rw,noexec,nodev,noatime,nodiratime,largeio,inode64,barrier=0
+  rw,noexec,nodev,noatime,nodiratime,largeio,inode64
 
 This disables unneeded features from the mount which gives a slight
 performance increase especially in case of many chunks. It also increases the
