@@ -143,12 +143,26 @@ source tree.
 LizardFS uses :ref:`CMake` as its build system. To compile the sources, follow
 the directions outlined below.
 
-1. Create a build directory inside the source directory::
+1. Before compile you should ensure that your system have installed requirements packages:
+
+    For CentOS 7 install the following packages:
+
+        epel-release redhat-lsb-core acl asciidoc attr boost-devel boost-filesystem boost-iostreams boost-program-options boost-system centos-release-nfs-ganesha28 cmake dbench fuse fuse-devel gcc gcc-c++ git glibc-devel.i686 gperftools-libs libdb-devel libntirpc-devel make nc nfs4-acl-tools pam-devel pkgconfig pylint python3 rpm-build rsync socat tidy valgrind wget zlib-devel
+
+    For Debian 8 install the following packages:
+
+        acl attr build-essential cmake dbench debhelper devscripts dh-systemd docbook-xsl fuse gdb libboost-filesystem-dev libboost-iostreams-dev libboost-program-options-dev libboost-system-dev libc6-dev-i386 libdb-dev libfuse-dev libgoogle-perftools-dev libjudy-dev libntirpc-dev libpam0g-dev libxml2-utils libxslt1-dev lsb-release make netcat-openbsd nfs-ganesha pkg-config pylint python3 rsync socat tidy unzip wget xsltproc zlib1g-dev
+
+    For Ubuntu 18 install the following packages:
+
+        acl attr build-essential cmake dbench debhelper devscripts docbook-xsl fuse gdb git libboost-filesystem-dev libboost-iostreams-dev libboost-program-options-dev libboost-system-dev libc6-dev-i386 libdb-dev libfuse-dev libgoogle-perftools-dev libisal-dev libjudy-dev libntirpc-dev libpam0g-dev libxml2-utils libxslt1-dev lsb-core lsb-release make netcat-openbsd nfs-ganesha pkg-config pylint python3 rsync socat tidy unzip valgrind wget xsltproc zlib1g-dev
+
+2. Create a build directory inside the source directory::
 
     cd lizardfs-source
     mkdir build
 
-2. Run *cmake ..* inside the build directory. Useful options include
+3. Run *cmake ..* inside the build directory. Useful options include
    *-DCMAKE_INSTALL_PREFIX*, *-DCMAKE_BUILD_TYPE* as well as various
    LizardFS-specific *-DENABLE_...* options. Options are listed when
    cmake is ran and can be changed by re-running cmake::
@@ -156,15 +170,15 @@ the directions outlined below.
     cd build
     cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/lizardfs
 
-3. Run make in the build directory::
+4. Run make in the build directory::
 
     make
 
-4. Run make install to install files (you may need to be root)::
+5. Run make install to install files (you may need to be root)::
 
     make install
 
-5. Now continue to the configuration pages.
+6. Now continue to the configuration pages.
 
 
 If you want to participate in developing LizardFS, please refer to the
