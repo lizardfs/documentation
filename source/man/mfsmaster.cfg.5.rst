@@ -49,7 +49,10 @@ PERSONALITY
 
   Metadata server personality can be changed at any moment as long as one
   changes personality from *shadow* to *master*, changing personality the
-  other way around is forbidden. ::
+  other way around is forbidden. Note that this restriction only applies
+  when trying to change the personality of a *running* master. You may
+  change the personality from master to shadow if you restart the master
+  service.::
 
     PERSONALITY = ha-cluster-managed
 
