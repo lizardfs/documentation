@@ -4,8 +4,7 @@ LizardFS Handbook
 
 Please welcome to the LizardFS Handbook.
 
-This repository is the official source for the handbook which resides at
-http://docs.lizardfs.com/.
+For the Handbook, please write to us contact@lizardfs.com
 
 The Handbook is a work in progress and you are welcome to join in and work on 
 it with us
